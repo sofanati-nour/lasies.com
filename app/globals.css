@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-image: url(./bg_2.jpg);
+  background-position: left top;
+  background-size: auto;
+  background-repeat: repeat;
+  background-attachment: scroll;
+}
+
+.shimmer-on-hover:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.4);
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none;
+}
+
+.shimmer-on-hover:hover:after {
+  width: 120%;
+  background-color: rgba(255, 255, 255, 0);
+
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
