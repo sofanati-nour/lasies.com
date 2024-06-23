@@ -32,6 +32,7 @@ export default function Carousel() {
       <div className="relative h-[600px] sm:h-[500px] overflow-hidden ">
         {images.map((image, idx) => (
           <div
+            key={image}
             className={
               " duration-700 ease-in-out" +
               (idx === currentImage ? " opacity-100" : " opacity-0")

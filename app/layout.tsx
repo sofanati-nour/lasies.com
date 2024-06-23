@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Merriweather } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 const merriweather = Merriweather({
@@ -34,10 +35,10 @@ export default function RootLayout({
   return (
     <html lang="de">
       <head>
-        <script
+        <Script
           src="https://kit.fontawesome.com/307fd5a23b.js"
           crossOrigin="anonymous"
-        ></script>
+        ></Script>
       </head>
       <body
         className={`${inter.className} ${merriweather.className} container mx-auto`}
