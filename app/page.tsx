@@ -1,7 +1,10 @@
 import Carousel from "@/components/Carousel";
 import { cn } from "@/libs/utils";
+import { ReCaptchaProvider } from "next-recaptcha-v3";
 import Image from "next/image";
 import { text } from "stream/consumers";
+import { SendContactRequest } from "./actions";
+import Contact, { ContactRequest, ContactResponse } from "@/components/Contact";
 
 export default function Home() {
   return (
@@ -11,6 +14,9 @@ export default function Home() {
       <AboutUs />
       <Menu />
       <Services />
+      <ReCaptchaProvider reCaptchaKey={process.env.RECAPTCHA_CLIENT_KEY}>
+        <Contact handleSendEmail={SendContactRequest} />
+      </ReCaptchaProvider>
     </main>
   );
 }
