@@ -278,7 +278,7 @@ function SmNavbar() {
 
       <div
         className={cn(
-          "fixed top-0 left-0 w-full bg-[#f0ebdf] z-50 transition shadow",
+          "md:hidden fixed top-0 left-0 w-full bg-[#f0ebdf] z-50 transition shadow",
           {
             "-translate-y-full": inView || isMenuOpen,
           }
