@@ -1,5 +1,7 @@
 import Carousel from "@/components/Carousel";
+import { cn } from "@/libs/utils";
 import Image from "next/image";
+import { text } from "stream/consumers";
 
 export default function Home() {
   return (
@@ -8,6 +10,7 @@ export default function Home() {
       <Intro />
       <AboutUs />
       <Menu />
+      <Services />
     </main>
   );
 }
@@ -16,24 +19,62 @@ function HeaderThing({
   title,
   subtitle,
   className,
+  type = "default",
+  textAlignment = "center",
 }: {
   title: string;
   subtitle: string;
   className?: string;
+  type?: "default" | "small";
+  textAlignment?: "center" | "left" | "right";
 }) {
   return (
-    <div className={"flex justify-center items-center py-5 " + className}>
-      <div className="h-[120px] relative flex items-start justify-center flex-col text-center font-serif">
+    <div className={cn("flex justify-center items-center py-5 ", className)}>
+      <div
+        className={cn("h-[120px] relative flex flex-col font-serif", {
+          "text-center": textAlignment == "center",
+          "text-left": textAlignment == "left",
+          "text-right": textAlignment == "right",
+        })}
+      >
         <Image
           src={"/title_bg_green.webp"}
           alt="hero"
           width={280}
           height={180}
-          className="-mb-20 mx-auto"
+          className={cn(" mx-auto", {
+            "w-64 opacity-60": type == "small",
+            "-mb-20": type == "default",
+            "-mb-24": type == "small",
+            "-ml-24": textAlignment == "left",
+            "-mr-24": textAlignment == "right",
+          })}
         />
-        <h2 className="mx-auto text-xl text-center">{title}</h2>
-        <p className="font-semibold text-2xl text-center mx-auto">{subtitle}</p>
-        <div className="w-64 h-0.5 bg-yellow-500 mx-auto self-end absolute bottom-0 left-0 right-0"></div>
+        <h2
+          className={cn({
+            "text-xl": type == "default",
+            "font-bold": type == "small",
+            "text-center mx-auto": textAlignment == "center",
+            "text-left": textAlignment == "left",
+            "text-right": textAlignment == "right",
+          })}
+        >
+          {title}
+        </h2>
+        <p
+          className={cn({
+            "font-semibold text-2xl": type == "default",
+            "w-72": type == "small",
+            "text-center mx-auto": textAlignment == "center",
+            "text-left": textAlignment == "left",
+            "text-right": textAlignment == "right",
+          })}
+        >
+          {subtitle}
+        </p>
+        {type == "default" ? (
+          <div className="w-64 h-0.5 bg-yellow-500 mx-auto self-end absolute bottom-0 left-0 right-0"></div>
+        ) : null}
       </div>
     </div>
   );
@@ -57,7 +98,7 @@ function Intro() {
 
 function Card({ title, imageUrl }: { title: string; imageUrl: string }) {
   return (
-    <div className="bg-[#f0ebdf] relative w-[370px] h-[473px] justify-center items-center flex flex-col backdrop-filter backdrop-blur-lg bg-opacity-50 ">
+    <div className="bg-[#f0ebdf] relative w-[185px] h-[236.5px] md:w-[370px] md:h-[473px] justify-center items-center flex flex-col backdrop-filter backdrop-blur-lg bg-opacity-50 ">
       <Image
         src={imageUrl}
         alt={title}
@@ -66,7 +107,7 @@ function Card({ title, imageUrl }: { title: string; imageUrl: string }) {
         className="absolute top-0 left-0 z-10"
       />
       <div className="w-full h-full bg-black/20 group hover:bg-transparent transition-all z-20 justify-center  items-center flex backdrop-blur-sm hover:backdrop-blur-none shimmer-on-hover">
-        <h3 className=" text-3xl text-white group-hover:text-transparent transition-all ease-linear ">
+        <h3 className=" md:text-3xl text-white group-hover:text-transparent transition-all ease-linear ">
           {title}
         </h3>
       </div>
@@ -196,6 +237,86 @@ function Menu() {
             <p className="text-[#808369] mt-auto">{menu.description}</p>
           </div>
         ))}
+      </div>
+    </section>
+  );
+}
+
+// HOCHZEITEN
+// An einem der wichtigsten Tage Ihres Lebens bieten wir ein umfassendes Catering-Programm an.
+
+// PICKNICKS
+// Wir freuen uns, für Sie bei einem Familien- oder Firmenpicknick zu arbeiten.
+
+// UNTERNEHMEN
+// Sie können einen Vollzeit- oder Teilzeitservice für Personal- oder Mitarbeiteressen bestellen.
+
+// FESTIVALS
+// Wir sind in der Lage, große, offene, kleine, Erwachsene- oder Kinderfestivals zu bedienen.
+
+// GESELLSCHAFTLICHE VERANSTALTUNGEN
+// Gesellschaftliche Veranstaltungen sind für unsere Kunden sehr wichtig, und wir garantieren perfekten Service.
+
+// PRIVATE PARTYS
+// Ein privater Speiseraum oder ein Penthouse-Catering gehört zu unseren vielen großartigen Dienstleistungen.
+
+function Services() {
+  return (
+    <section className="bg-[#f3f1ec] overflow-x-clip">
+      <HeaderThing
+        title="DIENSTLEISTUNGEN"
+        subtitle="Planen Sie ein fabelhaftes Event?"
+      />
+      <div className="grid lg:grid-cols-3 px-8">
+        <div className="flex flex-col gap-4 sm:-mr-40">
+          <HeaderThing
+            type="small"
+            title="HOCHZEITEN"
+            subtitle="An einem der wichtigsten Tage Ihres Lebens bieten wir ein umfassendes Catering-Programm an."
+            textAlignment="right"
+          />
+          <HeaderThing
+            type="small"
+            title="PICKNICKS"
+            subtitle="Wir freuen uns, für Sie bei einem Familien- oder Firmenpicknick zu arbeiten."
+            textAlignment="right"
+          />
+          <HeaderThing
+            type="small"
+            title="UNTERNEHMEN"
+            subtitle="Sie können einen Vollzeit- oder Teilzeitservice für Personal- oder Mitarbeiteressen bestellen."
+            textAlignment="right"
+          />
+        </div>
+        <div className="flex flex-col h-full justify-center items-center">
+          <Image
+            src="/images/1719172912415.jpg"
+            alt="hero"
+            width={380}
+            height={380}
+            className="h-[250px] w-[250px] lg:h-[380px] lg:w-[380px] rounded-full object-cover shadow-inner "
+          />
+        </div>
+        <div className="flex flex-col gap-4 sm:-ml-40">
+          <HeaderThing
+            type="small"
+            title="FESTIVALS"
+            subtitle="Wir sind in der Lage, große, offene, kleine, Erwachsene- oder Kinderfestivals zu bedienen."
+            textAlignment="left"
+          />
+          <HeaderThing
+            type="small"
+            title="GESELLSCHAFTLICHE"
+            subtitle="Gesellschaftliche Veranstaltungen sind für unsere Kunden sehr wichtig, und wir garantieren perfekten Service."
+            textAlignment="left"
+          />
+          <HeaderThing
+            type="small"
+            title="PRIVATE PARTYS"
+            subtitle="Ein privater Speiseraum oder ein Penthouse-Catering gehört zu unseren vielen großartigen Dienstleistungen."
+            textAlignment="left"
+          />
+        </div>
       </div>
     </section>
   );
