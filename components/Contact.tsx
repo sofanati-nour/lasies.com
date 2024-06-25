@@ -34,7 +34,7 @@ export default function Contact({
     await handleSendEmail(data);
   };
   return (
-    <section className="py-8">
+    <section className="py-8" id="kontakte">
       <ReCaptchaProvider reCaptchaKey={process.env.RECAPTCHA_CLIENT_KEY}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-4/5 mx-auto">

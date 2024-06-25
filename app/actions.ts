@@ -8,15 +8,20 @@ const translations = {
   "Lasies booking request from": "Lasies Buchungsanfrage von",
 };
 const resend = new Resend(process.env["RESEND_API_KEY"]);
-export async function SendContactRequest(data: ContactRequest) {
-  await resend.emails.send({
+export async function SendContactRequest(formData: ContactRequest) {
+  const { data, error } = await resend.emails.send({
     from: `Lasies <info@lasies.com>`,
-    subject: translations["Lasies booking request from"] + " " + data.name,
-    to: ["Lasies <info@lasies.com>"],
+    subject: translations["Lasies booking request from"] + " " + formData.name,
+    to: ["Lasies <contact@nour-sofanati.com>"],
     headers: {
-      "Reply-To": `${data.name} <${data.email}>`,
+      "Reply-To": `${formData.name} <${formData.email}>`,
     },
-    react: ContactRequestTemplate(data),
-    text: ContactRequestTemplate(data)!.toString(),
+    react: ContactRequestTemplate(formData),
+    text: `Name: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`,
   });
+
+  if (error) {
+    return { error };
+  }
+  return { data };
 }

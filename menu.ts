@@ -1,4 +1,4 @@
-const menu = [
+export const LasiesMenu = [
   {
     name: "Fingerfood Buffet",
     terms:

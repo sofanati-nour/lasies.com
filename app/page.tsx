@@ -21,7 +21,7 @@ export default function Home() {
   );
 }
 
-function HeaderThing({
+export function HeaderThing({
   title,
   subtitle,
   className,

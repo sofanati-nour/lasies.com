@@ -31,7 +31,7 @@ function LgNavbar() {
         </Link>
         <Link
           className="border-r  border-[#808369] px-6 text-[#808369]"
-          href={"/"}
+          href={"/menu"}
           title="Menü"
         >
           Menü
@@ -66,7 +66,11 @@ function LgNavbar() {
           Listando
         </Link>
 
-        <Link className=" px-6 text-[#808369]" href={"/"} title="Kontakte">
+        <Link
+          className=" px-6 text-[#808369]"
+          href={"#kontakte"}
+          title="Kontakte"
+        >
           Kontakte
         </Link>
       </nav>
@@ -88,7 +92,7 @@ function LgNavbar() {
         </Link>
         <Link
           className="border-r  border-[#808369] px-6 text-[#808369]"
-          href={"/"}
+          href={"/menu"}
           title="Menü"
         >
           Menü
@@ -123,7 +127,11 @@ function LgNavbar() {
           Listando
         </Link>
 
-        <Link className=" px-6 text-[#808369]" href={"/"} title="Kontakte">
+        <Link
+          className=" px-6 text-[#808369]"
+          href={"#kontakte"}
+          title="Kontakte"
+        >
           Kontakte
         </Link>
       </nav>
@@ -221,7 +229,7 @@ function SmNavbar() {
             </Link>
             <Link
               className="border-b border-[#808369] px-6 text-[#808369] py-4"
-              href={"/"}
+              href={"/menu"}
               title="Menü"
             >
               Menü
@@ -250,7 +258,7 @@ function SmNavbar() {
             </Link>
             <Link
               className="border-b border-[#808369] px-6 text-[#808369] py-4"
-              href={"/"}
+              href={"#kontakte"}
               title="Kontakte"
             >
               Kontakte
