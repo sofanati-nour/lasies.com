@@ -12,7 +12,7 @@ export async function SendContactRequest(formData: ContactRequest) {
   const { data, error } = await resend.emails.send({
     from: `Lasies <info@lasies.com>`,
     subject: translations["Lasies booking request from"] + " " + formData.name,
-    to: ["Lasies <contact@nour-sofanati.com>"],
+    to: ["Lasies <info@lasies.com>"],
     headers: {
       "Reply-To": `${formData.name} <${formData.email}>`,
     },
