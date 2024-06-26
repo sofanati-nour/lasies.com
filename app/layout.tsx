@@ -49,7 +49,7 @@ export default function RootLayout({
           <div className="lg:text-left ">
             <h3 className="text-2xl">Lasies Catering Service</h3>
             <p>Barthstr.4, 75378 Bad Liebenzell</p>
-            <p>Telefon: 07052 930 99 99</p>
+            <p>Telefon: +49 1573 8949296</p>
             <p>Email: info@lasies.com</p>
           </div>
           <div>
