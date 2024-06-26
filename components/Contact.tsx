@@ -22,7 +22,7 @@ export type ContactResponse = {
 export default function Contact({
   handleSendEmail,
 }: {
-  handleSendEmail: (data: ContactRequest) => Promise<void>;
+  handleSendEmail: (data: ContactRequest) => Promise<any>;
 }) {
   const {
     register,

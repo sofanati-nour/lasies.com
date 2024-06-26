@@ -1,5 +1,5 @@
 "use client";
-import { HeaderThing } from "../page";
+import HeaderThing from "@/components/HeaderThing";
 import { useState } from "react";
 
 const germanTranslations = {
