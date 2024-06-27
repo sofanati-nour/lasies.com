@@ -1436,7 +1436,7 @@ export default function Page() {
       />
       <section
         id="menus"
-        className="flex py-8 px-4 flex-wrap space-x-4 items-center justify-center"
+        className="flex py-8 md:px-4 flex-wrap space-x-4 items-center justify-center"
       >
         {Menus.map((menu, idx) => (
           <button
@@ -1450,22 +1450,22 @@ export default function Page() {
       </section>
       <section
         id="menu"
-        className="py-8 px-4 flex flex-col items-center justify-center"
+        className="py-8 md:px-4 flex flex-col items-center justify-center"
       >
         <h2 className="text-2xl font-bold">{Menus[currentMenuIndex].name}</h2>
         <p className="text-sm text-center">
           Mindestens {Menus[currentMenuIndex].minimumOrder.total} pro Bestellung
         </p>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-4 w-4/5 mx-auto mt-4">
+        <div className="grid lg:grid-cols-2 gap-x-16 gap-y-4 lg:w-4/5 mx-auto mt-4">
           {Menus[currentMenuIndex].items.map((item, idx) =>
             item.type === "MenuItem" ? (
               <MenuItemComponent item={item} key={idx + item.name} />
             ) : (
               <div
                 key={(item satisfies MenuSection).name + idx}
-                className=" space-y-4 grid lg:grid-cols-2 col-span-2 gap-x-16 gap-y-4"
+                className=" space-y-4 grid lg:grid-cols-2 lg:col-span-2 gap-x-16 gap-y-4"
               >
-                <div className="form-group col-span-2 mt-2">
+                <div className=" lg:col-span-2 mt-2">
                   <h3 className="font-bold text-xl border-b border-[#808369]">
                     {(item satisfies MenuSection).name}
                   </h3>
@@ -1484,7 +1484,7 @@ export default function Page() {
 
 function MenuItemComponent({ item }: { item: MenuItem }) {
   return (
-    <div className="form-group flex justify-between">
+    <div className=" flex justify-between">
       <div className="flex flex-col ">
         <h4 className="font-semibold">{item.name}</h4>
         <p className="text-sm text-[#808369]">{item.description}</p>
