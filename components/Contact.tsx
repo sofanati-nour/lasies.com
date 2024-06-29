@@ -2,6 +2,7 @@
 import { ReCaptchaProvider } from "next-recaptcha-v3";
 import { FormEvent } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import HeaderThing from "./HeaderThing";
 
 export type ContactRequest = {
   name: string;
@@ -12,6 +13,7 @@ export type ContactRequest = {
   time: string;
   date: string;
   guests: number;
+  address: string;
 };
 
 export type ContactResponse = {
@@ -34,7 +36,8 @@ export default function Contact({
     await handleSendEmail(data);
   };
   return (
-    <section className="py-8" id="kontakte">
+    <section className="py-8 bg-[#f0ebdf]" id="kontakte">
+      <HeaderThing title="Kontakt" subtitle="Kontaktieren Sie uns" />
       <ReCaptchaProvider reCaptchaKey={process.env.RECAPTCHA_CLIENT_KEY}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-4/5 mx-auto">
@@ -57,6 +60,15 @@ export default function Contact({
               />
             </div>
             <div className="form-group grid">
+              <label htmlFor="address">Adresse</label>
+              <input
+                type="text"
+                {...register("address", { required: true })}
+                placeholder="Geben Sie Ihre Adresse ein"
+                className="bg-[#f3f1ec] p-2 border rounded-md border-gray-300"
+              />
+            </div>
+            <div className="form-group grid">
               <label htmlFor="email">Email</label>
               <input
                 type="email"
@@ -65,16 +77,8 @@ export default function Contact({
                 className="bg-[#f3f1ec] p-2 border rounded-md border-gray-300"
               />
             </div>
-            <div className="form-group flex flex-col row-span-2">
-              <label htmlFor="message">Nachricht</label>
-              <textarea
-                {...register("message", { required: true })}
-                placeholder="Geben Sie Ihre Nachricht ein"
-                className="bg-[#f3f1ec] p-2 border rounded-md border-gray-300 grow"
-              />
-            </div>
             <div className="form-group grid">
-              <label htmlFor="location">Standort</label>
+              <label htmlFor="location">Veransaltungsort</label>
               <input
                 type="text"
                 {...register("location", { required: true })}
@@ -107,6 +111,16 @@ export default function Contact({
                 {...register("guests", { required: true })}
                 placeholder="Geben Sie die Anzahl der Gäste ein"
                 className="bg-[#f3f1ec] p-2 border rounded-md border-gray-300"
+              />
+            </div>
+
+            <div className="form-group flex flex-col lg:col-span-2 row-span-2">
+              <label htmlFor="message">Nachricht</label>
+              <textarea
+                {...register("message", { required: true })}
+                placeholder="Geben Sie Ihre Nachricht ein"
+                rows={4}
+                className="bg-[#f3f1ec] p-2 border rounded-md border-gray-300 grow"
               />
             </div>
             <button

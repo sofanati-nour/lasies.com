@@ -1,15 +1,13 @@
 import Carousel from "@/components/Carousel";
-import { cn } from "@/libs/utils";
 import { ReCaptchaProvider } from "next-recaptcha-v3";
 import Image from "next/image";
-import { text } from "stream/consumers";
 import { SendContactRequest } from "./actions";
-import Contact, { ContactRequest, ContactResponse } from "@/components/Contact";
+import Contact from "@/components/Contact";
 import HeaderThing from "@/components/HeaderThing";
 
 export default function Home() {
   return (
-    <main className="bg-[#f0ebdf]">
+    <main>
       <Carousel />
       <Intro />
       <AboutUs />
@@ -24,17 +22,57 @@ export default function Home() {
 
 function Intro() {
   return (
-    <section>
-      <HeaderThing
-        title="Lasies Catering Service"
-        subtitle="In Bad Liebenzell-Möttlingen"
-      />
-      <div className="flex justify-center gap-4 pb-16 flex-wrap">
-        <Card title="Catering" imageUrl="/images/welcome_img1.jpg" />
-        <Card title="Partyservice" imageUrl="/images/welcome_img2.jpg" />
-        <Card title="Marktenderei" imageUrl="/images/welcome_img3.jpg" />
-      </div>
-    </section>
+    <>
+      <section className="bg-[#f8f5ec] pb-8 pt-4">
+        <HeaderThing
+          title="Front-Cooking und individuelle Buffets"
+          subtitle="für unvergessliche Feste"
+        />
+        <div className="flex relative justify-center gap-x-10∫">
+          <div className="prose ">
+            <h2>
+              Den Tag der Veranstaltung können Sie in aller Ruhe auf sich
+              zukommen lassen.
+            </h2>
+            <p>
+              Wir verwöhnen Sie und alle Partygäste mit geschmackvollen Speisen
+              und Getränken.
+            </p>
+            <p>
+              Für den besonderen Erlebnisfaktor sorgen wir auf Wunsch mit dem
+              Front-Cooking.
+            </p>
+            <p>
+              Schauen Sie unserem Koch über die Schulter! Er bereitet die
+              Speisen direkt vor Ort für Sie zu – frischer geht es kaum!
+            </p>
+            <p>
+              Unserem Partyservice ist es wichtig, dass alles möglichst frisch
+              auf den Tisch kommt. Besonderen Wert legen wir auf die Qualität
+              und Verarbeitung frischer Zutaten regionaler Herkunft.
+            </p>
+          </div>
+          <Image
+            src="/images/1719172912415.jpg"
+            alt="hero"
+            width={380}
+            height={380}
+            className="h-[250px] w-[250px] lg:h-[380px] lg:w-[380px] rounded-full object-cover shadow-inner "
+          />
+        </div>
+      </section>
+      <section className="bg-[#f0ebdf]">
+        <HeaderThing
+          title="Lasies Catering Service"
+          subtitle="In Bad Liebenzell-Möttlingen"
+        />
+        <div className="flex justify-center gap-4 pb-16 flex-wrap">
+          <Card title="Catering" imageUrl="/images/welcome_img1.jpg" />
+          <Card title="Partyservice" imageUrl="/images/welcome_img2.jpg" />
+          <Card title="Marktenderei" imageUrl="/images/welcome_img3.jpg" />
+        </div>
+      </section>
+    </>
   );
 }
 
@@ -74,7 +112,7 @@ function AboutUs() {
       />
       <div className="grid lg:grid-cols-2 bg-white shadow-xl w-4/5 mx-auto">
         <Image
-          src="/images/IMG-20230707-WA0006.jpg"
+          src="/images/1719173020512.jpg"
           alt="hero"
           width={500}
           height={500}
@@ -204,62 +242,95 @@ function Menu() {
 
 function Services() {
   return (
-    <section className="bg-[#f3f1ec] overflow-x-clip">
-      <HeaderThing
-        title="DIENSTLEISTUNGEN"
-        subtitle="Planen Sie ein fabelhaftes Event?"
-      />
-      <div className="grid lg:grid-cols-3 px-8">
-        <div className="flex flex-col gap-4 sm:-mr-40">
-          <HeaderThing
-            type="small"
-            title="HOCHZEITEN"
-            subtitle="An einem der wichtigsten Tage Ihres Lebens bieten wir ein umfassendes Catering-Programm an."
-            textAlignment="right"
-          />
-          <HeaderThing
-            type="small"
-            title="PICKNICKS"
-            subtitle="Wir freuen uns, für Sie bei einem Familien- oder Firmenpicknick zu arbeiten."
-            textAlignment="right"
-          />
-          <HeaderThing
-            type="small"
-            title="UNTERNEHMEN"
-            subtitle="Sie können einen Vollzeit- oder Teilzeitservice für Personal- oder Mitarbeiteressen bestellen."
-            textAlignment="right"
-          />
+    <>
+      <section className="bg-[#f3f1ec] overflow-x-clip">
+        <HeaderThing
+          title="DIENSTLEISTUNGEN"
+          subtitle="Planen Sie ein fabelhaftes Event?"
+        />
+        <div className="grid lg:grid-cols-3 px-8">
+          <div className="flex flex-col gap-4 sm:-mr-40">
+            <HeaderThing
+              type="small"
+              title="HOCHZEITEN"
+              subtitle="An einem der wichtigsten Tage Ihres Lebens bieten wir ein umfassendes Catering-Programm an."
+              textAlignment="right"
+            />
+            <HeaderThing
+              type="small"
+              title="KONFIRMATIONEN/KOMMUNIONEN"
+              subtitle="Wir bieten ein umfassendes Catering-Programm für Konfirmationen und Kommunionen an."
+              textAlignment="right"
+            />
+            <HeaderThing
+              type="small"
+              title="UNTERNEHMEN"
+              subtitle="Ob Richtfest oder Tag der offenen Tür, wir verwöhnen Sie mit kulinarischen Gerichten oder Fingerfood."
+              textAlignment="right"
+            />
+          </div>
+          <div className="flex flex-col h-full justify-center items-center">
+            <Image
+              src="/images/1719172912415.jpg"
+              alt="hero"
+              width={380}
+              height={380}
+              className="h-[250px] w-[250px] lg:h-[380px] lg:w-[380px] rounded-full object-cover shadow-inner "
+            />
+          </div>
+          <div className="flex flex-col gap-4 sm:-ml-40">
+            <HeaderThing
+              type="small"
+              title="FESTIVALS"
+              subtitle="Wir sind in der Lage, große, offene, kleine, Erwachsene- oder Kinderfestivals zu bedienen."
+              textAlignment="left"
+            />
+            <HeaderThing
+              type="small"
+              title="GEBURTSTAGSFEIERN"
+              subtitle="Wir bieten ein umfassendes Catering-Programm für Geburtstagsfeiern an."
+              textAlignment="left"
+            />
+            <HeaderThing
+              type="small"
+              title="PRIVATE PARTYS"
+              subtitle="Ein privater Speiseraum oder ein Penthouse-Catering gehört zu unseren vielen großartigen Dienstleistungen."
+              textAlignment="left"
+            />
+          </div>
         </div>
-        <div className="flex flex-col h-full justify-center items-center">
-          <Image
-            src="/images/1719172912415.jpg"
-            alt="hero"
-            width={380}
-            height={380}
-            className="h-[250px] w-[250px] lg:h-[380px] lg:w-[380px] rounded-full object-cover shadow-inner "
-          />
+      </section>
+
+      <section className="py-8 backdrop-blur">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-4/5 mx-auto">
+          <div className="flex flex-col text-white prose prose-sm prose-invert">
+            <h2>Rundum-Betreuung für Veranstaltungen, Partys und Events</h2>
+            <p>
+              „Feiern wo und wann Sie möchten“ – diesen Satz hat sich unser
+              Partyservice zum Motto gemacht. Wir organisieren für Sie:
+            </p>
+          </div>
+          <ul className="text-right text-sm space-y-1 text-white">
+            <li>Messeservices </li>
+            <li>Tage der offenen Tür </li>
+            <li>Vernissagen </li>
+            <li>Stehempfänge </li>
+            <li>Betriebsfeste / Firmenevents </li>
+            <li>Einweihungen </li>
+            <li>Präsentationen aller Art </li>
+            <li>Caterings für Großveranstaltungen </li>
+            <li>Familien- und Vereinsfeste </li>
+            <li>Hochzeiten </li>
+            <li>Geburtstagsfeiern </li>
+            <li>Jubiläen </li>
+            <li>Konfirmationen/ Kommunionen </li>
+            <li>Taufen </li>
+            <li>Richtfeste </li>
+            <li>Abschlussfeiern </li>
+            <li>Und vieles mehr </li>
+          </ul>
         </div>
-        <div className="flex flex-col gap-4 sm:-ml-40">
-          <HeaderThing
-            type="small"
-            title="FESTIVALS"
-            subtitle="Wir sind in der Lage, große, offene, kleine, Erwachsene- oder Kinderfestivals zu bedienen."
-            textAlignment="left"
-          />
-          <HeaderThing
-            type="small"
-            title="GESELLSCHAFTLICHE"
-            subtitle="Gesellschaftliche Veranstaltungen sind für unsere Kunden sehr wichtig, und wir garantieren perfekten Service."
-            textAlignment="left"
-          />
-          <HeaderThing
-            type="small"
-            title="PRIVATE PARTYS"
-            subtitle="Ein privater Speiseraum oder ein Penthouse-Catering gehört zu unseren vielen großartigen Dienstleistungen."
-            textAlignment="left"
-          />
-        </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

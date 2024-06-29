@@ -1,5 +1,6 @@
 "use client";
 import HeaderThing from "@/components/HeaderThing";
+import { cn } from "@/libs/utils";
 import { useState } from "react";
 
 const germanTranslations = {
@@ -27,8 +28,10 @@ interface MenuSection extends BaseItem {
 interface Menu {
   name: string;
   minimumOrder: {
-    total: number;
+    total: number | string;
     perType: number;
+    unit?: string;
+    buffetPrice?: number;
   };
   items: (MenuItem | MenuSection)[];
 }
@@ -632,10 +635,11 @@ const zumKominierenMenu: Menu = {
 };
 const menu: Menu[] = [
   {
-    name: "Suppen Buffet",
+    name: "Suppen Auswahl",
     minimumOrder: {
-      total: 0,
-      perType: 0.25,
+      total: "20 Port.",
+      perType: 250,
+      unit: "ml",
     },
     items: [
       {
@@ -645,31 +649,31 @@ const menu: Menu[] = [
           {
             type: "MenuItem",
             name: "Kürbiscremesuppe mit Kokosmilch (saisonal)",
-            price: 48.3,
+            price: 3.2,
           },
-          { type: "MenuItem", name: "Kartoffelsuppe mit Shrimps", price: 48.3 },
-          { type: "MenuItem", name: "oder mit Würstchen", price: 48.3 },
-          { type: "MenuItem", name: "Tomatenrahmsuppe", price: 48.3 },
-          { type: "MenuItem", name: "Schwäbische Festtagssuppe", price: 48.3 },
+          { type: "MenuItem", name: "Kartoffelsuppe mit Shrimps", price: 4 },
+          { type: "MenuItem", name: "oder mit Würstchen", price: 3.4 },
+          { type: "MenuItem", name: "Tomatenrahmsuppe", price: 3 },
+          { type: "MenuItem", name: "Schwäbische Festtagssuppe", price: 4 },
           {
             type: "MenuItem",
             name: "Feurige Gulaschsuppe mit Brot",
-            price: 48.3,
+            price: 4,
           },
-          { type: "MenuItem", name: "Gaisburger Marsch", price: 48.3 },
+          { type: "MenuItem", name: "Gaisburger Marsch", price: 4 },
           {
             type: "MenuItem",
             name: "Käsesuppe mit Lauchstreifen",
-            price: 48.3,
+            price: 3,
           },
           {
             type: "MenuItem",
             name: "Schwäbische Wurstknöpfle in der Brühe",
-            price: 48.3,
+            price: 3.7,
           },
-          { type: "MenuItem", name: "Deftiger Erbseneintopf", price: 48.3 },
-          { type: "MenuItem", name: "Linsen Suppe", price: 48.3 },
-          { type: "MenuItem", name: "Cremige Champignons Suppe", price: 48.3 },
+          { type: "MenuItem", name: "Deftiger Erbseneintopf", price: 3.2 },
+          { type: "MenuItem", name: "Linsen Suppe", price: 3.4 },
+          { type: "MenuItem", name: "Cremige Champignons Suppe", price: 4 },
         ],
       },
     ],
@@ -678,7 +682,9 @@ const menu: Menu[] = [
     name: "Schlemmerplatten",
     minimumOrder: {
       total: 10,
-      perType: 0,
+      perType: 100,
+      unit: "Gramm",
+      // buffetPrice: 48.3,
     },
     items: [
       {
@@ -686,28 +692,28 @@ const menu: Menu[] = [
         name: "Hirtenplatte",
         description:
           "Rustikale Auswahl von rohen Schinken, Pfefferbeißern, Landjäger, Minicabanossi und deftigen Käsespezialitäten, Essiggemüse, Bauernbrot",
-        price: 48.3,
+        price: 12,
       },
       {
         type: "MenuItem",
         name: "Fischplatte",
         description:
           "Variation von Räucherlachs und Graved Lachs, geräuchertes Forellenfilet, Cocktail von Grönlandgarnelen, Lachstatarbällchen, Stangenweißbrot",
-        price: 48.3,
+        price: 17,
       },
       {
         type: "MenuItem",
         name: "Käseplatte",
         description:
-          "Käseplatte Internationale Käsespezialitäten, reich garniert mit Früchten und Salzgebäck, Brotauswahl",
-        price: 48.3,
+          "Käseplatte Internationale Käsespezialitäten, reich garniert mit Früchten und Salzgebäck, Brotauswahl.",
+        price: 12.5,
       },
       {
         type: "MenuItem",
-        name: "Gourmetplatte Constantin",
+        name: "Gourmetplatte Constantin (220g pro Pers., ab 15 Personen.)",
         description:
           "Zarter Räucherlachs mit Sahnemeerrettich, Crevettencocktail, delikate Entenbrust, Filetmedaillons bunt garniert, rosa gebratenes Roastbeef Sauce Remoulade, luftgetrockneter Schinken, französischer Camembert mit Früchten Bunter Brotkorb",
-        price: 48.3,
+        price: 27,
       },
     ],
   },
@@ -715,7 +721,8 @@ const menu: Menu[] = [
     name: "Grill Buffet",
     minimumOrder: {
       total: 20,
-      perType: 34.5,
+      perType: 37.8,
+      buffetPrice: 37.8,
     },
     items: [
       {
@@ -809,6 +816,7 @@ const menu: Menu[] = [
     minimumOrder: {
       total: 20,
       perType: 34.8,
+      buffetPrice: 35,
     },
     items: [
       {
@@ -888,6 +896,7 @@ const menu: Menu[] = [
     minimumOrder: {
       total: 20,
       perType: 34.8,
+      buffetPrice: 35,
     },
     items: [
       {
@@ -995,6 +1004,7 @@ const menu: Menu[] = [
     minimumOrder: {
       total: 20,
       perType: 41.3,
+      buffetPrice: 41.3,
     },
     items: [
       {
@@ -1084,6 +1094,7 @@ const menu: Menu[] = [
     minimumOrder: {
       total: 20,
       perType: 48.3,
+      buffetPrice: 48,
     },
     items: [
       {
@@ -1221,6 +1232,7 @@ const menu: Menu[] = [
     minimumOrder: {
       total: 30,
       perType: 42.6,
+      buffetPrice: 43,
     },
     items: [
       {
@@ -1307,6 +1319,7 @@ const menu: Menu[] = [
     minimumOrder: {
       total: 20,
       perType: 43.6,
+      buffetPrice: 44,
     },
     items: [
       {
@@ -1428,6 +1441,10 @@ const Menus = [fingerfoodMenu, zumKominierenMenu, ...menu];
 
 export default function Page() {
   const [currentMenuIndex, setCurrentMenuIndex] = useState(0);
+  const currencyFormatter = new Intl.NumberFormat("de-DE", {
+    style: "currency",
+    currency: "EUR",
+  });
   return (
     <div className="bg-[#f0ebdf]">
       <HeaderThing
@@ -1441,7 +1458,10 @@ export default function Page() {
         {Menus.map((menu, idx) => (
           <button
             key={idx + menu.name}
-            className="border border-[#808369] px-4 py-2 mt-2"
+            className={cn(
+              "border border-[#80836967] px-4 py-2 mt-2 rounded-lg",
+              currentMenuIndex === idx ? "bg-yellow-500 font-bold" : "bg-white"
+            )}
             onClick={() => setCurrentMenuIndex(idx)}
           >
             {menu.name}
@@ -1452,14 +1472,41 @@ export default function Page() {
         id="menu"
         className="py-8 md:px-4 flex flex-col items-center justify-center"
       >
-        <h2 className="text-2xl font-bold">{Menus[currentMenuIndex].name}</h2>
-        <p className="text-sm text-center">
-          Mindestens {Menus[currentMenuIndex].minimumOrder.total} pro Bestellung
-        </p>
+        <div className="relative text-center from-white/50 to-[#efeadf] bg-gradient-radial w-full py-4">
+          <h2 className="text-2xl text-yellow-600 font-bold">
+            {Menus[currentMenuIndex].name}
+          </h2>
+          <p className="text-sm text-center">
+            Mindestens {Menus[currentMenuIndex].minimumOrder.total} pro
+            Bestellung
+          </p>
+          {Menus[currentMenuIndex].minimumOrder.perType &&
+            Menus[currentMenuIndex].minimumOrder.unit && (
+              <p className="text-sm text-center">
+                {Menus[currentMenuIndex].minimumOrder.perType}
+                {Menus[currentMenuIndex].minimumOrder.unit} pro Port.
+              </p>
+            )}
+          <div className="absolute top-0 right-5 bottom-0 text-yellow-600 text-lg my-auto flex items-center justify-center">
+            {Menus[currentMenuIndex].minimumOrder.buffetPrice
+              ? `${currencyFormatter.format(
+                  Menus[currentMenuIndex].minimumOrder.buffetPrice
+                )} pro Person`
+              : ""}
+          </div>
+        </div>
         <div className="grid lg:grid-cols-2 gap-x-16 gap-y-4 lg:w-4/5 mx-auto mt-4">
           {Menus[currentMenuIndex].items.map((item, idx) =>
             item.type === "MenuItem" ? (
-              <MenuItemComponent item={item} key={idx + item.name} />
+              <MenuItemComponent
+                item={item}
+                key={idx + item.name}
+                showPrice={
+                  Menus[currentMenuIndex].minimumOrder?.buffetPrice ===
+                    undefined ||
+                  Menus[currentMenuIndex].minimumOrder?.buffetPrice === 0
+                }
+              />
             ) : (
               <div
                 key={(item satisfies MenuSection).name + idx}
@@ -1471,7 +1518,15 @@ export default function Page() {
                   </h3>
                 </div>
                 {(item.items as MenuItem[]).map((subItem, idxx) => (
-                  <MenuItemComponent item={subItem} key={idxx + subItem.name} />
+                  <MenuItemComponent
+                    item={subItem}
+                    key={idxx + subItem.name}
+                    showPrice={
+                      Menus[currentMenuIndex].minimumOrder?.buffetPrice ===
+                        undefined ||
+                      Menus[currentMenuIndex].minimumOrder?.buffetPrice === 0
+                    }
+                  />
                 ))}
               </div>
             )
@@ -1482,16 +1537,29 @@ export default function Page() {
   );
 }
 
-function MenuItemComponent({ item }: { item: MenuItem }) {
+function MenuItemComponent({
+  item,
+  showPrice,
+}: {
+  item: MenuItem;
+  showPrice?: boolean;
+}) {
+  const currencyFormatter = new Intl.NumberFormat("de-DE", {
+    style: "currency",
+    currency: "EUR",
+  });
+  const price = currencyFormatter.format(item.updatedPrice ?? item.price);
   return (
-    <div className=" flex justify-between">
+    <div className="flex justify-between items-center">
       <div className="flex flex-col ">
         <h4 className="font-semibold">{item.name}</h4>
         <p className="text-sm text-[#808369]">{item.description}</p>
       </div>
-      <p className="text-right text-emerald-600">
-        {item.updatedPrice ?? item.price}€
-      </p>
+      {showPrice == true && (
+        <p className="text-right text-yellow-600 font-bold text-xl pl-2">
+          {price}
+        </p>
+      )}
     </div>
   );
 }

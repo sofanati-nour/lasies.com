@@ -49,7 +49,7 @@ export default function HeaderThing({
         <p
           className={cn({
             "font-semibold text-2xl": type == "default",
-            "w-72": type == "small",
+            "w-80": type == "small",
             "text-center mx-auto": textAlignment == "center",
             "text-left": textAlignment == "left",
             "text-right": textAlignment == "right",

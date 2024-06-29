@@ -54,21 +54,23 @@ export default function RootLayout({
           </div>
           <div>
             <h3 className="text-2xl">Öffnungszeiten</h3>
-            <p>Montag bis Freitag: 9:00 - 18:00 Uhr</p>
-            <p>Samstag: 9:00 - 14:00 Uhr</p>
+            <p>Montag bis Samstag: 9:00 - 18:00 Uhr</p>
             <p>Sonntag: Geschlossen</p>
           </div>
 
           <div>
             <h3 className="text-2xl">Social Media</h3>
             <div className="flex justify-center gap-4">
-              <a href="https://www.instagram.com/lasies.catering.service/">
+              <a
+                href="https://www.instagram.com/lasies.catering.service/"
+                target="_blank"
+              >
                 <i className="fab fa-instagram w-4 h-4"></i>
               </a>
-              <a href="https://www.facebook.com/lasies.catering.service">
+              {/* <a href="https://www.facebook.com/lasies.catering.service">
                 <i className="fab fa-facebook w-4 h-4"></i>
-              </a>
-              <a href="https://wa.me/4915738949296">
+              </a> */}
+              <a href="https://wa.me/4915738949296" target="_blank">
                 <i className="fab fa-whatsapp w-4 h-4"></i>
               </a>
             </div>
