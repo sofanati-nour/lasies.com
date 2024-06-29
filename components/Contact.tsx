@@ -124,7 +124,7 @@ export default function Contact({
               />
             </div>
             <button
-              className="w-full lg:col-span-2 py-2 bg-[#808369] text-white rounded-md"
+              className="w-full lg:col-span-2 py-2 bg-[#4d4f3f] text-white rounded-md"
               type="submit"
             >
               Senden

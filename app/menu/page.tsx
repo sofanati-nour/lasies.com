@@ -1459,7 +1459,7 @@ export default function Page() {
           <button
             key={idx + menu.name}
             className={cn(
-              "border border-[#80836967] px-4 py-2 mt-2 rounded-lg",
+              "border border-[#4d4f3f67] px-4 py-2 mt-2 rounded-lg",
               currentMenuIndex === idx ? "bg-yellow-500 font-bold" : "bg-white"
             )}
             onClick={() => setCurrentMenuIndex(idx)}
@@ -1513,7 +1513,7 @@ export default function Page() {
                 className=" space-y-4 grid lg:grid-cols-2 lg:col-span-2 gap-x-16 gap-y-4"
               >
                 <div className=" lg:col-span-2 mt-2">
-                  <h3 className="font-bold text-xl border-b border-[#808369]">
+                  <h3 className="font-bold text-xl border-b border-[#4d4f3f]">
                     {(item satisfies MenuSection).name}
                   </h3>
                 </div>
@@ -1553,7 +1553,7 @@ function MenuItemComponent({
     <div className="flex justify-between items-center">
       <div className="flex flex-col ">
         <h4 className="font-semibold">{item.name}</h4>
-        <p className="text-sm text-[#808369]">{item.description}</p>
+        <p className="text-sm text-[#4d4f3f]">{item.description}</p>
       </div>
       {showPrice == true && (
         <p className="text-right text-yellow-600 font-bold text-xl pl-2">

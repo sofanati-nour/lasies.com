@@ -22,7 +22,7 @@ function LgNavbar() {
         )}
       >
         <Link
-          className="border-r border-[#808369] px-6 text-[#808369] flex items-center"
+          className="border-r border-[#4d4f3f] px-6 text-[#4d4f3f] flex items-center"
           href={"/"}
           title="Startseite"
         >
@@ -30,27 +30,27 @@ function LgNavbar() {
           <span>Startseite</span>
         </Link>
         <Link
-          className="border-r  border-[#808369] px-6 text-[#808369]"
+          className="border-r  border-[#4d4f3f] px-6 text-[#4d4f3f]"
           href={"/menu"}
           title="Menü"
         >
           Menü
         </Link>
         <Link
-          className="border-r  border-[#808369] px-6 text-[#808369]"
+          className="border-r  border-[#4d4f3f] px-6 text-[#4d4f3f]"
           href={"/"}
           title="Galerie"
         >
           Galerie
         </Link>
         <Link
-          className="border-r  border-[#808369] px-6 text-[#808369]"
+          className="border-r  border-[#4d4f3f] px-6 text-[#4d4f3f]"
           href={"/"}
         >
           Blog
         </Link>
         <Link
-          className="border-r  border-[#808369] px-6 text-[#808369] flex items-center"
+          className="border-r  border-[#4d4f3f] px-6 text-[#4d4f3f] flex items-center"
           href={
             "https://www.listando.de/baden-wuerttemberg/bad-liebenzell/WzS8jzQmtH/catering/lasies-catering-service-/CNGWSkIcw3"
           }
@@ -67,7 +67,7 @@ function LgNavbar() {
         </Link>
 
         <Link
-          className=" px-6 text-[#808369]"
+          className=" px-6 text-[#4d4f3f]"
           href={"#kontakte"}
           title="Kontakte"
         >
@@ -83,7 +83,7 @@ function LgNavbar() {
         )}
       >
         <Link
-          className="border-r border-[#808369] px-6 text-[#808369] flex items-center"
+          className="border-r border-[#4d4f3f] px-6 text-[#4d4f3f] flex items-center"
           href={"/"}
           title="Startseite"
         >
@@ -91,27 +91,27 @@ function LgNavbar() {
           <span>Startseite</span>
         </Link>
         <Link
-          className="border-r  border-[#808369] px-6 text-[#808369]"
+          className="border-r  border-[#4d4f3f] px-6 text-[#4d4f3f]"
           href={"/menu"}
           title="Menü"
         >
           Menü
         </Link>
         <Link
-          className="border-r  border-[#808369] px-6 text-[#808369]"
+          className="border-r  border-[#4d4f3f] px-6 text-[#4d4f3f]"
           href={"/"}
           title="Galerie"
         >
           Galerie
         </Link>
         <Link
-          className="border-r  border-[#808369] px-6 text-[#808369]"
+          className="border-r  border-[#4d4f3f] px-6 text-[#4d4f3f]"
           href={"/"}
         >
           Blog
         </Link>
         <Link
-          className="border-r  border-[#808369] px-6 text-[#808369] flex items-center"
+          className="border-r  border-[#4d4f3f] px-6 text-[#4d4f3f] flex items-center"
           href={
             "https://www.listando.de/baden-wuerttemberg/bad-liebenzell/WzS8jzQmtH/catering/lasies-catering-service-/CNGWSkIcw3"
           }
@@ -128,7 +128,7 @@ function LgNavbar() {
         </Link>
 
         <Link
-          className=" px-6 text-[#808369]"
+          className=" px-6 text-[#4d4f3f]"
           href={"#kontakte"}
           title="Kontakte"
         >
@@ -218,37 +218,37 @@ function SmNavbar() {
               onClick={() => setIsMenuOpen(false)}
               className="absolute bottom-4 right-4"
             >
-              <i className="fas fa-times text-2xl text-[#808369]"></i>
+              <i className="fas fa-times text-2xl text-[#4d4f3f]"></i>
             </button>
             <Link
-              className="border-b border-[#808369] px-6 text-[#808369] py-4"
+              className="border-b border-[#4d4f3f] px-6 text-[#4d4f3f] py-4"
               href={"/"}
               title="Startseite"
             >
               Startseite
             </Link>
             <Link
-              className="border-b border-[#808369] px-6 text-[#808369] py-4"
+              className="border-b border-[#4d4f3f] px-6 text-[#4d4f3f] py-4"
               href={"/menu"}
               title="Menü"
             >
               Menü
             </Link>
             <Link
-              className="border-b border-[#808369] px-6 text-[#808369] py-4"
+              className="border-b border-[#4d4f3f] px-6 text-[#4d4f3f] py-4"
               href={"/"}
               title="Galerie"
             >
               Galerie
             </Link>
             <Link
-              className="border-b border-[#808369] px-6 text-[#808369] py-4"
+              className="border-b border-[#4d4f3f] px-6 text-[#4d4f3f] py-4"
               href={"/"}
             >
               Blog
             </Link>
             <Link
-              className="border-b border-[#808369] px-6 text-[#808369] py-4"
+              className="border-b border-[#4d4f3f] px-6 text-[#4d4f3f] py-4"
               href={
                 "https://www.listando.de/baden-wuerttemberg/bad-liebenzell/WzS8jzQmtH/catering/lasies-catering-service-/CNGWSkIcw3"
               }
@@ -257,7 +257,7 @@ function SmNavbar() {
               Listando
             </Link>
             <Link
-              className="border-b border-[#808369] px-6 text-[#808369] py-4"
+              className="border-b border-[#4d4f3f] px-6 text-[#4d4f3f] py-4"
               href={"#kontakte"}
               title="Kontakte"
             >
@@ -295,7 +295,7 @@ function SmNavbar() {
         <header className="flex justify-between px-4 backdrop-blur text-[#f0ebdf]">
           <section className="flex flex-col justify-center items-center">
             <button onClick={() => setIsMenuOpen(true)}>
-              <i className="fas fa-bars text-2xl text-[#808369]"></i>
+              <i className="fas fa-bars text-2xl text-[#4d4f3f]"></i>
             </button>
           </section>
           <section id="logo-header" className="w-full">

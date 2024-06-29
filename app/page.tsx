@@ -120,7 +120,7 @@ function AboutUs() {
         />
 
         <div className="p-4 flex flex-col justify-center">
-          <div className=" font-inter text-lg text-[#808369] space-y-2">
+          <div className=" font-inter text-lg text-[#4d4f3f] space-y-2">
             <p>
               Schöne Feste sind die Höhepunkte unseres Lebens. Damit sie
               gelingen, ist eine gut durchdachte Planung unverzichtbar.
@@ -214,7 +214,7 @@ function Menu() {
         {buffets.map((menu) => (
           <div className="bg-white shadow-lg p-4" key={menu.name}>
             <h4 className="text-lg font-bold">{menu.name}</h4>
-            <p className="text-[#808369] mt-auto">{menu.description}</p>
+            <p className="text-[#4d4f3f] mt-auto">{menu.description}</p>
           </div>
         ))}
       </div>
