@@ -212,7 +212,7 @@ function Menu() {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 w-4/5 mx-auto pb-8">
         {buffets.map((menu) => (
           <div className="bg-white shadow-lg p-4" key={menu.name}>
-            <h4 className="text-lg font-bold">{menu.name}</h4>
+            <h3 className="text-lg font-bold">{menu.name}</h3>
             <p className="text-[#4d4f3f] mt-auto">{menu.description}</p>
           </div>
         ))}

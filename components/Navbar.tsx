@@ -58,7 +58,7 @@ function LgNavbar() {
         >
           <Image
             src={"/listando-logo.webp"}
-            alt="Listando"
+            alt=""
             width={18}
             height={18}
             className="inline mr-2 grayscale rounded-md"
@@ -119,7 +119,7 @@ function LgNavbar() {
         >
           <Image
             src={"/listando-logo.webp"}
-            alt="Listando"
+            alt=""
             width={18}
             height={18}
             className="inline mr-2 grayscale rounded-md"
@@ -217,6 +217,7 @@ function SmNavbar() {
             <button
               onClick={() => setIsMenuOpen(false)}
               className="absolute bottom-4 right-4"
+              aria-label="Close Navigation Menu"
             >
               <i className="fas fa-times text-2xl text-[#4d4f3f]"></i>
             </button>
@@ -268,7 +269,10 @@ function SmNavbar() {
 
         <header className="flex justify-between px-4 relative backdrop-blur text-[#f0ebdf]">
           <section className="flex flex-col justify-center items-center">
-            <button onClick={() => setIsMenuOpen(true)}>
+            <button
+              onClick={() => setIsMenuOpen(true)}
+              aria-label="Open Navigation Menu"
+            >
               <i className="fas fa-bars text-2xl"></i>
             </button>
           </section>

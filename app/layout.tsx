@@ -64,13 +64,18 @@ export default function RootLayout({
               <a
                 href="https://www.instagram.com/lasies.catering.service/"
                 target="_blank"
+                aria-label="Instagram"
               >
                 <i className="fab fa-instagram w-4 h-4"></i>
               </a>
               {/* <a href="https://www.facebook.com/lasies.catering.service">
                 <i className="fab fa-facebook w-4 h-4"></i>
               </a> */}
-              <a href="https://wa.me/4915738949296" target="_blank">
+              <a
+                href="https://wa.me/4915738949296"
+                target="_blank"
+                aria-label="WhatsApp"
+              >
                 <i className="fab fa-whatsapp w-4 h-4"></i>
               </a>
             </div>
