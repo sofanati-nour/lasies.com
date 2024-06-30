@@ -1,10 +1,12 @@
 import Carousel from "@/components/Carousel";
 import { ReCaptchaProvider } from "next-recaptcha-v3";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { SendContactRequest } from "./actions";
 import Contact from "@/components/Contact";
 import HeaderThing from "@/components/HeaderThing";
-
+import welcomeImage1 from "@/app/images/welcome_img1.jpg";
+import welcomeImage2 from "@/app/images/welcome_img2.jpg";
+import welcomeImage3 from "@/app/images/welcome_img3.jpg";
 export default function Home() {
   return (
     <main>
@@ -67,20 +69,20 @@ function Intro() {
           subtitle="In Bad Liebenzell-Möttlingen"
         />
         <div className="flex justify-center gap-4 pb-16 flex-wrap">
-          <Card title="Catering" imageUrl="/images/welcome_img1.jpg" />
-          <Card title="Partyservice" imageUrl="/images/welcome_img2.jpg" />
-          <Card title="Marktenderei" imageUrl="/images/welcome_img3.jpg" />
+          <Card title="Catering" img={welcomeImage1} />
+          <Card title="Partyservice" img={welcomeImage2} />
+          <Card title="Marktenderei" img={welcomeImage3} />
         </div>
       </section>
     </>
   );
 }
 
-function Card({ title, imageUrl }: { title: string; imageUrl: string }) {
+function Card({ title, img }: { title: string; img: StaticImageData }) {
   return (
     <div className="bg-[#f0ebdf] relative w-[185px] h-[236.5px] md:w-[370px] md:h-[473px] justify-center items-center flex flex-col backdrop-filter backdrop-blur-lg bg-opacity-50 ">
       <Image
-        src={imageUrl}
+        src={img}
         alt={title}
         width={370}
         height={473}
