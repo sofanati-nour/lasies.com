@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({ subsets: ["latin"] });
 const merriweather = Merriweather({
@@ -84,6 +85,7 @@ export default function RootLayout({
         </footer>
         <Analytics />
       </body>
+      <GoogleAnalytics gaId="G-7SFQN95E17" />
     </html>
   );
 }
