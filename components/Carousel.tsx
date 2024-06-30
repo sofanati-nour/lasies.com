@@ -34,7 +34,7 @@ export default function Carousel() {
 
   return (
     <div className="relative w-full">
-      <div className="relative h-[600px] sm:h-[500px] overflow-hidden ">
+      <div className="relative overflow-hidden aspect-[1536/1000] md:aspect-[1536/500] ">
         {images.map((image, idx) => (
           <div
             key={image.src}
@@ -55,7 +55,7 @@ export default function Carousel() {
                 (idx === currentImage ? " scale-110" : " scale-100")
               }
             />
-            <div className="absolute bottom-0 top-0 text-center left-0 right-0 items-center flex justify-center p-4 text-white">
+            <div className="absolute bottom-0 top-0 text-center left-0 right-0 items-center flex justify-center p-4 text-white  backdrop-brightness-50">
               <h2 className="text-3xl px-8 font-bold">{subtitles[idx]}</h2>
             </div>
           </div>

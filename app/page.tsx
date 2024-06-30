@@ -27,7 +27,7 @@ function Intro() {
           title="Front-Cooking und individuelle Buffets"
           subtitle="für unvergessliche Feste"
         />
-        <div className="flex relative justify-center gap-x-10∫">
+        <div className="flex flex-col md:flex-row px-4 items-center gap-10 relative justify-center gap-x-10">
           <div className="prose ">
             <h2>
               Den Tag der Veranstaltung können Sie in aller Ruhe auf sich
@@ -99,27 +99,28 @@ function AboutUs() {
     <section
       style={{
         background: "#f3f1ec url(/images/bg1.jpg)",
-        backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "top ",
+        backgroundSize: "contain",
       }}
+      className=""
     >
       <HeaderThing
         title="Über uns"
         subtitle="Unsere Erfolgsgeschichte"
         className="text-white"
       />
-      <div className="grid lg:grid-cols-2 bg-white shadow-xl w-4/5 mx-auto">
+      <div className="grid lg:grid-cols-2 bg-white shadow-xl w-full md:w-fit mx-auto -mt-1">
         <Image
           src="/images/1719173020512.jpg"
           alt="hero"
           width={500}
           height={500}
-          className=" h-[500px] w-full object-cover shadow-inner "
+          className=" object-cover shadow-inner h-full w-full lg:max-w-none lg:aspect-square "
         />
 
-        <div className="p-4 flex flex-col justify-center">
-          <div className=" font-inter text-lg text-[#4d4f3f] space-y-2">
+        <div className="p-4 flex flex-col justify-center max-w-96">
+          <div className=" font-inter text-lg text-[#4d4f3f] space-y-2 md:max-w-80">
             <p>
               Schöne Feste sind die Höhepunkte unseres Lebens. Damit sie
               gelingen, ist eine gut durchdachte Planung unverzichtbar.
@@ -309,7 +310,7 @@ function Services() {
               Partyservice zum Motto gemacht. Wir organisieren für Sie:
             </p>
           </div>
-          <ul className="text-right text-sm space-y-1 text-white">
+          <ul className="md:text-right list-disc md:list-none text-sm space-y-1 text-white">
             <li>Messeservices </li>
             <li>Tage der offenen Tür </li>
             <li>Vernissagen </li>
