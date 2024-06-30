@@ -45,9 +45,10 @@ export default function Carousel() {
           >
             <Image
               src={image}
+              alt="Carousel image"
               placeholder="blur"
-              fill
-              alt="carousel image"
+              width={1536}
+              height={500}
               className={
                 "absolute block w-full object-cover h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2  transition duration-[7000ms]" +
                 (idx === currentImage ? " scale-110" : " scale-100")
