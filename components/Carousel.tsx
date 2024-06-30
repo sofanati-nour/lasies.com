@@ -5,9 +5,9 @@ import Image from "next/image";
 export default function Carousel() {
   const images = [
     // "/images/slide1-1.jpg",
-    "/images/1719172637065.jpg",
-    "/images/slide-tarek-2.jpeg",
-    "/images/slide-tarek-3.jpeg",
+    "/images/1719172637065.avif",
+    "/images/slide-tarek-2.avif",
+    "/images/slide-tarek-3.avif",
     "/images/slide4.jpg",
   ];
 
