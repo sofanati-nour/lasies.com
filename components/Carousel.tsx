@@ -46,7 +46,7 @@ export default function Carousel() {
             <Image
               src={image}
               alt="Carousel image"
-              placeholder="blur"
+              priority={true}
               width={1536}
               height={500}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
