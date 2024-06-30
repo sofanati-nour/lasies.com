@@ -49,6 +49,7 @@ export default function Carousel() {
               placeholder="blur"
               width={1536}
               height={500}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className={
                 "absolute block w-full object-cover h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2  transition duration-[7000ms]" +
                 (idx === currentImage ? " scale-110" : " scale-100")
