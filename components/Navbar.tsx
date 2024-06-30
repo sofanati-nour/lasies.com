@@ -224,6 +224,7 @@ function SmNavbar() {
             <Link
               className="border-b border-[#4d4f3f] px-6 text-[#4d4f3f] py-4"
               href={"/"}
+              onClick={() => setIsMenuOpen(false)}
               title="Startseite"
             >
               Startseite
@@ -231,6 +232,7 @@ function SmNavbar() {
             <Link
               className="border-b border-[#4d4f3f] px-6 text-[#4d4f3f] py-4"
               href={"/menu"}
+              onClick={() => setIsMenuOpen(false)}
               title="Menü"
             >
               Menü
@@ -238,6 +240,7 @@ function SmNavbar() {
             <Link
               className="border-b border-[#4d4f3f] px-6 text-[#4d4f3f] py-4"
               href={"/"}
+              onClick={() => setIsMenuOpen(false)}
               title="Galerie"
             >
               Galerie
@@ -245,6 +248,7 @@ function SmNavbar() {
             <Link
               className="border-b border-[#4d4f3f] px-6 text-[#4d4f3f] py-4"
               href={"/"}
+              onClick={() => setIsMenuOpen(false)}
             >
               Blog
             </Link>
@@ -253,6 +257,7 @@ function SmNavbar() {
               href={
                 "https://www.listando.de/baden-wuerttemberg/bad-liebenzell/WzS8jzQmtH/catering/lasies-catering-service-/CNGWSkIcw3"
               }
+              onClick={() => setIsMenuOpen(false)}
               target="_blank"
             >
               Listando
@@ -261,6 +266,7 @@ function SmNavbar() {
               className="border-b border-[#4d4f3f] px-6 text-[#4d4f3f] py-4"
               href={"#kontakte"}
               title="Kontakte"
+              onClick={() => setIsMenuOpen(false)}
             >
               Kontakte
             </Link>

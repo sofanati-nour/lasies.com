@@ -527,7 +527,7 @@ const fingerfoodMenu: Menu = {
   ],
 };
 const zumKominierenMenu: Menu = {
-  name: "Zum Kombinieren (mit Buffets oder einfach)",
+  name: "Zum Kombinieren",
   minimumOrder: {
     total: 50,
     perType: 10,
@@ -1090,7 +1090,7 @@ const menu: Menu[] = [
     ],
   },
   {
-    name: "„Die Glücklichen Ehepaar“ Buffet",
+    name: "Die Glücklichen Ehepaar",
     minimumOrder: {
       total: 20,
       perType: 48.3,
@@ -1451,26 +1451,33 @@ export default function Page() {
         title="Menü"
         subtitle={germanTranslations["Our perfect Meal for your joy"]}
       />
-      <section
-        id="menus"
-        className="flex py-8 md:px-4 flex-wrap space-x-4 items-center justify-center"
-      >
-        {Menus.map((menu, idx) => (
-          <button
-            key={idx + menu.name}
-            className={cn(
-              "border border-[#4d4f3f67] px-4 py-2 mt-2 rounded-lg",
-              currentMenuIndex === idx ? "bg-yellow-500 font-bold" : "bg-white"
-            )}
-            onClick={() => setCurrentMenuIndex(idx)}
-          >
-            {menu.name}
-          </button>
-        ))}
-      </section>
+      <div className="relative">
+        <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-r from-transparent to-[#f0ebdf] z-10"></div>
+        <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-l from-transparent to-[#f0ebdf] z-10"></div>
+        <section
+          id="menus"
+          className="flex md:py-8 mx-1 md:mx-0 px-4 md:flex-wrap space-x-4 md:items-center md:justify-center snap-x overflow-scroll relative"
+        >
+          <div></div>
+          {Menus.map((menu, idx) => (
+            <button
+              key={idx + menu.name}
+              className={cn(
+                "border border-[#4d4f3f67] px-4 py-2 md:mt-2 rounded-lg min-w-fit first:snap-start last:snap-end snap-center first:ml-8",
+                currentMenuIndex === idx
+                  ? "bg-yellow-500 font-bold"
+                  : "bg-white"
+              )}
+              onClick={() => setCurrentMenuIndex(idx)}
+            >
+              {menu.name}
+            </button>
+          ))}
+        </section>
+      </div>
       <section
         id="menu"
-        className="py-8 md:px-4 flex flex-col items-center justify-center"
+        className="py-8 px-4 flex flex-col items-center justify-center"
       >
         <div className="relative text-center from-white/50 to-[#efeadf] bg-gradient-radial w-full py-4">
           <h2 className="text-2xl text-yellow-600 font-bold">
@@ -1487,7 +1494,7 @@ export default function Page() {
                 {Menus[currentMenuIndex].minimumOrder.unit} pro Port.
               </p>
             )}
-          <div className="absolute top-0 right-5 bottom-0 text-yellow-600 text-lg my-auto flex items-center justify-center">
+          <div className="md:absolute mt-5 md:mt-0 md:top-0 md:right-5 bottom-0 text-yellow-600 text-lg my-auto flex items-center justify-center">
             {Menus[currentMenuIndex].minimumOrder.buffetPrice
               ? `${currencyFormatter.format(
                   Menus[currentMenuIndex].minimumOrder.buffetPrice
