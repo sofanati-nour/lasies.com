@@ -2,13 +2,17 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import slideOne from "@/app/images/1719172637065.jpg";
+import slideTwo from "@/app/images/slide-tarek-2.jpeg";
+import slideThree from "@/app/images/slide-tarek-3.jpeg";
+import slideFour from "@/app/images/slide4.jpg";
 export default function Carousel() {
   const images = [
     // "/images/slide1-1.jpg",
-    "/images/1719172637065.avif",
-    "/images/slide-tarek-2.avif",
-    "/images/slide-tarek-3.avif",
-    "/images/slide4.jpg",
+    slideOne,
+    slideTwo,
+    slideThree,
+    slideFour,
   ];
 
   const subtitles = [
@@ -33,7 +37,7 @@ export default function Carousel() {
       <div className="relative h-[600px] sm:h-[500px] overflow-hidden ">
         {images.map((image, idx) => (
           <div
-            key={image}
+            key={image.src}
             className={
               " duration-700 ease-in-out" +
               (idx === currentImage ? " opacity-100" : " opacity-0")
@@ -41,9 +45,9 @@ export default function Carousel() {
           >
             <Image
               src={image}
+              placeholder="blur"
+              fill
               alt="carousel image"
-              width={1536}
-              height={500}
               className={
                 "absolute block w-full object-cover h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2  transition duration-[7000ms]" +
                 (idx === currentImage ? " scale-110" : " scale-100")
