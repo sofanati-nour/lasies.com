@@ -1,14 +1,15 @@
 import { ContactRequest } from "../Contact";
 
 const germanTranslations = {
-  name: "Name",
-  email: "E-Mail",
+  name: "Name: ",
+  email: "E-Mail: ",
   telephone: "Telefon: ",
   message: "Nachricht: ",
-  location: "Standort: ",
+  location: "Veransaltungsort: ",
   time: "Uhrzeit: ",
   date: "Datum: ",
   number_of_guests: "Anzahl der Gäste: ",
+  address: "Adresse: ",
 };
 
 export const ContactRequestTemplate: React.FC<ContactRequest> = (data) => {
@@ -28,7 +29,10 @@ export const ContactRequestTemplate: React.FC<ContactRequest> = (data) => {
         {germanTranslations["location"]}
         {data.location}
       </p>
-
+      <p>
+        {germanTranslations["address"]}
+        {data.address}
+      </p>
       <p>
         {germanTranslations["time"]}
         <time>{data.time}</time>

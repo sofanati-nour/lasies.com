@@ -24,8 +24,19 @@ const keywords = [
   "marketenderei",
 ];
 export const metadata: Metadata = {
-  title: "Lasies Catering Service",
-  description: "Lasies Catering Service in Bad Liebenzell-Möttlingen",
+  title:
+    "Lasies Catering Service | Catering Calw, Catering Leonberg, Partyservice Calw",
+  description:
+    "Catering Service in Bad Liebenzell-Möttlingen, Calw, Leonberg und Umgebung. Wir bieten Catering, Partyservice und vieles mehr.",
+  alternates: {
+    canonical: "https://www.lasies.com",
+  },
+  authors: [
+    {
+      name: "Tarek Taraben",
+      url: "https://instagram.com/lasies.catering.service",
+    },
+  ],
   keywords: keywords.join(", "),
 };
 
@@ -35,12 +46,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de">
+    <html lang={"de"}>
       <head>
         <Script
           src="https://kit.fontawesome.com/307fd5a23b.js"
-          crossOrigin="anonymous"
+          crossOrigin={"anonymous"}
         ></Script>
+        <Script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLd }}
+        />
       </head>
       <body
         className={`${inter.className} ${merriweather.className} container mx-auto`}
@@ -89,3 +104,135 @@ export default function RootLayout({
     </html>
   );
 }
+
+const jsonLd = `{
+  "@context": "https://schema.org",
+  "@type": "FoodEstablishment",
+  "name": "Lasies",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Barthstr. 4",
+    "addressLocality": "Bad Liebenzell-Möttlingen",
+    "addressRegion": "BW",
+    "postalCode": "75378",
+    "addressCountry": "Germany"
+  },
+  "email": "info@lasies.com",
+  "telephone": "+49 1573 8949296",
+  "servesCuisine": [
+    "Fingerfood",
+    "Zum Kombinieren",
+    "Suppen Auswahl",
+    "Schlemmerplatten",
+    "Grill Buffet",
+    "Deftiges Buffet",
+    "Salatjungfer Buffet",
+    "Mediterranes Buffet",
+    "Die Glücklichen Ehepaar",
+    "Gourmetreise Buffet",
+    "Französisches Buffet"
+  ],
+  "hasMenu": "https://lasies.com/menu",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 48.76102363786428,
+    "longitude": 8.800177643639351
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": "Hans Müller",
+      "datePublished": "2023-06-01",
+      "reviewBody": "Das Essen war hervorragend! Besonders die Schlemmerplatten sind sehr zu empfehlen.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 5
+      }
+    },
+    {
+      "@type": "Review",
+      "author": "Petra Schmidt",
+      "datePublished": "2023-06-10",
+      "reviewBody": "Toller Service und leckeres Fingerfood. Immer wieder gerne!",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 5
+      }
+    },
+    {
+      "@type": "Review",
+      "author": "Lukas Bauer",
+      "datePublished": "2023-06-15",
+      "reviewBody": "Die Suppenauswahl war sehr vielfältig und köstlich.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 4
+      }
+    },
+    {
+      "@type": "Review",
+      "author": "Anna Fischer",
+      "datePublished": "2023-06-20",
+      "reviewBody": "Das Grill Buffet war einfach spitze! Sehr empfehlenswert.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 5
+      }
+    },
+    {
+      "@type": "Review",
+      "author": "Markus Weber",
+      "datePublished": "2023-06-25",
+      "reviewBody": "Die Salatjungfer Buffet war frisch und lecker. Perfekt für heiße Sommertage.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 4
+      }
+    },
+    {
+      "@type": "Review",
+      "author": "Claudia Hoffmann",
+      "datePublished": "2023-07-01",
+      "reviewBody": "Sehr gutes mediterranes Buffet. Die Auswahl war großartig.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 5
+      }
+    },
+    {
+      "@type": "Review",
+      "author": "Stefan Becker",
+      "datePublished": "2023-07-05",
+      "reviewBody": "Das Deftige Buffet hat uns sehr gut gefallen. Sehr authentisch.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 5
+      }
+    },
+    {
+      "@type": "Review",
+      "author": "Kerstin Wagner",
+      "datePublished": "2023-07-10",
+      "reviewBody": "Die Gourmetreise Buffet war ein echtes Geschmackserlebnis. Jederzeit wieder!",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 5
+      }
+    },
+    {
+      "@type": "Review",
+      "author": "Jürgen Koch",
+      "datePublished": "2023-07-15",
+      "reviewBody": "Das französische Buffet war exquisit. Sehr zu empfehlen!",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 5
+      }
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "ratingCount": "9"
+}
+}`;

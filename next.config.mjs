@@ -1,8 +1,13 @@
+import createMDX from "@next/mdx";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    domains: ["cdn.sanity.io", "via.placeholder.com"],
-  },
+  pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
 };
 
-export default nextConfig;
+const withMDX = createMDX({
+  options: {
+    rehypePlugins: [],
+  },
+});
+
+export default withMDX(nextConfig);
