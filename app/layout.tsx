@@ -55,6 +55,7 @@ export default function RootLayout({
         <Script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: jsonLd }}
+          id="json-ld"
         />
       </head>
       <body

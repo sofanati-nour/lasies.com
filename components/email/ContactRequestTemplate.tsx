@@ -1,4 +1,4 @@
-import { ContactRequest } from "../Contact";
+import { ContactRequestType } from "@/libs/types/contactRequest";
 
 const germanTranslations = {
   name: "Name: ",
@@ -12,7 +12,7 @@ const germanTranslations = {
   address: "Adresse: ",
 };
 
-export const ContactRequestTemplate: React.FC<ContactRequest> = (data) => {
+export const ContactRequestTemplate: React.FC<ContactRequestType> = (data) => {
   return (
     <div>
       <h1>Name: {data.name}</h1>

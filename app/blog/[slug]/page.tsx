@@ -14,10 +14,10 @@ export default async function Page({ params }: { params: Params }) {
       outputFormat: "function-body",
       remarkPlugins: [remarkGfm, remarkMdxFrontmatter],
     }),
+    //@ts-ignore
     {
       ...runtime,
       baseUrl: import.meta.url,
-      jsx: runtime.jsx,
     }
   );
   const Content = Result.default;
