@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main>
       <Carousel />
-      <Intro />
+      {/* <Intro /> */}
       <AboutUs />
       <Menu />
       <Services />
@@ -302,33 +302,36 @@ function Services() {
       </section>
 
       <section className="py-8 backdrop-blur">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-4/5 mx-auto">
-          <div className="flex flex-col text-white prose prose-sm prose-invert">
+        <div className="grid  gap-4 w-4/5 mx-auto">
+          <div className="mx-auto flex flex-col text-white prose text-center prose-invert">
             <h2>Rundum-Betreuung für Veranstaltungen, Partys und Events</h2>
             <p>
               „Feiern wo und wann Sie möchten“ – diesen Satz hat sich unser
               Partyservice zum Motto gemacht. Wir organisieren für Sie:
             </p>
+            <div className="flex flex-col sm:flex-row justify-between">
+              <ul className="list-disc text-left text-sm space-y-1 text-white">
+                <li>Messeservices </li>
+                <li>Tage der offenen Tür </li>
+                <li>Vernissagen </li>
+                <li>Stehempfänge </li>
+                <li>Betriebsfeste / Firmenevents </li>
+                <li>Einweihungen </li>
+                <li>Präsentationen aller Art </li>
+                <li>Caterings für Großveranstaltungen </li>
+              </ul>
+              <ul className="list-disc text-left text-sm space-y-1 text-white">
+                <li>Familien- und Vereinsfeste </li>
+                <li>Hochzeiten </li>
+                <li>Geburtstagsfeiern </li>
+                <li>Jubiläen </li>
+                <li>Konfirmationen/ Kommunionen </li>
+                <li>Taufen </li>
+                <li>Richtfeste </li>
+                <li>Abschlussfeiern </li>
+              </ul>
+            </div>
           </div>
-          <ul className="md:text-right list-disc md:list-none text-sm space-y-1 text-white">
-            <li>Messeservices </li>
-            <li>Tage der offenen Tür </li>
-            <li>Vernissagen </li>
-            <li>Stehempfänge </li>
-            <li>Betriebsfeste / Firmenevents </li>
-            <li>Einweihungen </li>
-            <li>Präsentationen aller Art </li>
-            <li>Caterings für Großveranstaltungen </li>
-            <li>Familien- und Vereinsfeste </li>
-            <li>Hochzeiten </li>
-            <li>Geburtstagsfeiern </li>
-            <li>Jubiläen </li>
-            <li>Konfirmationen/ Kommunionen </li>
-            <li>Taufen </li>
-            <li>Richtfeste </li>
-            <li>Abschlussfeiern </li>
-            <li>Und vieles mehr </li>
-          </ul>
         </div>
       </section>
     </>
