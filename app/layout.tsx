@@ -96,6 +96,21 @@ export default function RootLayout({
               >
                 <i className="fab fa-whatsapp w-4 h-4"></i>
               </a>
+              <a
+                className="invert text-[#4d4f3f] flex items-center"
+                href={
+                  "https://www.listando.de/baden-wuerttemberg/bad-liebenzell/WzS8jzQmtH/catering/lasies-catering-service-/CNGWSkIcw3"
+                }
+                target="_blank"
+              >
+                <img
+                  src={"/listando-logo.webp"}
+                  alt=""
+                  width={18}
+                  height={18}
+                  className="inline mr-2 grayscale rounded-md"
+                />
+              </a>
             </div>
           </div>
         </footer>

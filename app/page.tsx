@@ -334,3 +334,102 @@ function Services() {
     </>
   );
 }
+
+//   Was unser Partyservice noch für Sie tun kann? Wir unterstützen Sie bei der Suche nach einer
+// passenden Location. Benötigtes Geschirr, Gläser und Besteck können Sie bei uns auf
+// Wunsch zum Catering dazu mieten. Zudem stellen wir gerne Servicepersonal zur Verfügung,
+// das die Bewirtung auf der Feier übernimmt. Bei der Zusammenstellung eines
+// Rahmenprogramms und passenden Dekorationen sind wir gerne behilflich.
+// Mehr Wichtiges und Wissenswertes erfahren Sie auf unserer Webseite oder persönlich bei
+// unserem Team. Unsere Impressionen sollen Ihnen derweil einen ersten Vorgeschmack geben
+// – denn das Auge isst schließlich mit!
+// Ihr persönliches Partyservice-Angebot – fragen Sie uns
+// Gerne erstellen wir ein unverbindliches Angebot. Vereinbaren Sie mit uns einen
+// Gesprächstermin für Ihr Catering rund um Bad Liebenzell, Stuttgart, Leonberg und Calw. Sie
+// erreichen unseren Partyservice telefonisch unter ✆ 01573 8949296. Alternativ können Sie uns
+// via ✉ Kontaktformular Ihre Anfrage zukommen lassen. Wir freuen uns auf Sie!
+// Lesen Sie unsere Geschäftsbedingungen
+// Uber uns
+
+// Catering nach Wunsch und Front-Cooking für den besonderen Zauber
+// Keine Feier ohne den passenden kulinarischen Rahmen! Unser
+// Partyservice liefert frische, hausgemachte Speisen und Getränke. Die
+// individuellen Buffets wissen zu begeistern! Für ein ganz besonderes
+// Highlight auf jeder Veranstaltung sorgen wir mit unserem Front-Cooking –
+// unser Koch bereitet die Speisen direkt vor Ort zu und die Gäste dürfen
+// zuschauen.
+// Ausnahmslose Qualität für Ihr Catering
+// Miteinander feiern gehört zu den schönsten Dingen in unserem Leben.
+// Liebevoll und individuell abgestimmtes Essen ist dabei ein wichtiger
+// Bestandteil. Ob Front-Cooking oder Fingerfood, ob rustikales Stallknecht-
+// Buffet oder edles Buffet nach Karl dem Großen – beste Qualität ist
+// unserem Partyservice sehr wichtig. Deshalb verwenden wir nur frische
+// Zutaten für unsere Caterings. Wir setzen auf Obst, Gemüse und Kräuter
+// aus eigenem Anbau oder vom Wochenmarkt.
+
+// Wichtiges & WissenswertesUNSERE
+// GESCHÄFTSBEDINGUNGEN
+// Bitte beachten Sie, dass aufgrund der momentanen allgemeinen Preisentwicklung, keine
+// Preise im Prospekt aufgeführt sind. Wir erstellen Ihnen ein individuelles Angebot. Wir
+// bitten für Ihr Verständnis, vielen Dank.
+// Zur Freude der Gastgeberin versorgen wir Sie, bei Bedarf, mit Gläsern, Geschirr, Besteck und
+// vielem mehr.
+// Mietgebühr: (Standardausführung)
+// Suppen- , Speise- , Dessertteller
+
+// Suppentassen obere und untere
+
+// Kaffeetasse, obere und untere
+
+// Speisemesser, -gabel, -löffel, Dessertlöffel
+
+// Gläser aller Art
+
+// Stehtisch schwarz rund 80 cm
+
+// Stehtisch inkl. weißer Husse
+
+// Reinigungsgebühr pro Geschirr- und Besteckteil
+
+// Gemietete Artikel, Racks und Boxen sind Eigentum der Firma Die Marketenderei Huter &
+// Lechner GbR.
+// Der Mietpreis eines Artikels wird auf Grund der aktuellsten Preisliste zuzüglich
+// Reinigungsgebühr, inklusive der gesetzlichen Mehrwertsteuer festgelegt. Eine Mieteinheit
+// beträgt 3 Tage, auch wenn die gemieteten Artikel vorzeitig und/oder unbenutzt zurückgegeben
+// werden.
+// Bei Abholung muss der Mieter selbst für einen vorschriftsmäßigen Transport Sorge tragen
+// Die Mietartikel müssen in einem geschlossenen Fahrzeug transportiert werden.
+// Bei Rücknahme müssen die Mietartikel transportfähig wieder in die Boxen geräumt sein.
+// Der Mietpreis beinhaltet nicht den Auf- und Abbau sowie das Vertragen und Einsammeln der
+// gemieteten Gegenstände.
+// Diese Leistung übernehmen wir gerne gegen gesonderte Berechnung (Stundensatz pro Person
+// 35,00 Euro).
+// Für beschädigte oder nicht zurückgegebene Ausstattungsgegenstände berechnen wir den
+// Wiederbeschaffungswert.
+// Dekoration
+// Bei der Auswahl der Dekoration und Blumen sind wir gerne behilflich.
+// Personal
+// ∙Servicepersonal pro Person / Stunde 35,00 Euro
+// ∙Küchenpersonal pro Person / Stunde 40,00 Euro
+
+// Rahmenprogramm
+// Bei der Vermittlung von Rahmenprogrammen (z. B. Musiker ...) sind wir gerne behilflich.
+// Auftragserteilung / Anzahlung
+// Bei Auftragserteilung werden 50 % der zu erwartenden Auftragssumme fällig.
+
+// Auftragsänderung/ Stornierung
+// Auftragsänderungen sind bis spätestens 7 Werktage vor Lieferung möglich. Bei
+// Auftragsstornierung innerhalb von 14 Tagen vor Veranstaltungsbeginn stellen wir 50 % der zu
+// erwartenden Auftragssumme in Rechnung.
+// Die gelieferte Ware bleibt bis zur vollständigen Bezahlung unser Eigentum. Ein Recht auf
+// Weiterveräußerung besteht nicht.
+
+// Lieferkosten
+// Bei einer Order ab 200,00 Euro berechnen wir innerhalb der Stadtgrenzen von Leonberg und
+// Fellbach keine Anfahrtskosten. Außerhalb dieser Zonen schlägt der Kilometer mit 0,60 Euro
+// zu Buche.
+// Bei einer Rückholung unserer Ausstattung an Sonn- und Feiertagen berechnen wir einen
+// Aufschlag von 40,00 Euro.
+// Alle genannten Preise verstehen sich, wenn nicht anders benannt, einschließlich der
+// gesetzlichen Mehrwertsteuer.
+// Alle bisher erschienenen Preislisten verlieren mit Erscheinen dieser Preisliste ihre Gültigkeit.

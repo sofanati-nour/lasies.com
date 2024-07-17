@@ -45,27 +45,17 @@ function LgNavbar() {
         </Link>
         <Link
           className="border-r  border-[#4d4f3f] px-6 text-[#4d4f3f]"
+          href={"/wichteges-und-wissenswertes"}
+          title="Wichtiges & Wissenswertes"
+        >
+          Wichtiges & Wissenswertes
+        </Link>
+        <Link
+          className="border-r  border-[#4d4f3f] px-6 text-[#4d4f3f]"
           href={"/"}
         >
           Blog
         </Link>
-        <Link
-          className="border-r  border-[#4d4f3f] px-6 text-[#4d4f3f] flex items-center"
-          href={
-            "https://www.listando.de/baden-wuerttemberg/bad-liebenzell/WzS8jzQmtH/catering/lasies-catering-service-/CNGWSkIcw3"
-          }
-          target="_blank"
-        >
-          <Image
-            src={"/listando-logo.webp"}
-            alt=""
-            width={18}
-            height={18}
-            className="inline mr-2 grayscale rounded-md"
-          />
-          Listando
-        </Link>
-
         <Link
           className=" px-6 text-[#4d4f3f]"
           href={"#kontakte"}
@@ -106,27 +96,17 @@ function LgNavbar() {
         </Link>
         <Link
           className="border-r  border-[#4d4f3f] px-6 text-[#4d4f3f]"
+          href={"/wichteges-und-wissenswertes"}
+          title="Wichtiges & Wissenswertes"
+        >
+          Wichtiges & Wissenswertes
+        </Link>
+        <Link
+          className="border-r  border-[#4d4f3f] px-6 text-[#4d4f3f]"
           href={"/"}
         >
           Blog
         </Link>
-        <Link
-          className="border-r  border-[#4d4f3f] px-6 text-[#4d4f3f] flex items-center"
-          href={
-            "https://www.listando.de/baden-wuerttemberg/bad-liebenzell/WzS8jzQmtH/catering/lasies-catering-service-/CNGWSkIcw3"
-          }
-          target="_blank"
-        >
-          <Image
-            src={"/listando-logo.webp"}
-            alt=""
-            width={18}
-            height={18}
-            className="inline mr-2 grayscale rounded-md"
-          />
-          Listando
-        </Link>
-
         <Link
           className=" px-6 text-[#4d4f3f]"
           href={"#kontakte"}
@@ -190,6 +170,22 @@ function LgNavbar() {
           <Link href="https://wa.me/4915738949296" title="WhatsApp">
             <i className="fab fa-whatsapp w-4 h-4"></i>
           </Link>
+
+          <Link
+            className="invert text-[#4d4f3f] flex items-center"
+            href={
+              "https://www.listando.de/baden-wuerttemberg/bad-liebenzell/WzS8jzQmtH/catering/lasies-catering-service-/CNGWSkIcw3"
+            }
+            target="_blank"
+          >
+            <Image
+              src={"/listando-logo.webp"}
+              alt=""
+              width={18}
+              height={18}
+              className="inline mr-2 grayscale rounded-md"
+            />
+          </Link>
         </section>
       </header>
     </div>
@@ -251,16 +247,6 @@ function SmNavbar() {
               onClick={() => setIsMenuOpen(false)}
             >
               Blog
-            </Link>
-            <Link
-              className="border-b border-[#4d4f3f] px-6 text-[#4d4f3f] py-4"
-              href={
-                "https://www.listando.de/baden-wuerttemberg/bad-liebenzell/WzS8jzQmtH/catering/lasies-catering-service-/CNGWSkIcw3"
-              }
-              onClick={() => setIsMenuOpen(false)}
-              target="_blank"
-            >
-              Listando
             </Link>
             <Link
               className="border-b border-[#4d4f3f] px-6 text-[#4d4f3f] py-4"
