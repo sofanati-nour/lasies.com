@@ -239,7 +239,7 @@ function SmNavbar() {
             </Link>
             <Link
               className="border-b border-[#4d4f3f] px-6 text-[#4d4f3f] py-4"
-              href={"/"}
+              href={"/galerie"}
               onClick={() => setIsMenuOpen(false)}
               title="Galerie"
             >
