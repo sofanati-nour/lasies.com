@@ -1,8 +1,9 @@
 "use server";
-
+import fs from "fs";
 import { ContactRequestTemplate } from "@/components/email/ContactRequestTemplate";
 import { ContactRequestType } from "@/libs/types/contactRequest";
 import { Resend } from "resend";
+import { join } from "path";
 const translations = {
   "New Contact Request": "Neue Kontaktanfrage",
   "Lasies booking request from": "Lasies Buchungsanfrage von",
@@ -29,4 +30,13 @@ export async function SendContactRequest(formData: ContactRequestType) {
     return { error };
   }
   return { data };
+}
+
+export async function GetImagesFromDirectory() {
+  const images = fs.readdirSync(join(process.cwd(), "public/images/galarie"));
+  const imagesPath = images.map((image) => {
+    return `/images/galarie/${image}`;
+  });
+
+  return imagesPath.filter((i) => i.includes(".jpg") || i.includes(".png"));
 }
