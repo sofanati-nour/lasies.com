@@ -99,7 +99,7 @@ function LgNavbar() {
         </Link>
         <Link
           className="border-r  border-[#4d4f3f] px-6 text-[#4d4f3f]"
-          href={"/"}
+          href={"/galerie"}
           title="Galerie"
         >
           Galerie
