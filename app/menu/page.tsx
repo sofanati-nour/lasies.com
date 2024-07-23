@@ -721,8 +721,8 @@ const menu: Menu[] = [
     name: "Grill Buffet",
     minimumOrder: {
       total: 20,
-      perType: 37.8,
-      buffetPrice: 37.8,
+      perType: 40,
+      buffetPrice: 40,
     },
     items: [
       {
