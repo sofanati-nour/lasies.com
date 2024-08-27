@@ -58,7 +58,7 @@ function LgNavbar() {
         </Link>
         <Link
           className=" px-6 text-[#4d4f3f]"
-          href={"#kontakte"}
+          href={"/#kontakte"}
           title="Kontakte"
         >
           Kontakte
@@ -109,7 +109,7 @@ function LgNavbar() {
         </Link>
         <Link
           className=" px-6 text-[#4d4f3f]"
-          href={"#kontakte"}
+          href={"/#kontakte"}
           title="Kontakte"
         >
           Kontakte
@@ -250,7 +250,7 @@ function SmNavbar() {
             </Link>
             <Link
               className="border-b border-[#4d4f3f] px-6 text-[#4d4f3f] py-4"
-              href={"#kontakte"}
+              href={"/#kontakte"}
               title="Kontakte"
               onClick={() => setIsMenuOpen(false)}
             >

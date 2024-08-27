@@ -32,6 +32,7 @@ interface Menu {
     perType: number;
     unit?: string;
     buffetPrice?: number;
+    description?: string;
   };
   items: (MenuItem | MenuSection)[];
 }
@@ -41,6 +42,8 @@ const fingerfoodMenu: Menu = {
   minimumOrder: {
     total: 50,
     perType: 10,
+    description:
+      "Bestellmenge mindestens 50 Teile pro Bestellung mindestens 10 Teile pro Sorte",
   },
   items: [
     {
@@ -54,7 +57,7 @@ const fingerfoodMenu: Menu = {
       type: "MenuItem",
       name: "Halbe belegte Brötchen",
       description: "appetitlich belegt mit: Aufschnitt, Käse und Schinken ...",
-      price: 2.1,
+      price: 2.5,
     },
     {
       type: "MenuSection",
@@ -65,6 +68,24 @@ const fingerfoodMenu: Menu = {
           name: "Schwäbische Langenstange verschiedenen belegt",
           price: 2.7,
           updatedPrice: 3.2,
+        },
+        {
+          type: "MenuItem",
+          name: "Mini-Tortilla mit Hackfleisch und Käse gefüllt",
+          price: 2.7,
+          updatedPrice: 3.2,
+        },
+        {
+          type: "MenuItem",
+          name: "Sommer Röllchen (vegetarische Füllung, Fleisch Füllung, Geräucherte Lachs Füllung)",
+          price: 2.7,
+          updatedPrice: 2.7,
+        },
+        {
+          type: "MenuItem",
+          name: "Burger Tacos",
+          price: 2.7,
+          updatedPrice: 3.1,
         },
         {
           type: "MenuItem",
@@ -329,7 +350,7 @@ const fingerfoodMenu: Menu = {
         },
         {
           type: "MenuItem",
-          name: "Minipizza",
+          name: "Minipizza (Salami, Margherita, oder Vegetarisch)",
           price: 1.8,
           updatedPrice: 2.1,
           unit: "Stück",
@@ -529,16 +550,28 @@ const fingerfoodMenu: Menu = {
 const zumKominierenMenu: Menu = {
   name: "Zum Kombinieren",
   minimumOrder: {
-    total: 50,
+    total: 10,
     perType: 10,
   },
   items: [
     {
       type: "MenuSection",
-      name: "Hauptspeise",
+      name: "",
       description:
         "mit Weißbrot oder mitgelieferten Minibrötchen, Mindestbestellmenge: 10 Portionen",
       items: [
+        {
+          type: "MenuItem",
+          name: "Piccata Milanese (Pute oder Kalb) auf Tomatensauce mit Butterspaghetti",
+          price: 12.7,
+          unit: "Pers.",
+        },
+        {
+          type: "MenuItem",
+          name: "Rinderrouladen nach Art des Hauses mit kräftiger Rotweinsauce und Kartoffelknödel",
+          price: 14.6,
+          unit: "Pers.",
+        },
         {
           type: "MenuItem",
           name: "Zarte Lammkeule, mit Bohnen im Speckmantel, Ratatouille, Rosmarinkartoffeln",
@@ -547,9 +580,85 @@ const zumKominierenMenu: Menu = {
         },
         {
           type: "MenuItem",
+          name: "Schwäbische Maultaschen mit Zwiebelschmälze und Kartoffel-Gurkensalat",
+          price: 8.9,
+          unit: "Pers.",
+        },
+        {
+          type: "MenuItem",
+          name: "Schwäbischer Linsenteller mit Saiten Wurst und Spätzle",
+          price: 9.2,
+          unit: "Pers.",
+        },
+        {
+          type: "MenuItem",
           name: "Chili con carne, auf Basmatireis",
           price: 8.9,
           unit: "Pers.",
+        },
+
+        {
+          type: "MenuItem",
+          name: "Tagliatelle verde mit Lachssahne",
+          price: 1.8,
+          updatedPrice: 8.2,
+          unit: "Port.",
+        },
+        {
+          type: "MenuItem",
+          name: "Saltimbocca vom Lachs Blattspinat und Schwenkkartoffeln",
+          price: 1.8,
+          updatedPrice: 8.7,
+          unit: "Port.",
+        },
+        {
+          type: "MenuItem",
+          name: "Italienische Lasagne mit Hackfleisch oder Lachs und Spinat oder Gemüsefüllung",
+          price: 1.8,
+          updatedPrice: 8.3,
+          unit: "Port.",
+        },
+        {
+          type: "MenuItem",
+          name: "Asia-Pfanne mit Chinagemüse, Mie-Nudeln und Putenstreifen ",
+          price: 1.8,
+          updatedPrice: 7.9,
+          unit: "Port.",
+        },
+        {
+          type: "MenuItem",
+          name: "Kartoffel Gratin Klassisch oder mit Hähnchen",
+          price: 1.8,
+          updatedPrice: 8.5,
+          unit: "Port.",
+        },
+        {
+          type: "MenuItem",
+          name: "Gebratene Hähnchenbrust eingelegt in Orangensoße",
+          price: 1.8,
+          updatedPrice: 9.2,
+          unit: "Port.",
+        },
+        {
+          type: "MenuItem",
+          name: "Gegrillte Lachsfilet eingelegt in Honig und Petersilie",
+          price: 1.8,
+          updatedPrice: 8.8,
+          unit: "Port.",
+        },
+        {
+          type: "MenuItem",
+          name: "Gefüllte Paprika mit Bulgur und Feta ",
+          price: 1.8,
+          updatedPrice: 7.5,
+          unit: "Port.",
+        },
+        {
+          type: "MenuItem",
+          name: "Hähnchenbrust gefüllt mit Gemüse und Käse",
+          price: 1.8,
+          updatedPrice: 8.7,
+          unit: "Port.",
         },
         {
           type: "MenuItem",
@@ -613,7 +722,7 @@ const zumKominierenMenu: Menu = {
         },
         {
           type: "MenuItem",
-          name: "Rinderfilet mit Spinat-Ricotta-Füllung, auf Tomaten-Basilikum-Concassée",
+          name: "Ravioli mit Spinat-Ricotta-Füllung, auf Tomaten-Basilikum-Concassée",
           price: 8.0,
           unit: "Pers.",
         },
@@ -635,7 +744,7 @@ const zumKominierenMenu: Menu = {
 };
 const menu: Menu[] = [
   {
-    name: "Suppen Auswahl",
+    name: "Suppen",
     minimumOrder: {
       total: "20 Port.",
       perType: 250,
@@ -649,22 +758,22 @@ const menu: Menu[] = [
           {
             type: "MenuItem",
             name: "Kürbiscremesuppe mit Kokosmilch (saisonal)",
-            price: 3.2,
+            price: 4,
           },
-          { type: "MenuItem", name: "Kartoffelsuppe mit Shrimps", price: 4 },
-          { type: "MenuItem", name: "oder mit Würstchen", price: 3.4 },
-          { type: "MenuItem", name: "Tomatenrahmsuppe", price: 3 },
+          { type: "MenuItem", name: "Kartoffelsuppe mit Shrimps", price: 4, description:"oder mit Würstchen (3,50 €)" },
+          // { type: "MenuItem", name: "oder mit Würstchen", price: 3.4 },
+          { type: "MenuItem", name: "Tomatenrahmsuppe", price: 3.5 },
           { type: "MenuItem", name: "Schwäbische Festtagssuppe", price: 4 },
           {
             type: "MenuItem",
             name: "Feurige Gulaschsuppe mit Brot",
-            price: 4,
+            price: 4.5,
           },
           { type: "MenuItem", name: "Gaisburger Marsch", price: 4 },
           {
             type: "MenuItem",
             name: "Käsesuppe mit Lauchstreifen",
-            price: 3,
+            price: 3.5,
           },
           {
             type: "MenuItem",
@@ -1484,8 +1593,8 @@ export default function Page() {
             {Menus[currentMenuIndex].name}
           </h2>
           <p className="text-sm text-center">
-            Mindestens {Menus[currentMenuIndex].minimumOrder.total} pro
-            Bestellung
+            {Menus[currentMenuIndex].minimumOrder.description ??
+              `Mindestbestellmenge ${Menus[currentMenuIndex].minimumOrder.total} Portionen`}
           </p>
           {Menus[currentMenuIndex].minimumOrder.perType &&
             Menus[currentMenuIndex].minimumOrder.unit && (
@@ -1503,7 +1612,7 @@ export default function Page() {
           </div>
         </div>
         <div className="grid lg:grid-cols-2 gap-x-16 gap-y-4 lg:w-4/5 mx-auto mt-4">
-          {Menus[currentMenuIndex].items.map((item, idx) =>
+          {Menus[currentMenuIndex].items.sort((a,b)=> a.name < b.name ? -1 : 1).map((item, idx) =>
             item.type === "MenuItem" ? (
               <MenuItemComponent
                 item={item}
@@ -1524,7 +1633,7 @@ export default function Page() {
                     {(item satisfies MenuSection).name}
                   </h3>
                 </div>
-                {(item.items as MenuItem[]).map((subItem, idxx) => (
+                {(item.items as MenuItem[]).sort((a,b)=> a.name < b.name ? -1 : 1)  .map((subItem, idxx) => (
                   <MenuItemComponent
                     item={subItem}
                     key={idxx + subItem.name}
