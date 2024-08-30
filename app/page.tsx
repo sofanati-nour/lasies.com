@@ -11,7 +11,6 @@ export default function Home() {
     <main>
       <Carousel />
        <Intro /> 
-      <AboutUs />
       <Menu />
       <Services />
       <Contact handleSendEmail={SendContactRequest} />
@@ -56,7 +55,7 @@ function Intro() {
             alt="hero"
             width={380}
             height={380}
-            className="h-[250px] w-[250px] lg:h-[380px] lg:w-[380px] rounded-full object-cover shadow-inner "
+            className="hidden lg:block aspect-square h-[250px] w-[250px] lg:h-[380px] lg:w-[380px] rounded-full object-cover shadow-inner "
           />
         </div>
       </section>
