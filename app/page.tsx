@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main>
       <Carousel />
-      {/* <Intro /> */}
+       <Intro /> 
       <AboutUs />
       <Menu />
       <Services />
@@ -60,17 +60,6 @@ function Intro() {
           />
         </div>
       </section>
-      <section className="bg-[#f0ebdf]">
-        <HeaderThing
-          title="Lasies Catering Service"
-          subtitle="In Bad Liebenzell-Möttlingen"
-        />
-        <div className="flex justify-center gap-4 pb-16 flex-wrap">
-          <Card title="Catering" img={welcomeImage1} />
-          <Card title="Partyservice" img={welcomeImage2} />
-          <Card title="Marktenderei" img={welcomeImage3} />
-        </div>
-      </section>
     </>
   );
 }
@@ -116,7 +105,7 @@ function AboutUs() {
           alt="hero"
           width={500}
           height={500}
-          className=" object-cover shadow-inner h-full w-full lg:max-w-none lg:aspect-square "
+          className=" object-cover hidden md:block shadow-inner h-full w-full lg:max-w-none lg:aspect-square "
         />
 
         <div className="p-4 flex flex-col justify-center max-w-96">
