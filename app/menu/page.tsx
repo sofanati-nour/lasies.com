@@ -22,6 +22,7 @@ interface MenuItem extends BaseItem {
 interface MenuSection extends BaseItem {
   type: "MenuSection";
   description?: string;
+  priority?: number;
   items: (MenuItem | MenuSection)[];
 }
 
@@ -760,7 +761,12 @@ const menu: Menu[] = [
             name: "Kürbiscremesuppe mit Kokosmilch (saisonal)",
             price: 4,
           },
-          { type: "MenuItem", name: "Kartoffelsuppe mit Shrimps", price: 4, description:"oder mit Würstchen (3,50 €)" },
+          {
+            type: "MenuItem",
+            name: "Kartoffelsuppe mit Shrimps",
+            price: 4,
+            description: "oder mit Würstchen (3,50 €)",
+          },
           // { type: "MenuItem", name: "oder mit Würstchen", price: 3.4 },
           { type: "MenuItem", name: "Tomatenrahmsuppe", price: 3.5 },
           { type: "MenuItem", name: "Schwäbische Festtagssuppe", price: 4 },
@@ -837,6 +843,7 @@ const menu: Menu[] = [
       {
         type: "MenuSection",
         name: "Vorspeise Und Salate",
+        priority: 0,
         items: [
           {
             type: "MenuItem",
@@ -871,6 +878,7 @@ const menu: Menu[] = [
       {
         type: "MenuSection",
         name: "Hauptspeise",
+        priority: 1,
         items: [
           {
             type: "MenuItem",
@@ -909,6 +917,7 @@ const menu: Menu[] = [
       {
         type: "MenuSection",
         name: "Nachspeise",
+        priority: 2,
         items: [
           { type: "MenuItem", name: "Melonensalat", price: 34.5 },
           {
@@ -930,7 +939,8 @@ const menu: Menu[] = [
     items: [
       {
         type: "MenuSection",
-        name: "Vorspeise und Salate",
+        name: "Vorspeise Und Salate",
+        priority: 0,
         items: [
           {
             type: "MenuItem",
@@ -964,6 +974,7 @@ const menu: Menu[] = [
       {
         type: "MenuSection",
         name: "Hauptspeise",
+        priority: 1,
         items: [
           { type: "MenuItem", name: "Schinkenkrustenbraten", price: 34.8 },
           {
@@ -985,6 +996,7 @@ const menu: Menu[] = [
       {
         type: "MenuSection",
         name: "Nachspeise",
+        priority: 2,
         items: [
           {
             type: "MenuItem",
@@ -1010,7 +1022,8 @@ const menu: Menu[] = [
     items: [
       {
         type: "MenuSection",
-        name: "Vorspeise und Salate",
+        name: "Vorspeise Und Salate",
+        priority: 0,
         items: [
           {
             type: "MenuItem",
@@ -1064,6 +1077,7 @@ const menu: Menu[] = [
       {
         type: "MenuSection",
         name: "Hauptspeise",
+        priority: 1,
         items: [
           {
             type: "MenuItem",
@@ -1096,6 +1110,7 @@ const menu: Menu[] = [
       {
         type: "MenuSection",
         name: "Nachspeise",
+        priority: 2,
         items: [
           { type: "MenuItem", name: "Frischer Obstsalat", price: 34.8 },
           { type: "MenuItem", name: "Johannisbeer-Joghurtcreme", price: 34.8 },
@@ -1118,7 +1133,8 @@ const menu: Menu[] = [
     items: [
       {
         type: "MenuSection",
-        name: "Vorspeise und Salate",
+        name: "Vorspeise Und Salate",
+        priority: 0,
         items: [
           {
             type: "MenuItem",
@@ -1182,6 +1198,7 @@ const menu: Menu[] = [
       {
         type: "MenuSection",
         name: "Nachspeise",
+        priority: 2,
         items: [
           { type: "MenuItem", name: "Obstplatte der Saison", price: 41.3 },
           {
@@ -1214,6 +1231,7 @@ const menu: Menu[] = [
       {
         type: "MenuSection",
         name: "Vorspeise Und Salate",
+        priority: 0,
         items: [
           {
             type: "MenuItem",
@@ -1284,6 +1302,7 @@ const menu: Menu[] = [
       {
         type: "MenuSection",
         name: "Hauptspeise",
+        priority: 1,
         items: [
           {
             type: "MenuItem",
@@ -1321,6 +1340,7 @@ const menu: Menu[] = [
       {
         type: "MenuSection",
         name: "Nachspeise",
+        priority: 2,
         items: [
           {
             type: "MenuItem",
@@ -1346,7 +1366,8 @@ const menu: Menu[] = [
     items: [
       {
         type: "MenuSection",
-        name: "Vorspeise und Salate",
+        name: "Vorspeise Und Salate",
+        priority: 0,
         items: [
           {
             type: "MenuItem",
@@ -1393,6 +1414,7 @@ const menu: Menu[] = [
       {
         type: "MenuSection",
         name: "Hauptspeise",
+        priority: 1,
         items: [
           { type: "MenuItem", name: "Zanderfilet gebraten", price: 42.6 },
           { type: "MenuItem", name: "Fischsamtsauce", price: 42.6 },
@@ -1411,6 +1433,7 @@ const menu: Menu[] = [
       {
         type: "MenuSection",
         name: "Nachspeise",
+        priority: 2,
         items: [
           { type: "MenuItem", name: "Internationale Käseauswahl", price: 42.6 },
           {
@@ -1433,7 +1456,8 @@ const menu: Menu[] = [
     items: [
       {
         type: "MenuSection",
-        name: "Vorspeise und Salate",
+        name: "Vorspeise Und Salate",
+        priority: 0,
         items: [
           {
             type: "MenuItem",
@@ -1529,6 +1553,7 @@ const menu: Menu[] = [
       {
         type: "MenuSection",
         name: "Nachspeise",
+        priority: 2,
         items: [
           {
             type: "MenuItem",
@@ -1612,41 +1637,46 @@ export default function Page() {
           </div>
         </div>
         <div className="grid lg:grid-cols-2 gap-x-16 gap-y-4 lg:w-4/5 mx-auto mt-4">
-          {Menus[currentMenuIndex].items.sort((a,b)=> a.name < b.name ? -1 : 1).map((item, idx) =>
-            item.type === "MenuItem" ? (
-              <MenuItemComponent
-                item={item}
-                key={idx + item.name}
-                showPrice={
-                  Menus[currentMenuIndex].minimumOrder?.buffetPrice ===
-                    undefined ||
-                  Menus[currentMenuIndex].minimumOrder?.buffetPrice === 0
-                }
-              />
-            ) : (
-              <div
-                key={(item satisfies MenuSection).name + idx}
-                className=" space-y-4 grid lg:grid-cols-2 lg:col-span-2 gap-x-16 gap-y-4"
-              >
-                <div className=" lg:col-span-2 mt-2">
-                  <h3 className="font-bold text-xl border-b border-[#4d4f3f]">
-                    {(item satisfies MenuSection).name}
-                  </h3>
+          {Menus[currentMenuIndex].items
+            
+            .map((item, idx) =>
+              item.type === "MenuItem" ? (
+                <MenuItemComponent
+                  item={item}
+                  key={idx + item.name}
+                  showPrice={
+                    Menus[currentMenuIndex].minimumOrder?.buffetPrice ===
+                      undefined ||
+                    Menus[currentMenuIndex].minimumOrder?.buffetPrice === 0
+                  }
+                />
+              ) : (
+                <div
+                  key={(item satisfies MenuSection).name + idx}
+                  className=" space-y-4 grid lg:grid-cols-2 lg:col-span-2 gap-x-16 gap-y-4"
+                >
+                  <div className=" lg:col-span-2 mt-2">
+                    <h3 className="font-bold text-xl border-b border-[#4d4f3f]">
+                      {(item satisfies MenuSection).name}
+                    </h3>
+                  </div>
+                  {(item.items as MenuItem[])
+                    
+                    .map((subItem, idxx) => (
+                      <MenuItemComponent
+                        item={subItem}
+                        key={idxx + subItem.name}
+                        showPrice={
+                          Menus[currentMenuIndex].minimumOrder?.buffetPrice ===
+                            undefined ||
+                          Menus[currentMenuIndex].minimumOrder?.buffetPrice ===
+                            0
+                        }
+                      />
+                    ))}
                 </div>
-                {(item.items as MenuItem[]).sort((a,b)=> a.name < b.name ? -1 : 1)  .map((subItem, idxx) => (
-                  <MenuItemComponent
-                    item={subItem}
-                    key={idxx + subItem.name}
-                    showPrice={
-                      Menus[currentMenuIndex].minimumOrder?.buffetPrice ===
-                        undefined ||
-                      Menus[currentMenuIndex].minimumOrder?.buffetPrice === 0
-                    }
-                  />
-                ))}
-              </div>
-            )
-          )}
+              )
+            )}
         </div>
       </section>
     </div>
