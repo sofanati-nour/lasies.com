@@ -522,7 +522,7 @@ const fingerfoodMenu: Menu = {
         {
           type: "MenuItem",
           name: "Himbeertraum",
-          description: "(im Glas)"
+          description: "(im Glas)",
           price: 1.9,
           updatedPrice: 2.3,
           unit: "Stück",
