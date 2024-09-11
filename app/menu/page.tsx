@@ -532,7 +532,7 @@ const fingerfoodMenu: Menu = {
           name: "Beerenschnitte vom Blech",
           price: 2.0,
           updatedPrice: 2.3,
-          unit: "Stück.",
+          unit: "Stück",
         },
         {
           type: "MenuItem",
@@ -540,7 +540,7 @@ const fingerfoodMenu: Menu = {
           description: "(im Glas)",
           price: 2.3,
           updatedPrice: 2.7,
-          unit: "Stück.",
+          unit: "Stück",
         },
         {
           type: "MenuItem",
