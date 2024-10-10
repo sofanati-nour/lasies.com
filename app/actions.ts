@@ -28,8 +28,25 @@ export async function SendContactRequest(formData: ContactRequestType) {
 
   if (error) {
     return { error };
+  } else {
+    await SendRequestConfirmation(formData);
   }
   return { data };
+}
+
+export async function SendRequestConfirmation(formData: ContactRequestType) {
+  const { data, error } = await resend.emails.send({
+    from: `Lasies <info@lasies.com>`,
+    subject: "Ihre Anfrage ist beim Lasies Catering Service angekommen.",
+    text: "Wir haben Ihre Anfrage erhalten und sie wird vom Lasies Catering Service bearbeitet",
+    to: [`${formData.name} <${formData.email}>`],
+    headers: {
+      "Reply-To": `Lasies <info@lasies.com>`,
+    },
+  });
+
+  if (error) return error;
+  return data;
 }
 
 export async function GetImagesFromDirectory() {
