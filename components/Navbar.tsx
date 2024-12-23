@@ -243,6 +243,14 @@ function SmNavbar() {
             </Link>
             <Link
               className="border-b border-[#4d4f3f] px-6 text-[#4d4f3f] py-4"
+              href={"/wichteges-und-wissenswertes"}
+              title="Wichtiges & Wissenswertes"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Wichtiges & Wissenswertes
+            </Link>
+            <Link
+              className="border-b border-[#4d4f3f] px-6 text-[#4d4f3f] py-4"
               href={"/"}
               onClick={() => setIsMenuOpen(false)}
             >
