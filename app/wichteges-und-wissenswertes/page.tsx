@@ -66,7 +66,7 @@ export default function Wichtiges() {
           </h3>
           <ul>
             <li>Servicepersonal pro Person / Stunde 35,00 Euro</li>
-            <li>Küchenpersonal pro Person / Stunde 35,50 Euro</li>
+            <li>Küchenpersonal pro Person / Stunde 40,00 Euro</li>
           </ul>
           <hr className="my-2" />{" "}
           <h3>
