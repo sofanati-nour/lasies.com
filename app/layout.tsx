@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { CSPostHogProvider } from './providers'
 
 const inter = Inter({ subsets: ["latin"] });
 const merriweather = Merriweather({
@@ -58,6 +59,7 @@ export default function RootLayout({
           id="json-ld"
         />
       </head>
+      <CSPostHogProvider>
       <body
         className={`${inter.className} ${merriweather.className} container mx-auto`}
       >
@@ -116,6 +118,7 @@ export default function RootLayout({
         </footer>
         <Analytics />
       </body>
+      </CSPostHogProvider>
       <GoogleAnalytics gaId="G-7SFQN95E17" />
     </html>
   );
