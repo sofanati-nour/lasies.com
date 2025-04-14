@@ -3,14 +3,13 @@ import Image, { StaticImageData } from "next/image";
 import { SendContactRequest } from "./actions";
 import Contact from "@/components/Contact";
 import HeaderThing from "@/components/HeaderThing";
-import welcomeImage1 from "@/app/images/welcome_img1.jpg";
-import welcomeImage2 from "@/app/images/welcome_img2.jpg";
-import welcomeImage3 from "@/app/images/welcome_img3.jpg";
+import pizza from "@/app/images/pizzaman.jpeg";
 export default function Home() {
   return (
     <main>
       <Carousel />
-       <Intro /> 
+      <PizzaSection />
+      <Intro />
       <Menu />
       <Services />
       <Contact handleSendEmail={SendContactRequest} />
@@ -60,6 +59,44 @@ function Intro() {
         </div>
       </section>
     </>
+  );
+}
+
+function PizzaSection() {
+  return (
+    <section className="bg-[#f8f5ec] pb-8 pt-4">
+      <HeaderThing
+        title="Steinofen-Pizza"
+        subtitle="Frisch. Heiß. Direkt vor Ort."
+        isNew={true}
+      />
+      <div className="flex flex-col md:flex-row px-4 items-center gap-10 relative justify-center gap-x-10">
+        <Image
+          src={pizza}
+          alt="Pizza Chef with fresh pizza"
+          width={380}
+          height={380}
+          className="hidden lg:block aspect-square h-[250px] w-[250px] lg:h-[380px] lg:w-[380px] rounded-full object-cover shadow-inner"
+        />
+        <div className="prose">
+          <h2>Mach dein Event zum echten Pizza-Highlight!</h2>
+          <p>Du planst ein Fest, eine Firmenfeier oder ein Event?</p>
+          <p>
+            Wir bringen den <strong>Steinofen direkt zu dir</strong> und zaubern
+            vor den Augen deiner Gäste knusprige, duftende Pizzen – wie aus
+            Italien!
+          </p>
+          <h3>Unser Party-Angebot für dich:</h3>
+          <ul className="space-y-2">
+            <li>✅ Klassisch: Margherita, Salami, Prosciutto</li>
+            <li>✅ Vegetarisch: Grillgemüse, Pilze, Rucola</li>
+            <li>
+              ✅ Spezial: BBQ Chicken, Thunfisch, Schafskäse & vieles mehr!
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -294,7 +331,7 @@ function Services() {
           <div className="mx-auto flex flex-col text-white prose text-center prose-invert">
             <h2>Rundum-Betreuung für Veranstaltungen, Partys und Events</h2>
             <p>
-              „Feiern wo und wann Sie möchten“ – diesen Satz hat sich unser
+              "Feiern wo und wann Sie möchten" – diesen Satz hat sich unser
               Partyservice zum Motto gemacht. Wir organisieren für Sie:
             </p>
             <div className="flex flex-col sm:flex-row justify-between">

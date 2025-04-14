@@ -6,12 +6,14 @@ export default function HeaderThing({
   className,
   type = "default",
   textAlignment = "center",
+  isNew,
 }: {
   title: string;
   subtitle: string;
   className?: string;
   type?: "default" | "small";
   textAlignment?: "center" | "left" | "right";
+  isNew?: boolean;
 }) {
   return (
     <div className={cn("flex justify-center items-center py-5 ", className)}>
@@ -22,6 +24,11 @@ export default function HeaderThing({
           "text-right": textAlignment == "right",
         })}
       >
+        {isNew === true && (
+          <span className=" bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-sans">
+            Neulich bei uns!!
+          </span>
+        )}
         <Image
           src={"/title_bg_green.webp"}
           alt="hero"

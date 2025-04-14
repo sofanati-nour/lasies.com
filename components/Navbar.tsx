@@ -1,6 +1,5 @@
 "use client";
 import { cn } from "@/libs/utils";
-// Navigation Bar
 
 import { HomeIcon, Instagram, Mail, Phone } from "lucide-react";
 import Image from "next/image";
@@ -51,10 +50,13 @@ function LgNavbar() {
           Wichtiges & Wissenswertes
         </Link>
         <Link
-          className="border-r  border-[#4d4f3f] px-6 text-[#4d4f3f]"
-          href={"/"}
+          className="border-r  border-[#4d4f3f] px-6 text-[#4d4f3f] relative"
+          href={"/tagesessen"}
         >
-          Blog
+          Tagesessen{" "}
+          <span className="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full ml-2">
+            Neu!
+          </span>
         </Link>
         <Link
           className=" px-6 text-[#4d4f3f]"
@@ -102,10 +104,13 @@ function LgNavbar() {
           Wichtiges & Wissenswertes
         </Link>
         <Link
-          className="border-r  border-[#4d4f3f] px-6 text-[#4d4f3f]"
-          href={"/"}
+          className="border-r  border-[#4d4f3f] px-6 text-[#4d4f3f] relative"
+          href={"/tagesessen"}
         >
-          Blog
+          Tagesessen{" "}
+          <span className="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full ml-2">
+            Neu!
+          </span>
         </Link>
         <Link
           className=" px-6 text-[#4d4f3f]"
@@ -251,10 +256,13 @@ function SmNavbar() {
             </Link>
             <Link
               className="border-b border-[#4d4f3f] px-6 text-[#4d4f3f] py-4"
-              href={"/"}
+              href={"/tagesessen"}
               onClick={() => setIsMenuOpen(false)}
             >
-              Blog
+              Tagesessen{" "}
+              <span className="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full ml-2">
+                Neu!
+              </span>
             </Link>
             <Link
               className="border-b border-[#4d4f3f] px-6 text-[#4d4f3f] py-4"
