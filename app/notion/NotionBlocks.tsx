@@ -6,7 +6,27 @@ interface NotionContent {
 
 import { NotionBlockContent } from "./NotionBlockContent";
 
-export function NotionBlocks({ blocks }: { blocks: NotionContent[] | null }) {
+// : {
+//   title: [string[]];
+//   type: string;
+//   id: string;
+//   properties: {
+//       [key: string]: [string[]];
+//   };
+// }[]
+
+export function NotionBlocks({
+  blocks,
+}: {
+  blocks: {
+    title: [string[]];
+    type: string;
+    id: string;
+    properties: {
+      [key: string]: [string[]];
+    };
+  }[];
+}) {
   const renderBlocks = () => {
     if (blocks === null) {
       return null;

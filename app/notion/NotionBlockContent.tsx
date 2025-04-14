@@ -1,4 +1,4 @@
-import { NotionContent } from "@/app/data/types";
+// import { NotionContent } from "@/app/data/types";
 // import TextLink from "@/components/links/TextLink";
 // import NormalText from "@/components/text/NormalText";
 // import Heading2 from "../text/Heading2";
@@ -30,7 +30,16 @@ const Heading4 = ({ children }: { children: React.ReactNode }) => {
   return <h4>{children}</h4>;
 };
 
-export function NotionBlockContent({ c: block }: { c: NotionContent }) {
+type NotionBlock = {
+  title: [string[]];
+  type: string;
+  id: string;
+  properties: {
+    [key: string]: [string[]];
+  };
+};
+
+export function NotionBlockContent({ c: block }: { c: NotionBlock }) {
   const textSegments = block.title;
   if (!Array.isArray(textSegments)) {
     return <>{textSegments}</>;
@@ -46,6 +55,8 @@ export function NotionBlockContent({ c: block }: { c: NotionContent }) {
       if (formatting === undefined || formatting.length === 0) {
         return text;
       }
+
+      // @ts-expect-error type is not correct
       const [format, formatValue] = formatting[0];
 
       switch (format) {
@@ -126,7 +137,7 @@ export function NotionBlockContent({ c: block }: { c: NotionContent }) {
         return <NormalText>{childContent}</NormalText>;
     }
   };
-
+  // @ts-expect-error type is not correct
   if (textSegments.length === 0) {
     return null;
   }

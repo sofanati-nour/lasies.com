@@ -331,8 +331,8 @@ function Services() {
           <div className="mx-auto flex flex-col text-white prose text-center prose-invert">
             <h2>Rundum-Betreuung für Veranstaltungen, Partys und Events</h2>
             <p>
-              "Feiern wo und wann Sie möchten" – diesen Satz hat sich unser
-              Partyservice zum Motto gemacht. Wir organisieren für Sie:
+              &quot;Feiern wo und wann Sie möchten&quot; – diesen Satz hat sich
+              unser Partyservice zum Motto gemacht. Wir organisieren für Sie:
             </p>
             <div className="flex flex-col sm:flex-row justify-between">
               <ul className="list-disc text-left text-sm space-y-1 text-white">

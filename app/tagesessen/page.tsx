@@ -13,13 +13,28 @@ export default async function Tagesessen() {
     "https://heliotrope-seahorse-337.notion.site/Tagesessen-1d142f09f98680eb84d7d5a80a48ed74?pvs=74"
   );
 
+  if (!data) {
+    return <div>No data found</div>;
+  }
+
+  if (!data.recordMap) {
+    return <div>No record map found</div>;
+  }
+
+  if (!data.recordMap.block) {
+    return <div>No block found</div>;
+  }
+
   const blocks = Object.values(data.recordMap.block).flatMap((block) => ({
     title: block.value.value.properties?.title,
     type: block.value.value.type,
     id: block.value.value.id,
     properties: block.value.value.properties,
   }));
-  console.log(JSON.stringify(blocks, null, 2));
+
+  if (blocks.length === 0) {
+    return <div>No blocks found</div>;
+  }
 
   return (
     <div className="bg-white">
