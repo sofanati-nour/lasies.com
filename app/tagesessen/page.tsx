@@ -2,17 +2,10 @@ import HeaderThing from "@/components/HeaderThing";
 
 export default async function Tagesessen() {
   return (
-    <div className="bg-white">
-      <HeaderThing title="Tagesessen" subtitle="Tagesessen" />
+    <div className="bg-white overflow-hidden">
+      <HeaderThing title="Tagesessen" subtitle="Mittagsessen 12:00-14:00 Uhr" />
       <div className="flex flex-col px-2 sm:px-4 items-center relative justify-center bg-white">
         <div className="prose max-w-full mx-auto w-full py-8">
-          <h1 className="text-2xl sm:text-3xl font-bold text-center mb-4">
-            Tagesessen
-          </h1>
-          <p className="text-center text-base sm:text-lg mb-6 sm:mb-8">
-            <strong>Mittagsessen 12:00-14:00 Uhr</strong>
-          </p>
-
           <h2 className="text-xl sm:text-2xl font-bold mt-8 mb-3 sm:mb-4">
             KW 16-2025
           </h2>
