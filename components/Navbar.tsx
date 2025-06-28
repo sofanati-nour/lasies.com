@@ -50,20 +50,18 @@ function LgNavbar() {
           Wichtiges & Wissenswertes
         </Link>
         <Link
-          className="border-r  border-[#4d4f3f] px-6 text-[#4d4f3f] relative"
-          href={"/tagesessen"}
-        >
-          Tagesessen{" "}
-          <span className="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full ml-2">
-            Neu!
-          </span>
-        </Link>
-        <Link
-          className=" px-6 text-[#4d4f3f]"
+          className="border-r border-[#4d4f3f] px-6 text-[#4d4f3f]"
           href={"/#kontakte"}
           title="Kontakte"
         >
           Kontakte
+        </Link>
+        <Link
+          className=" px-6 text-[#4d4f3f]"
+          href={"/impressum"}
+          title="Impressum"
+        >
+          Impressum
         </Link>
       </nav>
       <nav
@@ -104,20 +102,18 @@ function LgNavbar() {
           Wichtiges & Wissenswertes
         </Link>
         <Link
-          className="border-r  border-[#4d4f3f] px-6 text-[#4d4f3f] relative"
-          href={"/tagesessen"}
-        >
-          Tagesessen{" "}
-          <span className="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full ml-2">
-            Neu!
-          </span>
-        </Link>
-        <Link
-          className=" px-6 text-[#4d4f3f]"
+          className="border-r border-[#4d4f3f] px-6 text-[#4d4f3f]"
           href={"/#kontakte"}
           title="Kontakte"
         >
           Kontakte
+        </Link>
+        <Link
+          className=" px-6 text-[#4d4f3f]"
+          href={"/impressum"}
+          title="Impressum"
+        >
+          Impressum
         </Link>
       </nav>
       <header className="grid grid-cols-3 relative backdrop-blur text-[#f0ebdf]">
@@ -256,21 +252,19 @@ function SmNavbar() {
             </Link>
             <Link
               className="border-b border-[#4d4f3f] px-6 text-[#4d4f3f] py-4"
-              href={"/tagesessen"}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Tagesessen{" "}
-              <span className="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full ml-2">
-                Neu!
-              </span>
-            </Link>
-            <Link
-              className="border-b border-[#4d4f3f] px-6 text-[#4d4f3f] py-4"
               href={"/#kontakte"}
               title="Kontakte"
               onClick={() => setIsMenuOpen(false)}
             >
               Kontakte
+            </Link>
+            <Link
+              className="border-b border-[#4d4f3f] px-6 text-[#4d4f3f] py-4"
+              href={"/impressum"}
+              title="Impressum"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Impressum
             </Link>
           </nav>
         </div>

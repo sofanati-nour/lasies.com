@@ -52,5 +52,9 @@
       "core-js",
       "sharp"
     ]
-  }
+  },
+  "trustedDependencies": [
+    "core-js",
+    "unrs-resolver"
+  ]
 }
