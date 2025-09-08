@@ -70,12 +70,12 @@ const fingerfoodMenu: Menu = {
           price: 2.7,
           updatedPrice: 3.2,
         },
-        {
-          type: "MenuItem",
-          name: "Mini-Tortilla mit Hackfleisch und Käse gefüllt",
-          price: 2.7,
-          updatedPrice: 3.2,
-        },
+        //{
+        //  type: "MenuItem",
+        //  name: "Mini-Tortilla mit Hackfleisch und Käse gefüllt",
+        //  price: 2.7,
+        //  updatedPrice: 3.2,
+        //},
         {
           type: "MenuItem",
           name: "Sommer Röllchen (vegetarische Füllung, Fleisch Füllung, Geräucherte Lachs Füllung)",
