@@ -79,8 +79,8 @@ const fingerfoodMenu: Menu = {
         {
           type: "MenuItem",
           name: "Sommer Röllchen (vegetarische Füllung, Fleisch Füllung, Geräucherte Lachs Füllung)",
-          price: 2.7,
-          updatedPrice: 2.7,
+          price: 3.20,
+          updatedPrice: 3.20,
         },
         {
           type: "MenuItem",
