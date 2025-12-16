@@ -51,13 +51,13 @@ const fingerfoodMenu: Menu = {
       type: "MenuItem",
       name: "Dekorative Canapés",
       description:
-        "belegt und garniert mit: zartem Räucherlachs, geräuchertes Forellenfilet, Lachsschinken, reifem Tortenbrie, Schweinemedaillons mit Früchten ...",
+        "belegt und garniert mit: zartem Räucherlachs, geräuchertes Forellenfilet, reifem Tortenbrie mit Früchten ...",
       price: 2.6,
     },
     {
       type: "MenuItem",
       name: "Halbe belegte Brötchen",
-      description: "appetitlich belegt mit: Aufschnitt, Käse und Schinken ...",
+      description: "appetitlich belegt mit: Aufschnitt, Käse und Schinken (Pute)...",
       price: 2.5,
     },
     {
@@ -121,13 +121,6 @@ const fingerfoodMenu: Menu = {
         },
         {
           type: "MenuItem",
-          name: "Kräftiges Bauernbrot mit Schweinemett und Zwiebeln",
-          price: 2.1,
-          updatedPrice: 2.7,
-          unit: "Port.",
-        },
-        {
-          type: "MenuItem",
           name: "Blätterteigstangen mit Tomate und Käse",
           price: 1.4,
           updatedPrice: 1.8,
@@ -144,22 +137,6 @@ const fingerfoodMenu: Menu = {
         {
           type: "MenuItem",
           name: "Käsespieße mit Früchten",
-          description: "(2 Stück)",
-          price: 1.9,
-          updatedPrice: 2.2,
-          unit: "Port.",
-        },
-        {
-          type: "MenuItem",
-          name: "Melone-Schinkenspieße",
-          description: "(2 Stück)",
-          price: 1.9,
-          updatedPrice: 2.2,
-          unit: "Port.",
-        },
-        {
-          type: "MenuItem",
-          name: "Kabanossi und Chorizo-Spieße",
           description: "(2 Stück)",
           price: 1.9,
           updatedPrice: 2.2,
@@ -206,13 +183,6 @@ const fingerfoodMenu: Menu = {
         },
         {
           type: "MenuItem",
-          name: "Törtchen mit Ziegenfrischkäse und luftgetrocknetem Schinken",
-          price: 2.9,
-          updatedPrice: 3.1,
-          unit: "Stück",
-        },
-        {
-          type: "MenuItem",
           name: "Italienische Bruschette mit nativem Olivenöl und Tomaten",
           price: 1.5,
           updatedPrice: 1.6,
@@ -234,7 +204,7 @@ const fingerfoodMenu: Menu = {
         },
         {
           type: "MenuItem",
-          name: "Schinkenhörnchen",
+          name: "Putenschinken-Hörnchen",
           price: 1.8,
           updatedPrice: 2.1,
           unit: "Stück",
@@ -269,14 +239,7 @@ const fingerfoodMenu: Menu = {
         },
         {
           type: "MenuItem",
-          name: "Pumpernickel mit Schinken-Walnusscreme",
-          price: 1.8,
-          updatedPrice: 1.9,
-          unit: "Stück",
-        },
-        {
-          type: "MenuItem",
-          name: "Blätterteigwirbel mit Schinken, Käse u. Röstzwiebeln",
+          name: "Blätterteigwirbel mit Putenschinken, Käse u. Röstzwiebeln",
           price: 1.8,
           updatedPrice: 1.9,
           unit: "Stück",
@@ -287,13 +250,6 @@ const fingerfoodMenu: Menu = {
       type: "MenuSection",
       name: "Warmes aus der Hand",
       items: [
-        {
-          type: "MenuItem",
-          name: "Nürnbergerle im Schlafrock",
-          price: 1.8,
-          updatedPrice: 2.1,
-          unit: "Stück",
-        },
         {
           type: "MenuItem",
           name: "Hackfleischtorte",
@@ -351,7 +307,7 @@ const fingerfoodMenu: Menu = {
         },
         {
           type: "MenuItem",
-          name: "Minipizza (Salami, Margherita, oder Vegetarisch)",
+          name: "Minipizza (Margherita oder Vegetarisch)",
           price: 1.8,
           updatedPrice: 2.1,
           unit: "Stück",
@@ -414,21 +370,6 @@ const fingerfoodMenu: Menu = {
           price: 1.9,
           updatedPrice: 2.3,
           unit: "Port.",
-        },
-        {
-          type: "MenuItem",
-          name: 'Schinkenpäckchen "Maoni" süß-scharf',
-          price: 1.7,
-          updatedPrice: 1.7,
-          unit: "Stück",
-        },
-        {
-          type: "MenuItem",
-          name: "Minihaxen vom Schwein",
-          description: "(120 g)",
-          price: 4.6,
-          updatedPrice: 5.3,
-          unit: "Stück",
         },
       ],
     },
@@ -575,7 +516,7 @@ const zumKominierenMenu: Menu = {
         },
         {
           type: "MenuItem",
-          name: "Rinderrouladen nach Art des Hauses mit kräftiger Rotweinsauce und Kartoffelknödel",
+          name: "Rinderrouladen nach Art des Hauses mit kräftiger Bratensauce und Kartoffelknödel",
           price: 14.6,
           unit: "Pers.",
         },
@@ -669,24 +610,6 @@ const zumKominierenMenu: Menu = {
         },
         {
           type: "MenuItem",
-          name: "Schweinefilet im Speckmantel, auf Blattspinat mit Schwenkartoffeln",
-          price: 15.8,
-          unit: "Pers.",
-        },
-        {
-          type: "MenuItem",
-          name: "Schweinemedaillons in Weinsauce mit Buttergemüse",
-          price: 9.8,
-          unit: "Pers.",
-        },
-        {
-          type: "MenuItem",
-          name: "Schweinefilet Elsässer Art, mit Sauerkraut und Kartoffelstücke",
-          price: 8.8,
-          unit: "Pers.",
-        },
-        {
-          type: "MenuItem",
           name: "Zwiebelrostbraten, auf Bratensoße mit Kartoffelpüree",
           price: 9.8,
           unit: "Pers.",
@@ -699,8 +622,8 @@ const zumKominierenMenu: Menu = {
         },
         {
           type: "MenuItem",
-          name: "Gemischter Braten, mit heller Rahmsauce und buntem Reis",
-          price: 8.2,
+          name: "Rinder Braten, mit heller Rahmsauce und buntem Reis",
+          price: 9.8,
           unit: "Pers.",
         },
         {
@@ -711,20 +634,8 @@ const zumKominierenMenu: Menu = {
         },
         {
           type: "MenuItem",
-          name: "Schweinelende, mit Kräuter-Frischkäsefüllung und Kartoffelrösti",
-          price: 12.4,
-          unit: "Pers.",
-        },
-        {
-          type: "MenuItem",
-          name: "Rinderschmorbraten, mit Rotwein-Schalotten-Sauce und Kartoffelgratin",
+          name: "Rinderschmorbraten, mit Bratensauce und Kartoffelgratin",
           price: 13.9,
-          unit: "Pers.",
-        },
-        {
-          type: "MenuItem",
-          name: "Schweinefilet Mailänder Art, mit Zwiebelgemüse und Gartenkräuter-Kartoffeln",
-          price: 8.5,
           unit: "Pers.",
         },
         {
@@ -737,12 +648,6 @@ const zumKominierenMenu: Menu = {
           type: "MenuItem",
           name: "Buntes Geflügelragout, mit Safran-Kartoffeln",
           price: 8.6,
-          unit: "Pers.",
-        },
-        {
-          type: "MenuItem",
-          name: "Schaschliktopf, auf würziger Sauce mit Gemüsereis",
-          price: 8.9,
           unit: "Pers.",
         },
       ],
@@ -812,14 +717,14 @@ const menu: Menu[] = [
         type: "MenuItem",
         name: "Hirtenplatte",
         description:
-          "Rustikale Auswahl von rohen Schinken, Pfefferbeißern, Landjäger, Minicabanossi und deftigen Käsespezialitäten, Essiggemüse, Bauernbrot",
+          "Rustikale Auswahl von rohen Putenschinken, deftigen Käsespezialitäten, Essiggemüse, und Bauernbrot",
         price: 12,
       },
       {
         type: "MenuItem",
         name: "Fischplatte",
         description:
-          "Variation von Räucherlachs und Graved Lachs, geräuchertes Forellenfilet, Cocktail von Grönlandgarnelen, Lachstatarbällchen, Stangenweißbrot",
+          "Variation von Räucherlachs und Graved Lachs, geräuchertes Forellenfilet, Cocktail von Grönlandgarnelen, Makrelenfilet mit Pfeffer, Stangenweißbrot",
         price: 17,
       },
       {
@@ -833,7 +738,7 @@ const menu: Menu[] = [
         type: "MenuItem",
         name: "Gourmetplatte Constantin (220g pro Pers., ab 15 Personen.)",
         description:
-          "Zarter Räucherlachs mit Sahnemeerrettich, Crevettencocktail, delikate Entenbrust, Filetmedaillons bunt garniert, rosa gebratenes Roastbeef Sauce Remoulade, luftgetrockneter Schinken, französischer Camembert mit Früchten Bunter Brotkorb",
+          "Zarter Räucherlachs mit Sahnemeerrettich, Crevettencocktail, delikate Entenbrust, Filetmedaillons bunt garniert, rosa gebratenes Roastbeef Sauce Remoulade, luftgetrockneter Putenschinken, französischer Camembert mit Früchten Bunter Brotkorb",
         price: 27,
       },
     ],
@@ -893,7 +798,7 @@ const menu: Menu[] = [
           },
           {
             type: "MenuItem",
-            name: "Eingelegte Schweinenackensteaks",
+            name: "Zartes Rindersteak",
             price: 34.5,
           },
           {
@@ -982,15 +887,15 @@ const menu: Menu[] = [
         name: "Hauptspeise",
         priority: 1,
         items: [
-          { type: "MenuItem", name: "Schinkenkrustenbraten", price: 34.8 },
+          { type: "MenuItem", name: "Putensteak unter Zwiebel-Kräuterhaube", price: 34.8 },
           {
             type: "MenuItem",
             name: "Zartes Rinderschmorsteak „Esterhazy“",
             price: 34.8,
           },
-          { type: "MenuItem", name: "Kräftige Rotweinsauce", price: 34.8 },
+          { type: "MenuItem", name: "Kräftige Bratensauce", price: 34.8 },
           { type: "MenuItem", name: "Kartoffelknödel", price: 34.8 },
-          { type: "MenuItem", name: "Hausgemachte Spätzle", price: 34.8 },
+          { type: "MenuItem", name: "Schwäbische Eierspätzle", price: 34.8 },
           {
             type: "MenuItem",
             name: "Kartoffel-Gemüseauflauf (vegetarisch)",
@@ -1019,7 +924,7 @@ const menu: Menu[] = [
     ],
   },
   {
-    name: "Salatjungfer Buffet",
+    name: "Vegetarisches Buffet",
     minimumOrder: {
       total: 20,
       perType: 34.8,
@@ -1031,11 +936,6 @@ const menu: Menu[] = [
         name: "Vorspeise Und Salate",
         priority: 0,
         items: [
-          {
-            type: "MenuItem",
-            name: "Zucchiniröllchen mit Frischkäse und Feige",
-            price: 34.8,
-          },
           {
             type: "MenuItem",
             name: "Zucchiniröllchen mit Frischkäse und Feigen gefüllt",
@@ -1161,7 +1061,7 @@ const menu: Menu[] = [
           { type: "MenuItem", name: "Vitello tonnato", price: 41.3 },
           {
             type: "MenuItem",
-            name: "Honigmelone mit luftgetrocknetem Schinken",
+            name: "Honigmelone mit luftgetrocknetem Putenschinken",
             price: 41.3,
           },
           { type: "MenuItem", name: "Tomate „Caprese“", price: 41.3 },
@@ -1190,7 +1090,7 @@ const menu: Menu[] = [
             price: 41.3,
           },
           { type: "MenuItem", name: "Lammbeinscheiben", price: 41.3 },
-          { type: "MenuItem", name: "Kräftige Rotweinsauce", price: 41.3 },
+          { type: "MenuItem", name: "Kräftige Bratensauce", price: 41.3 },
           { type: "MenuItem", name: "Madeirasauce", price: 41.3 },
           { type: "MenuItem", name: "Bunte Tagliatelle", price: 41.3 },
           { type: "MenuItem", name: "Rosmarinkartoffeln", price: 41.3 },
@@ -1257,7 +1157,7 @@ const menu: Menu[] = [
           { type: "MenuItem", name: "Anti pasti Spieße mit", price: 48.3 },
           {
             type: "MenuItem",
-            name: "Tomate-Mozzarella, Melone-Schinken, Hirtenkäse und Oliven",
+            name: "Tomate-Mozzarella, Melone-Putenschinken, Hirtenkäse und Oliven",
             price: 48.3,
           },
           {
@@ -1307,17 +1207,12 @@ const menu: Menu[] = [
       },
       {
         type: "MenuSection",
-        name: "Hauptspeise",
+        name: "Frisch vom Grill und aus der Pfanne",
         priority: 1,
         items: [
           {
             type: "MenuItem",
-            name: "Frisch vom Grill und aus der Pfanne",
-            price: 48.3,
-          },
-          {
-            type: "MenuItem",
-            name: "Medaillons vom Schweinefilet",
+            name: "Gebratene Putensteak",
             price: 48.3,
           },
           {
@@ -1325,7 +1220,7 @@ const menu: Menu[] = [
             name: "Kleine Rostbraten, Röstzwiebel",
             price: 48.3,
           },
-          { type: "MenuItem", name: "Kräftige Rotweinsauce", price: 48.3 },
+          { type: "MenuItem", name: "Kräftige Bratensauce", price: 48.3 },
           { type: "MenuItem", name: "Helle Marsalasauce", price: 48.3 },
           {
             type: "MenuItem",
@@ -1487,11 +1382,6 @@ const menu: Menu[] = [
           },
           {
             type: "MenuItem",
-            name: "Schinkenröllchen mit Spargelspitzen",
-            price: 43.6,
-          },
-          {
-            type: "MenuItem",
             name: "Gebratene Pilze in Balsamico Dressing",
             price: 43.6,
           },
@@ -1543,7 +1433,7 @@ const menu: Menu[] = [
           { type: "MenuItem", name: "Apfel-Currysauce", price: 43.6 },
           {
             type: "MenuItem",
-            name: "Medaillons vom Schweinefilet unter der Zwiebel-Kräuterhaube",
+            name: "Rinderbraten",
             price: 43.6,
           },
           { type: "MenuItem", name: "Kräftige Bratensauce", price: 43.6 },

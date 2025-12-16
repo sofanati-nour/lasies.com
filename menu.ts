@@ -17,7 +17,6 @@ export const LasiesMenu = [
           "Blätterteigstangen mit Tomate und Käse",
           "Gemüsesticks mit Kräuterdip (40g pro Port.)",
           "Käsespieße mit Früchten (2 Stück)",
-          "Melone-Schinkenspieße (2 Stück)",
           "Cabanossi und Chorizo-Spieße (2 Stück)",
           "Pilze in Balsamico Spieße (2 Stück)",
           "Tomaten-Mozzarellaspieße (2 Stück)",
@@ -141,7 +140,7 @@ export const LasiesMenu = [
         name: "Hauptspeise",
         items: [
           "Auswahl von verschiedenen Würstchen",
-          "Eingelegte Schweinenackensteaks",
+          "Zartes Rindersteak",
           "Marinierte Hähnchenbrustfilets „sweet chilli“",
           "Frische Sepia in Kräuter-Olivenöl",
           "Halloumi-Grillkäse",
@@ -179,11 +178,11 @@ export const LasiesMenu = [
       {
         name: "Hauptspeise",
         items: [
-          "Schinkenkrustenbraten",
+          "Putensteak unter Zwiebel-Kräuterhaube",
           "Zartes Rinderschmorsteak „Esterhazy“",
-          "Kräftige Rotweinsauce",
+          "Kräftige Bratensauce",
           "Kartoffelknödel",
-          "Hausgemachte Spätzle",
+          "Schwäbische Eierspätzle",
           "Kartoffel-Gemüseauflauf (vegetarisch)",
           "Rustikales Gemüse",
         ],
@@ -198,7 +197,7 @@ export const LasiesMenu = [
     ],
   },
   {
-    name: "Salatjungfer Buffet",
+    name: "Vegetarisches Buffet",
     terms: "ab 20 Personen",
     price: "34,80",
     buffets: [
