@@ -916,7 +916,7 @@ const menu: Menu[] = [
           },
           {
             type: "MenuItem",
-            name: "Sahnequark mit Hägemark und frischen Früchten",
+            name: "Himbeertraum",
             price: 34.8,
           },
         ],
@@ -992,7 +992,7 @@ const menu: Menu[] = [
           },
           {
             type: "MenuItem",
-            name: "Brokkoli-Nussecke und Quinoa-Erbsenbratling",
+            name: "Vegetarische Frikadellen",
             price: 34.8,
           },
           {
@@ -1177,17 +1177,7 @@ const menu: Menu[] = [
           },
           {
             type: "MenuItem",
-            name: "Festplatte „…“ mit leckeren Tunken",
-            price: 48.3,
-          },
-          {
-            type: "MenuItem",
             name: "Truthahnröllchen verschieden gefüllt,",
-            price: 48.3,
-          },
-          {
-            type: "MenuItem",
-            name: "Auswahl von Terrinen und Pasteten",
             price: 48.3,
           },
           {
