@@ -57,7 +57,8 @@ const fingerfoodMenu: Menu = {
     {
       type: "MenuItem",
       name: "Halbe belegte Brötchen",
-      description: "appetitlich belegt mit: Aufschnitt, Käse und Schinken (Pute)...",
+      description:
+        "appetitlich belegt mit: Aufschnitt, Käse und Schinken (Pute)...",
       price: 2.5,
     },
     {
@@ -79,8 +80,8 @@ const fingerfoodMenu: Menu = {
         {
           type: "MenuItem",
           name: "Sommer Röllchen (vegetarische Füllung, Fleisch Füllung, Geräucherte Lachs Füllung)",
-          price: 3.20,
-          updatedPrice: 3.20,
+          price: 3.2,
+          updatedPrice: 3.2,
         },
         {
           type: "MenuItem",
@@ -390,7 +391,7 @@ const fingerfoodMenu: Menu = {
           name: "Sahnequark mit Hagemark und Fruchten",
           description: "(m Glas)",
           price: 1.8,
-          updatedPrice: 2.3
+          updatedPrice: 2.3,
         },
         {
           type: "MenuItem",
@@ -781,8 +782,12 @@ const menu: Menu[] = [
             price: 34.5,
           },
           { type: "MenuItem", name: "Paprika-Maissalat", price: 34.5 },
-          { type: "MenuItem", name: "Bunte Blattsalate", price: 34.5 },
-          { type: "MenuItem", name: "Zwei Dressings", price: 34.5 },
+          {
+            type: "MenuItem",
+            name: "Bunte Blattsalate",
+            description: "mit zwei Dressings",
+            price: 34.5,
+          },
           { type: "MenuItem", name: "Großer Brotkorb", price: 34.5 },
         ],
       },
@@ -856,9 +861,9 @@ const menu: Menu[] = [
           {
             type: "MenuItem",
             name: "Geräucherte Forellen- und Makrelenfilets",
+            description: "mit Sahnemeerrettich",
             price: 34.8,
           },
-          { type: "MenuItem", name: "Sahnemeerrettich", price: 34.8 },
           {
             type: "MenuItem",
             name: "Harzer Roller mit Essig, Öl und Zwiebeln",
@@ -887,13 +892,17 @@ const menu: Menu[] = [
         name: "Hauptspeise",
         priority: 1,
         items: [
-          { type: "MenuItem", name: "Putensteak unter Zwiebel-Kräuterhaube", price: 34.8 },
+          {
+            type: "MenuItem",
+            name: "Putensteak unter Zwiebel-Kräuterhaube",
+            price: 34.8,
+          },
           {
             type: "MenuItem",
             name: "Zartes Rinderschmorsteak „Esterhazy“",
             price: 34.8,
+            description: "mit kräftiger Bratensauce",
           },
-          { type: "MenuItem", name: "Kräftige Bratensauce", price: 34.8 },
           { type: "MenuItem", name: "Kartoffelknödel", price: 34.8 },
           { type: "MenuItem", name: "Schwäbische Eierspätzle", price: 34.8 },
           {
@@ -975,8 +984,12 @@ const menu: Menu[] = [
             name: "Schwäbischer Kartoffelsalat",
             price: 34.8,
           },
-          { type: "MenuItem", name: "Gartenfrische Blattsalate", price: 34.8 },
-          { type: "MenuItem", name: "Verschiedene Dressings", price: 34.8 },
+          {
+            type: "MenuItem",
+            name: "Gartenfrische Blattsalate",
+            description: "mit verschiedenen Dressings",
+            price: 34.8,
+          },
           { type: "MenuItem", name: "Selbstgebackenes Brot", price: 34.8 },
         ],
       },
@@ -1003,14 +1016,10 @@ const menu: Menu[] = [
           {
             type: "MenuItem",
             name: "Gemüsemaultaschen auf Blattspinat",
+            description:
+              "mit Tomaten-Basilikum-Concassée und heller Käse-Kräutersauce",
             price: 34.8,
           },
-          {
-            type: "MenuItem",
-            name: "Tomaten-Basilikum-Concassée",
-            price: 34.8,
-          },
-          { type: "MenuItem", name: "Helle Käse-Kräutersauce", price: 34.8 },
         ],
       },
       {
@@ -1089,9 +1098,12 @@ const menu: Menu[] = [
             name: "Kleine Steaks aus der Rinderhüfte",
             price: 41.3,
           },
-          { type: "MenuItem", name: "Lammbeinscheiben", price: 41.3 },
-          { type: "MenuItem", name: "Kräftige Bratensauce", price: 41.3 },
-          { type: "MenuItem", name: "Madeirasauce", price: 41.3 },
+          {
+            type: "MenuItem",
+            name: "Lammbeinscheiben",
+            description: "dazu kräftige Bratensauce und Madeirasauce",
+            price: 41.3,
+          },
           { type: "MenuItem", name: "Bunte Tagliatelle", price: 41.3 },
           { type: "MenuItem", name: "Rosmarinkartoffeln", price: 41.3 },
           {
@@ -1142,11 +1154,7 @@ const menu: Menu[] = [
           {
             type: "MenuItem",
             name: "Variation aus Fluss und Meer",
-            price: 48.3,
-          },
-          {
-            type: "MenuItem",
-            name: "Sahnemeerrettich, Senf-Orangensauce",
+            description: "mit Sahnemeerrettich, Senf-Orangensauce",
             price: 48.3,
           },
           {
@@ -1154,10 +1162,11 @@ const menu: Menu[] = [
             name: "Gegrillte Gemüse eingelegt in nativem Olivenöl",
             price: 48.3,
           },
-          { type: "MenuItem", name: "Anti pasti Spieße mit", price: 48.3 },
           {
             type: "MenuItem",
-            name: "Tomate-Mozzarella, Melone-Putenschinken, Hirtenkäse und Oliven",
+            name: "Anti pasti Spieße",
+            description:
+              "Tomate-Mozzarella, Melone-Putenschinken, Hirtenkäse und Oliven",
             price: 48.3,
           },
           {
@@ -1189,9 +1198,9 @@ const menu: Menu[] = [
           {
             type: "MenuItem",
             name: "Bunte Blattsalate der Saison",
+            description: "mit zwei Dressings",
             price: 48.3,
           },
-          { type: "MenuItem", name: "Zwei Dressings", price: 48.3 },
           { type: "MenuItem", name: "Selbstgebackenes Brot", price: 48.3 },
         ],
       },
@@ -1208,16 +1217,15 @@ const menu: Menu[] = [
           {
             type: "MenuItem",
             name: "Kleine Rostbraten, Röstzwiebel",
+            description: "dazu kräftige Bratensauce und helle Marsalasauce",
             price: 48.3,
           },
-          { type: "MenuItem", name: "Kräftige Bratensauce", price: 48.3 },
-          { type: "MenuItem", name: "Helle Marsalasauce", price: 48.3 },
           {
             type: "MenuItem",
             name: "Claress-Fischfilet, frisch gebraten",
+            description: "mit Fischsamtsauce",
             price: 48.3,
           },
-          { type: "MenuItem", name: "Fischsamtsauce", price: 48.3 },
           { type: "MenuItem", name: "Schwäbische Eierspätzle", price: 48.3 },
           { type: "MenuItem", name: "Kartoffel-Lauchgratin", price: 48.3 },
           { type: "MenuItem", name: "Reismosaik", price: 48.3 },
@@ -1272,10 +1280,10 @@ const menu: Menu[] = [
           },
           {
             type: "MenuItem",
-            name: "Sahnemeerrettich, Preiselbeersahne",
+            name: "Delikate Fischterrine",
+            description: "dazu Sahnemeerrettich, Preiselbeersahne",
             price: 42.6,
           },
-          { type: "MenuItem", name: "Delikate Fischterrine", price: 42.6 },
           {
             type: "MenuItem",
             name: "Yufkaröllchen mit Spinat-Hirtenkäsefüllung",
@@ -1307,8 +1315,12 @@ const menu: Menu[] = [
         name: "Hauptspeise",
         priority: 1,
         items: [
-          { type: "MenuItem", name: "Zanderfilet gebraten", price: 42.6 },
-          { type: "MenuItem", name: "Fischsamtsauce", price: 42.6 },
+          {
+            type: "MenuItem",
+            name: "Zanderfilet gebraten",
+            description: "mit Fischsamtsauce",
+            price: 42.6,
+          },
           { type: "MenuItem", name: "Lammrücken „provencale“", price: 42.6 },
           {
             type: "MenuItem",
@@ -1405,9 +1417,9 @@ const menu: Menu[] = [
           {
             type: "MenuItem",
             name: "Frische Blattsalate der Saison",
+            description: "mit zwei Dressings",
             price: 43.6,
           },
-          { type: "MenuItem", name: "Zwei Dressings", price: 43.6 },
           { type: "MenuItem", name: "Gemischter Brotkorb", price: 43.6 },
         ],
       },
@@ -1418,15 +1430,15 @@ const menu: Menu[] = [
           {
             type: "MenuItem",
             name: "Putensteak mit gebratenen Ananasscheiben",
+            description: "mit Apfel-Currysauce",
             price: 43.6,
           },
-          { type: "MenuItem", name: "Apfel-Currysauce", price: 43.6 },
           {
             type: "MenuItem",
             name: "Rinderbraten",
+            description: "mit kräftiger Bratensauce",
             price: 43.6,
           },
-          { type: "MenuItem", name: "Kräftige Bratensauce", price: 43.6 },
           { type: "MenuItem", name: "Basmatireis", price: 43.6 },
           { type: "MenuItem", name: "Kartoffelrösti", price: 43.6 },
           {
@@ -1486,7 +1498,7 @@ export default function Page() {
                 "border border-[#4d4f3f67] px-4 py-2 md:mt-2 rounded-lg min-w-fit first:snap-start last:snap-end snap-center first:ml-8",
                 currentMenuIndex === idx
                   ? "bg-yellow-500 font-bold"
-                  : "bg-white"
+                  : "bg-white",
               )}
               onClick={() => setCurrentMenuIndex(idx)}
             >
@@ -1514,55 +1526,35 @@ export default function Page() {
                 {Menus[currentMenuIndex].minimumOrder.unit} pro Port.
               </p>
             )}
-          <div className="md:absolute mt-5 md:mt-0 md:top-0 md:right-5 bottom-0 text-yellow-600 text-lg my-auto flex items-center justify-center">
-            {Menus[currentMenuIndex].minimumOrder.buffetPrice
-              ? `${currencyFormatter.format(
-                  Menus[currentMenuIndex].minimumOrder.buffetPrice
-                )} pro Person`
-              : ""}
-          </div>
         </div>
         <div className="grid lg:grid-cols-2 gap-x-16 gap-y-4 lg:w-4/5 mx-auto mt-4">
-          {Menus[currentMenuIndex].items
-            
-            .map((item, idx) =>
-              item.type === "MenuItem" ? (
-                <MenuItemComponent
-                  item={item}
-                  key={idx + item.name}
-                  showPrice={
-                    Menus[currentMenuIndex].minimumOrder?.buffetPrice ===
-                      undefined ||
-                    Menus[currentMenuIndex].minimumOrder?.buffetPrice === 0
-                  }
-                />
-              ) : (
-                <div
-                  key={(item satisfies MenuSection).name + idx}
-                  className=" space-y-4 grid lg:grid-cols-2 lg:col-span-2 gap-x-16 gap-y-4"
-                >
-                  <div className=" lg:col-span-2 mt-2">
-                    <h3 className="font-bold text-xl border-b border-[#4d4f3f]">
-                      {(item satisfies MenuSection).name}
-                    </h3>
-                  </div>
-                  {(item.items as MenuItem[])
-                    
-                    .map((subItem, idxx) => (
-                      <MenuItemComponent
-                        item={subItem}
-                        key={idxx + subItem.name}
-                        showPrice={
-                          Menus[currentMenuIndex].minimumOrder?.buffetPrice ===
-                            undefined ||
-                          Menus[currentMenuIndex].minimumOrder?.buffetPrice ===
-                            0
-                        }
-                      />
-                    ))}
+          {Menus[currentMenuIndex].items.map((item, idx) =>
+            item.type === "MenuItem" ? (
+              <MenuItemComponent
+                item={item}
+                key={idx + item.name}
+                showPrice={currentMenuIndex === 0}
+              />
+            ) : (
+              <div
+                key={(item satisfies MenuSection).name + idx}
+                className=" space-y-4 grid lg:grid-cols-2 lg:col-span-2 gap-x-16 gap-y-4"
+              >
+                <div className=" lg:col-span-2 mt-2">
+                  <h3 className="font-bold text-xl border-b border-[#4d4f3f]">
+                    {(item satisfies MenuSection).name}
+                  </h3>
                 </div>
-              )
-            )}
+                {(item.items as MenuItem[]).map((subItem, idxx) => (
+                  <MenuItemComponent
+                    item={subItem}
+                    key={idxx + subItem.name}
+                    showPrice={currentMenuIndex === 0}
+                  />
+                ))}
+              </div>
+            ),
+          )}
         </div>
       </section>
     </div>
