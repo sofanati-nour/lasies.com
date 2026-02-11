@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { CSPostHogProvider } from './providers'
+import { CSPostHogProvider } from "./providers";
 
 const inter = Inter({ subsets: ["latin"] });
 const merriweather = Merriweather({
@@ -60,64 +60,60 @@ export default function RootLayout({
         />
       </head>
       <CSPostHogProvider>
-      <body
-        className={`${inter.className} ${merriweather.className} container mx-auto`}
-      >
-        <Navbar />
-        {children}
-        <footer className="py-8 px-20 text-[#c4c7ae] backdrop-blur text-center grid grid-cols-1 lg:grid-cols-3 gap-4">
-          <div className="lg:text-left ">
-            <h3 className="text-2xl">Lasies Catering Service</h3>
-            <p>Barthstr.4, 75378 Bad Liebenzell</p>
-            <p>Telefon: +49 1573 8949296</p>
-            <p>Email: info@lasies.com</p>
-          </div>
-          <div>
-            <h3 className="text-2xl">Öffnungszeiten</h3>
-            <p>Montag bis Samstag: 9:00 - 18:00 Uhr</p>
-            <p>Sonntag: Geschlossen</p>
-          </div>
+        <body
+          className={`${inter.className} ${merriweather.className} container mx-auto`}
+        >
+          <Navbar />
+          {children}
+          <footer className="py-8 px-20 text-[#c4c7ae] backdrop-blur text-center grid grid-cols-1 lg:grid-cols-3 gap-4">
+            <div className="lg:text-left ">
+              <h3 className="text-2xl">Lasies Catering Service</h3>
+              <p>Barthstr.4, 75378 Bad Liebenzell</p>
+              <p>Telefon: +49 1573 8949296</p>
+              <p>Email: info@lasies.com</p>
+            </div>
+            <div></div>
 
-          <div>
-            <h3 className="text-2xl">Social Media</h3>
-            <div className="flex justify-center gap-4">
-              <a
-                href="https://www.instagram.com/lasies.catering.service/"
-                target="_blank"
-                aria-label="Instagram"
-              >
-                <i className="fab fa-instagram w-4 h-4"></i>
-              </a>
-              {/* <a href="https://www.facebook.com/lasies.catering.service">
+            <div>
+              <h3 className="text-2xl">Social Media</h3>
+              <div className="flex justify-center gap-4">
+                <a
+                  href="https://www.instagram.com/lasies.catering.service/"
+                  target="_blank"
+                  aria-label="Instagram"
+                >
+                  <i className="fab fa-instagram w-4 h-4"></i>
+                </a>
+                {/* <a href="https://www.facebook.com/lasies.catering.service">
                 <i className="fab fa-facebook w-4 h-4"></i>
               </a> */}
-              <a
-                href="https://wa.me/4915738949296"
-                target="_blank"
-                aria-label="WhatsApp"
-              >
-                <i className="fab fa-whatsapp w-4 h-4"></i>
-              </a>
-              <a
-                className="invert text-[#4d4f3f] flex items-center"
-                href={
-                  "https://www.listando.de/baden-wuerttemberg/bad-liebenzell/WzS8jzQmtH/catering/lasies-catering-service-/CNGWSkIcw3"
-                }
-                target="_blank"
-              >
-                <img
-                  src={"/listando-logo.webp"}
-                  alt=""
-                  width={18}
-                  height={18}
-                  className="inline mr-2 grayscale rounded-md"
-                />
-              </a>
+                <a
+                  href="https://wa.me/4915738949296"
+                  target="_blank"
+                  aria-label="WhatsApp"
+                >
+                  <i className="fab fa-whatsapp w-4 h-4"></i>
+                </a>
+                <a
+                  className="invert text-[#4d4f3f] flex items-center"
+                  href={
+                    "https://www.listando.de/baden-wuerttemberg/bad-liebenzell/WzS8jzQmtH/catering/lasies-catering-service-/CNGWSkIcw3"
+                  }
+                  target="_blank"
+                >
+                  <img
+                    src={"/listando-logo.webp"}
+                    alt=""
+                    width={18}
+                    height={18}
+                    className="inline mr-2 grayscale rounded-md"
+                  />
+                </a>
+              </div>
             </div>
-          </div>
-        </footer>
-        <Analytics />
-      </body>
+          </footer>
+          <Analytics />
+        </body>
       </CSPostHogProvider>
       <GoogleAnalytics gaId="G-7SFQN95E17" />
     </html>

@@ -677,7 +677,7 @@ const menu: Menu[] = [
             type: "MenuItem",
             name: "Kartoffelsuppe mit Shrimps",
             price: 4,
-            description: "oder mit Würstchen (3,50 €)",
+            description: "oder mit Würstchen",
           },
           // { type: "MenuItem", name: "oder mit Würstchen", price: 3.4 },
           { type: "MenuItem", name: "Tomatenrahmsuppe", price: 3.5 },
