@@ -793,7 +793,7 @@ const menu: Menu[] = [
       },
       {
         type: "MenuSection",
-        name: "Hauptspeise",
+        name: "Frisch vom Grill und aus der Pfanne",
         priority: 1,
         items: [
           {
@@ -990,7 +990,7 @@ const menu: Menu[] = [
             description: "mit verschiedenen Dressings",
             price: 34.8,
           },
-          { type: "MenuItem", name: "Selbstgebackenes Brot", price: 34.8 },
+          { type: "MenuItem", name: "Bunte Brotauswahl", price: 34.8 },
         ],
       },
       {
@@ -1001,6 +1001,12 @@ const menu: Menu[] = [
           {
             type: "MenuItem",
             name: "Paprika gefüllt mit Gemüse-Couscous",
+            description: "mit Tomaten-Basilikum-Concassée",
+            price: 34.8,
+          },
+          {
+            type: "MenuItem",
+            name: "Kürbisfalafel mit Hummus-Dip",
             price: 34.8,
           },
           {
@@ -1016,8 +1022,11 @@ const menu: Menu[] = [
           {
             type: "MenuItem",
             name: "Gemüsemaultaschen auf Blattspinat",
-            description:
-              "mit Tomaten-Basilikum-Concassée und heller Käse-Kräutersauce",
+            price: 34.8,
+          },
+          {
+            type: "MenuItem",
+            name: "Heller Käse-Kräutersauce",
             price: 34.8,
           },
         ],
@@ -1085,7 +1094,7 @@ const menu: Menu[] = [
             name: "Bunte Salatschüssel, zwei Dressings",
             price: 41.3,
           },
-          { type: "MenuItem", name: "Selbstgebackenes Brot", price: 41.3 },
+          { type: "MenuItem", name: "Bunte Brotauswahl", price: 41.3 },
         ],
       },
       {
@@ -1201,23 +1210,23 @@ const menu: Menu[] = [
             description: "mit zwei Dressings",
             price: 48.3,
           },
-          { type: "MenuItem", name: "Selbstgebackenes Brot", price: 48.3 },
+          { type: "MenuItem", name: "Bunte Brotauswahl", price: 48.3 },
         ],
       },
       {
         type: "MenuSection",
-        name: "Frisch vom Grill und aus der Pfanne",
+        name: "Hauptspeise",
         priority: 1,
         items: [
           {
             type: "MenuItem",
-            name: "Gebratene Putensteak",
+            name: "Zarte Putensteak",
             price: 48.3,
           },
           {
             type: "MenuItem",
             name: "Kleine Rostbraten, Röstzwiebel",
-            description: "dazu kräftige Bratensauce und helle Marsalasauce",
+            description: "dazu kräftige Bratensauce",
             price: 48.3,
           },
           {
@@ -1232,6 +1241,11 @@ const menu: Menu[] = [
           {
             type: "MenuItem",
             name: "Variation von Gartengemüsen",
+            price: 48.3,
+          },
+          {
+            type: "MenuItem",
+            name: "Helle Marsalasauce",
             price: 48.3,
           },
         ],
@@ -1325,6 +1339,7 @@ const menu: Menu[] = [
           {
             type: "MenuItem",
             name: "Roastbeef in der Kräuterkruste",
+            description: "Kräftige Bratensauce",
             price: 42.6,
           },
           { type: "MenuItem", name: "Duftreis", price: 42.6 },
