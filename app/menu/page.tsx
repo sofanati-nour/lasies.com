@@ -91,13 +91,13 @@ const fingerfoodMenu: Menu = {
         },
         {
           type: "MenuItem",
-          name: "Bagles mit Kräuterfrischkäse und Tomate",
+          name: "Bagels mit Kräuterfrischkäse und Tomate",
           price: 2.3,
           updatedPrice: 2.8,
         },
         {
           type: "MenuItem",
-          name: "Fladenbrötecke vegetarisch oder mit Fleisch gefüllt",
+          name: "Fladenbrotecke vegetarisch oder mit Fleisch gefüllt",
           price: 2.6,
           updatedPrice: 2.3,
         },
@@ -145,6 +145,14 @@ const fingerfoodMenu: Menu = {
         },
         {
           type: "MenuItem",
+          name: "Schinken-Melonespieße",
+          description: "(2 Stück)",
+          price: 1.9,
+          updatedPrice: 2.2,
+          unit: "Port.",
+        },
+        {
+          type: "MenuItem",
           name: "Pilze in Balsamico Spieße",
           description: "(2 Stück)",
           price: 1.9,
@@ -177,7 +185,7 @@ const fingerfoodMenu: Menu = {
           type: "MenuItem",
           name: "American Wrap",
           description:
-            "(tex-mex-Füllung, Asia-Füllung, Hirtenkäse-Rucola-Füllung) mind. 8 St. pro Füllung",
+            "(tex-mex-Füllung, Couscous-Gemüse-Füllung, Asia-Füllung, Hirtenkäse-Rucola-Füllung) mind. 8 St. pro Füllung",
           price: 3.2,
           updatedPrice: 2.6,
           unit: "Stück",
@@ -352,13 +360,22 @@ const fingerfoodMenu: Menu = {
         {
           type: "MenuItem",
           name: "Hähnchenspieß in der Mandelpanade mit Chutney",
+          description: "(60 gr)",
           price: 2.9,
           updatedPrice: 3.3,
           unit: "Stück",
         },
         {
           type: "MenuItem",
-          name: "Fleischspieß in würziger Sauce",
+          name: "Schaschlickspieß in würziger Sauce",
+          description: "(80 g)",
+          price: 3.1,
+          updatedPrice: 3.6,
+          unit: "Stück",
+        },
+        {
+          type: "MenuItem",
+          name: "Corndog-Spieß (koreanisch)",
           description: "(80 g)",
           price: 3.1,
           updatedPrice: 3.6,
