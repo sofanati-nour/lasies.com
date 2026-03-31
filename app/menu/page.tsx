@@ -1499,6 +1499,51 @@ const menu: Menu[] = [
       },
     ],
   },
+  {
+    name: "Orientalisches Buffet",
+    minimumOrder: {
+      total: 20,
+      perType: 39.8,
+      buffetPrice: 40,
+    },
+    items: [
+      {
+        type: "MenuSection",
+        name: "Vorspeise Und Salate",
+        priority: 0,
+        items: [
+          { type: "MenuItem", name: "Kibbeh-Nayieh", price: 39.8 },
+          { type: "MenuItem", name: "Fattousch", price: 39.8 },
+          { type: "MenuItem", name: "Tabouleh", price: 39.8 },
+          { type: "MenuItem", name: "Hummus", price: 39.8 },
+          { type: "MenuItem", name: "Baba-Ghanoush", price: 39.8 },
+          {
+            type: "MenuItem",
+            name: "Blätterteighalbmonde gefüllt mit Käse oder Hackfleisch",
+            price: 39.8,
+          },
+        ],
+      },
+      {
+        type: "MenuSection",
+        name: "Hauptspeise",
+        priority: 1,
+        items: [
+          { type: "MenuItem", name: "Mansaf mit Lammfleisch", price: 39.8 },
+          { type: "MenuItem", name: "Kabab-Hindi", price: 39.8 },
+          { type: "MenuItem", name: "Kabseh mit Hähnchenkeule", price: 39.8 },
+        ],
+      },
+      {
+        type: "MenuSection",
+        name: "Nachspeise",
+        priority: 2,
+        items: [
+          { type: "MenuItem", name: "Baklava", price: 39.8 },
+        ],
+      },
+    ],
+  },
 ];
 
 const Menus = [fingerfoodMenu, zumKominierenMenu, ...menu];
