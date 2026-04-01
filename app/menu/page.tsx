@@ -1522,6 +1522,7 @@ const menu: Menu[] = [
             name: "Blätterteighalbmonde gefüllt mit Käse oder Hackfleisch",
             price: 39.8,
           },
+          { type: "MenuItem", name: "Rucola-Radicciosalat mit Walnüssen", price: 39.8 },
         ],
       },
       {
@@ -1532,6 +1533,7 @@ const menu: Menu[] = [
           { type: "MenuItem", name: "Mansaf mit Lammfleisch", price: 39.8 },
           { type: "MenuItem", name: "Kabab-Hindi", price: 39.8 },
           { type: "MenuItem", name: "Kabseh mit Hähnchenkeule", price: 39.8 },
+          { type: "MenuItem", name: "Shakriyeh", price: 39.8 },
         ],
       },
       {
@@ -1540,6 +1542,7 @@ const menu: Menu[] = [
         priority: 2,
         items: [
           { type: "MenuItem", name: "Baklava", price: 39.8 },
+          { type: "MenuItem", name: "Kunafa Nabulsia", price: 39.8 },
         ],
       },
     ],
