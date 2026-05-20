@@ -6,6 +6,7 @@ import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { CSPostHogProvider } from "./providers";
+import ConsentBanner from "@/components/ConsentBanner";
 
 const inter = Inter({ subsets: ["latin"] });
 const merriweather = Merriweather({
@@ -57,6 +58,31 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: jsonLd }}
           id="json-ld"
+        />
+        <Script
+          id="gtag-consent-default"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              window.gtag = gtag;
+              gtag('consent', 'default', {
+                ad_storage: 'denied',
+                ad_user_data: 'denied',
+                ad_personalization: 'denied',
+                analytics_storage: 'denied',
+                wait_for_update: 500
+              });
+              gtag('js', new Date());
+              gtag('config', 'AW-18091080306');
+            `,
+          }}
+        />
+        <Script
+          id="gtag-src"
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18091080306"
         />
       </head>
       <CSPostHogProvider>
@@ -113,6 +139,7 @@ export default function RootLayout({
             </div>
           </footer>
           <Analytics />
+          <ConsentBanner />
         </body>
       </CSPostHogProvider>
       <GoogleAnalytics gaId="G-7SFQN95E17" />
