@@ -44,7 +44,7 @@ export default function ConsentBanner() {
           <p>
             Wir verwenden Cookies und ähnliche Technologien, um unsere Website
             und unsere Dienstleistungen zu verbessern und Werbung auf Ihre
-            Interessen abzustimmen. Mit Klick auf „Akzeptieren" stimmen Sie der
+            Interessen abzustimmen. Mit Klick auf „Akzeptieren&ldquo; stimmen Sie der
             Nutzung zu. Weitere Informationen finden Sie in unserer{" "}
             <a href="/impressum" className="underline">
               Datenschutzerklärung
