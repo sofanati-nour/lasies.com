@@ -2,33 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-image: url(./bg_2.webp);
-  background-color: #262524;
-  background-position: left top;
-  background-size: auto;
-  background-repeat: repeat;
-  background-attachment: scroll;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-cream text-ink font-sans antialiased;
+  }
+  ::selection {
+    @apply bg-gold/40 text-olive-950;
+  }
+  :focus-visible {
+    @apply outline-none ring-2 ring-gold ring-offset-2 ring-offset-cream;
+  }
 }
 
-.shimmer-on-hover:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.4);
-  -webkit-transition: none;
-  -moz-transition: none;
-  transition: none;
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-gold-dark;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply block h-px w-8 bg-current;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition duration-200 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-gold {
+    @apply btn bg-gold text-olive-950 shadow-[0_8px_24px_-8px_rgba(201,162,58,0.6)] hover:bg-gold-light;
+  }
+  .btn-dark {
+    @apply btn bg-olive-900 text-cream hover:bg-olive-700;
+  }
+  .btn-ghost-light {
+    @apply btn border border-white/40 text-white backdrop-blur-sm hover:border-white hover:bg-white/10;
+  }
+  .btn-ghost-dark {
+    @apply btn border border-olive-900/25 text-olive-900 hover:border-olive-900 hover:bg-olive-900/5;
+  }
+  .field {
+    @apply w-full rounded-xl border border-olive-900/15 bg-cream-light px-4 py-3 text-ink placeholder:text-ink-muted/60 transition focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30;
+  }
 }
 
-.shimmer-on-hover:hover:after {
-  width: 120%;
-  background-color: rgba(255, 255, 255, 0);
-
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

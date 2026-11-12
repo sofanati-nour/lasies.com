@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import posthog from "posthog-js";
 
 const STORAGE_KEY = "lasies-consent-v1";
 
@@ -15,13 +16,24 @@ function updateConsent(choice: ConsentChoice) {
     ad_personalization: choice,
     analytics_storage: choice,
   });
+
+  if (!posthog.__loaded) return;
+  if (choice === "granted") {
+    posthog.set_config({ persistence: "localStorage+cookie" });
+    posthog.opt_in_capturing();
+  } else {
+    posthog.opt_out_capturing();
+  }
 }
 
 export default function ConsentBanner() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const stored = localStorage.getItem(STORAGE_KEY);
+    let stored: string | null = null;
+    try {
+      stored = localStorage.getItem(STORAGE_KEY);
+    } catch {}
     if (!stored) {
       setVisible(true);
     } else if (stored === "granted") {
@@ -30,7 +42,9 @@ export default function ConsentBanner() {
   }, []);
 
   const handle = (choice: ConsentChoice) => {
-    localStorage.setItem(STORAGE_KEY, choice);
+    try {
+      localStorage.setItem(STORAGE_KEY, choice);
+    } catch {}
     updateConsent(choice);
     setVisible(false);
   };

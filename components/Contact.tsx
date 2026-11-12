@@ -1,7 +1,7 @@
 "use client";
-import { SubmitHandler, useForm } from "react-hook-form";
-import HeaderThing from "./HeaderThing";
+import { SubmitHandler, useForm, type UseFormRegister } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { CheckCircle2, Loader2, Send } from "lucide-react";
 import {
   ContactRequestSchema,
   ContactRequestType,
@@ -13,194 +13,210 @@ export type ContactResponse = {
   error?: string;
 };
 
+type FieldName = Exclude<keyof ContactRequestType, "website">;
+
+const fields: {
+  name: FieldName;
+  label: string;
+  type: string;
+  placeholder?: string;
+  autoComplete?: string;
+  wide?: boolean;
+}[] = [
+  { name: "name", label: "Name", type: "text", placeholder: "Vor- und Nachname", autoComplete: "name" },
+  { name: "email", label: "E-Mail", type: "email", placeholder: "ihre@email.de", autoComplete: "email" },
+  { name: "telephone", label: "Telefonnummer", type: "tel", placeholder: "Für Rückfragen", autoComplete: "tel" },
+  { name: "address", label: "Ihre Adresse", type: "text", placeholder: "Straße, PLZ, Ort", autoComplete: "street-address" },
+  { name: "location", label: "Veranstaltungsort", type: "text", placeholder: "z. B. Gemeindehalle Calw" },
+  { name: "guests", label: "Anzahl der Gäste", type: "number", placeholder: "z. B. 50" },
+  { name: "date", label: "Datum", type: "date" },
+  { name: "time", label: "Uhrzeit", type: "time" },
+];
+
 export default function Contact({
   handleSendEmail,
 }: {
-  handleSendEmail: (data: ContactRequestType) => Promise<any>;
+  handleSendEmail: (data: ContactRequestType) => Promise<{ error?: string }>;
 }) {
   const {
     register,
     handleSubmit,
-    formState: {
-      errors,
-      isLoading,
-      isSubmitted,
-      isSubmitSuccessful,
-      isSubmitting,
-    },
+    setError,
+    reset,
+    formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<ContactRequestType>({
     resolver: zodResolver(ContactRequestSchema),
   });
+
   const onSubmit: SubmitHandler<ContactRequestType> = async (data) => {
     const result = ContactRequestSchema.safeParse(data);
     if (!result.success) {
       return;
     }
-    await handleSendEmail(data);
+    const response = await handleSendEmail(data);
+    if (response?.error) {
+      setError("root.server", { message: response.error });
+    }
   };
-  return (
-    <section className="py-8 bg-[#f0ebdf]" id="kontakte">
-      <HeaderThing title="Kontakt" subtitle="Kontaktieren Sie uns" />
 
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div
-          className={cn(
-            "grid grid-cols-1 lg:grid-cols-2 gap-4 w-4/5 mx-auto transition-all overflow-clip",
-            {
-              "opacity-50 pointer-events-none":
-                isSubmitting || isSubmitSuccessful,
-              "scale-y-100": !isSubmitSuccessful,
-            }
-          )}
-        >
-          <div className="form-group grid">
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              {...register("name", { required: true })}
-              placeholder="Geben Sie Ihren Namen ein"
-              className="bg-[#f3f1ec] p-2 border rounded-md border-gray-300"
-            />
-            {errors.name?.message && (
-              <p className="text-red-500">{errors.name?.message}</p>
-            )}
-          </div>
-          <div className="form-group grid">
-            <label htmlFor="phone">Telefonnummer</label>
-            <input
-              type="tel"
-              {...register("telephone", { required: true })}
-              placeholder="Geben Sie Ihre Telefonnummer ein"
-              className="bg-[#f3f1ec] p-2 border rounded-md border-gray-300"
-            />
-            {errors.telephone?.message && (
-              <p className="text-red-500">{errors.telephone?.message}</p>
-            )}
-          </div>
-          <div className="form-group grid">
-            <label htmlFor="address">Adresse</label>
-            <input
-              type="text"
-              {...register("address", { required: true })}
-              placeholder="Geben Sie Ihre Adresse ein"
-              className="bg-[#f3f1ec] p-2 border rounded-md border-gray-300"
-            />
-            {errors.address?.message && (
-              <p className="text-red-500">{errors.address?.message}</p>
-            )}
-          </div>
-          <div className="form-group grid">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              {...register("email", { required: true })}
-              placeholder="Geben Sie Ihre Email-Adresse ein"
-              className="bg-[#f3f1ec] p-2 border rounded-md border-gray-300"
-            />
-            {errors.email?.message && (
-              <p className="text-red-500">{errors.email?.message}</p>
-            )}
-          </div>
-          <div className="form-group grid">
-            <label htmlFor="location">Veransaltungsort</label>
-            <input
-              type="text"
-              {...register("location", { required: true })}
-              placeholder="Geben Sie Ihren Standort ein"
-              className="bg-[#f3f1ec] p-2 border rounded-md border-gray-300"
-            />
-            {errors.location?.message && (
-              <p className="text-red-500">{errors.location?.message}</p>
-            )}
-          </div>
-          <div className="form-group grid">
-            <label htmlFor="time">Uhrzeit</label>
-            <input
-              type="time"
-              {...register("time", { required: true })}
-              placeholder="Wählen Sie eine Uhrzeit"
-              className="bg-[#f3f1ec] p-2 border rounded-md border-gray-300"
-            />
-            {errors.time?.message && (
-              <p className="text-red-500">{errors.time?.message}</p>
-            )}
-          </div>
-          <div className="form-group grid">
-            <label htmlFor="date">Datum</label>
-            <input
-              type="date"
-              {...register("date", { required: true })}
-              placeholder="Wählen Sie ein Datum"
-              className="bg-[#f3f1ec] p-2 border rounded-md border-gray-300"
-              min={new Date().toISOString().split("T")[0]}
-            />
-            {errors.date?.message && (
-              <p className="text-red-500">{errors.date?.message}</p>
-            )}
-          </div>
-          <div className="form-group grid">
-            <label htmlFor="guests">Anzahl der Gäste</label>
-            <input
-              type="number"
-              {...register("guests", { required: true })}
-              placeholder="Geben Sie die Anzahl der Gäste ein"
-              className="bg-[#f3f1ec] p-2 border rounded-md border-gray-300"
-              min={1}
-            />
-            {errors.guests?.message && (
-              <p className="text-red-500">{errors.guests?.message}</p>
-            )}
-          </div>
-
-          <div className="form-group flex flex-col lg:col-span-2 row-span-2">
-            <label htmlFor="message">Nachricht</label>
-            <textarea
-              {...register("message", { required: true })}
-              placeholder="Geben Sie Ihre Nachricht ein"
-              rows={4}
-              className="bg-[#f3f1ec] p-2 border rounded-md border-gray-300 grow"
-            />
-            {errors.message?.message && (
-              <p className="text-red-500">{errors.message?.message}</p>
-            )}
-          </div>
-          <button
-            className="w-full lg:col-span-2 py-2 bg-[#4d4f3f] text-white rounded-md"
-            type="submit"
-            disabled={isSubmitting || isSubmitSuccessful}
-          >
-            {isSubmitting && <i className="fas fa-spinner fa-spin mr-2"></i>}
-            {isSubmitting
-              ? "Senden..."
-              : isSubmitSuccessful
-              ? "Gesendet"
-              : "Senden"}
-          </button>
-        </div>
-      </form>
+  if (isSubmitSuccessful) {
+    return (
       <div
-        className={cn(
-          "transition-all  flex justify-center items-start mt-10 fixed top-10 right-10 left-10",
-          {
-            "opacity-0": !isSubmitSuccessful,
-            "opacity-100": isSubmitSuccessful,
-          }
-        )}
+        role="status"
+        className="flex flex-col items-center justify-center rounded-[2rem] bg-cream-light p-10 text-center shadow-xl shadow-olive-900/5 ring-1 ring-olive-900/5"
       >
-        <p className="text-center text-[#4d4f3f] p-8 border-2 rounded-lg bg-white shadow-lg flex flex-col gap-4 relative">
-          <button
-            onClick={() => window.location.reload()}
-            className="absolute top-2 right-2"
-          >
-            <i className="fas fa-times text-[#4d4f3f]"></i>
-          </button>
-          <i className="fas fa-check-circle text-2xl text-[#4d4f3f] align-middle mr-4"></i>
-          <span className=" align-middle">
-            Vielen Dank für Ihre Anfrage. Wir werden uns in Kürze bei Ihnen
-            melden.
-          </span>
+        <div className="grid h-16 w-16 place-items-center rounded-full bg-gold/20 text-gold-dark">
+          <CheckCircle2 size={32} />
+        </div>
+        <h3 className="mt-6 font-display text-3xl text-olive-900">
+          Vielen Dank für Ihre Anfrage!
+        </h3>
+        <p className="mt-3 max-w-sm text-ink-muted">
+          Wir haben Ihre Nachricht erhalten und melden uns in Kürze bei Ihnen.
+          Eine Bestätigung ist auf dem Weg in Ihr Postfach.
         </p>
+        <button
+          type="button"
+          onClick={() => reset()}
+          className="btn-ghost-dark mt-8"
+        >
+          Weitere Anfrage senden
+        </button>
       </div>
-    </section>
+    );
+  }
+
+  return (
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      noValidate
+      className="rounded-[2rem] bg-cream-light p-6 shadow-xl shadow-olive-900/5 ring-1 ring-olive-900/5 sm:p-10"
+    >
+      <h3 className="font-display text-3xl text-olive-900">Ihre Anfrage</h3>
+      <p className="mt-2 text-sm text-ink-muted">
+        Alle Felder sind Pflichtfelder. Ihre Anfrage ist selbstverständlich
+        unverbindlich.
+      </p>
+
+      <fieldset
+        disabled={isSubmitting}
+        className="mt-8 grid grid-cols-1 gap-x-5 gap-y-5 sm:grid-cols-2"
+      >
+        {fields.map((f) => (
+          <Field
+            key={f.name}
+            {...f}
+            register={register}
+            error={errors[f.name]?.message}
+          />
+        ))}
+
+        <div className="sm:col-span-2">
+          <label
+            htmlFor="contact-message"
+            className="mb-1.5 block text-sm font-medium text-olive-900"
+          >
+            Ihre Nachricht
+          </label>
+          <textarea
+            id="contact-message"
+            {...register("message")}
+            placeholder="Art der Feier, Wunsch-Buffet, besondere Wünsche …"
+            rows={5}
+            aria-invalid={!!errors.message}
+            className={cn("field resize-y", errors.message && "border-red-400")}
+          />
+          {errors.message?.message && (
+            <p className="mt-1.5 text-sm text-red-600">
+              {errors.message.message}
+            </p>
+          )}
+        </div>
+
+        {/* Honeypot: invisible to people, often filled in by bots */}
+        <input
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          className="hidden"
+          {...register("website")}
+        />
+
+        {errors.root?.server?.message && (
+          <p
+            className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700 sm:col-span-2"
+            role="alert"
+          >
+            {errors.root.server.message}
+          </p>
+        )}
+
+        <button
+          className="btn-dark w-full !py-4 text-base sm:col-span-2"
+          type="submit"
+        >
+          {isSubmitting ? (
+            <>
+              <Loader2 size={18} className="animate-spin" /> Wird gesendet …
+            </>
+          ) : (
+            <>
+              Anfrage senden <Send size={16} />
+            </>
+          )}
+        </button>
+      </fieldset>
+    </form>
+  );
+}
+
+function Field({
+  name,
+  label,
+  type,
+  placeholder,
+  autoComplete,
+  register,
+  error,
+}: {
+  name: FieldName;
+  label: string;
+  type: string;
+  placeholder?: string;
+  autoComplete?: string;
+  register: UseFormRegister<ContactRequestType>;
+  error?: string;
+}) {
+  const id = `contact-${name}`;
+  return (
+    <div>
+      <label
+        htmlFor={id}
+        className="mb-1.5 block text-sm font-medium text-olive-900"
+      >
+        {label}
+      </label>
+      <input
+        id={id}
+        type={type}
+        placeholder={placeholder}
+        autoComplete={autoComplete}
+        aria-invalid={!!error}
+        aria-describedby={error ? `${id}-error` : undefined}
+        {...(type === "date"
+          ? { min: new Date().toISOString().split("T")[0] }
+          : type === "number"
+          ? { min: 1, inputMode: "numeric" as const }
+          : {})}
+        {...register(name)}
+        className={cn("field", error && "border-red-400")}
+      />
+      {error && (
+        <p id={`${id}-error`} className="mt-1.5 text-sm text-red-600">
+          {error}
+        </p>
+      )}
+    </div>
   );
 }
