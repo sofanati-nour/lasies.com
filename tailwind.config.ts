@@ -18,7 +18,7 @@ const config: Config = {
           700: "#35442F",
           600: "#4F5F47",
         },
-        gold: { light: "#E5CB82", DEFAULT: "#C9A23A", dark: "#8C6B16" },
+        gold: { light: "#E5CB82", DEFAULT: "#C9A23A", dark: "#7A5C10" },
         ink: { DEFAULT: "#1C1E19", muted: "#5E6157" },
       },
       fontFamily: {

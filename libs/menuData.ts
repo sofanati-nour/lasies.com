@@ -37,21 +37,21 @@ const fingerfoodMenu: Menu = {
     total: 50,
     perType: 10,
     description:
-      "Bestellmenge mindestens 50 Teile pro Bestellung mindestens 10 Teile pro Sorte",
+      "Mindestens 50 Teile pro Bestellung, mindestens 10 Teile pro Sorte",
   },
   items: [
     {
       type: "MenuItem",
       name: "Dekorative Canapés",
       description:
-        "belegt und garniert mit: zartem Räucherlachs, geräuchertes Forellenfilet, reifem Tortenbrie mit Früchten ...",
+        "Belegt und garniert mit zartem Räucherlachs, geräuchertem Forellenfilet, reifem Tortenbrie mit Früchten und mehr",
       price: 2.6,
     },
     {
       type: "MenuItem",
       name: "Halbe belegte Brötchen",
       description:
-        "appetitlich belegt mit: Aufschnitt, Käse und Schinken (Pute)...",
+        "Appetitlich belegt mit Aufschnitt, Käse und Putenschinken",
       price: 2.5,
     },
     {
@@ -60,27 +60,34 @@ const fingerfoodMenu: Menu = {
       items: [
         {
           type: "MenuItem",
-          name: "Schwäbische Langenstange verschiedenen belegt",
+          name: "Schwäbische Laugenstange, verschieden belegt",
           price: 2.7,
           updatedPrice: 3.2,
         },
         //{
         //  type: "MenuItem",
-        //  name: "Mini-Tortilla mit Hackfleisch und Käse gefüllt",
+        //  name: "Minitortilla mit Hackfleisch und Käse gefüllt",
         //  price: 2.7,
         //  updatedPrice: 3.2,
         //},
         {
           type: "MenuItem",
-          name: "Sommer Röllchen (vegetarische Füllung, Fleisch Füllung, Geräucherte Lachs Füllung)",
+          name: "Sommerrollen (vegetarisch, mit Fleisch- oder Räucherlachsfüllung)",
           price: 3.2,
           updatedPrice: 3.2,
         },
         {
           type: "MenuItem",
-          name: "Burger Tacos",
+          name: "Burger-Tacos",
           price: 2.7,
           updatedPrice: 3.1,
+        },
+        {
+          type: "MenuItem",
+          name: "Minihamburger",
+          price: 3.3,
+          updatedPrice: 3.3,
+          unit: "Stück",
         },
         {
           type: "MenuItem",
@@ -90,7 +97,7 @@ const fingerfoodMenu: Menu = {
         },
         {
           type: "MenuItem",
-          name: "Fladenbrotecke vegetarisch oder mit Fleisch gefüllt",
+          name: "Fladenbrotecken, vegetarisch oder mit Fleisch gefüllt",
           price: 2.6,
           updatedPrice: 2.3,
         },
@@ -102,7 +109,7 @@ const fingerfoodMenu: Menu = {
         },
         {
           type: "MenuItem",
-          name: "Halbes Laugencroissant mit Graveu Lachs",
+          name: "Halbes Laugencroissant mit Graved Lachs",
           price: 2.4,
           updatedPrice: 3.0,
         },
@@ -123,7 +130,7 @@ const fingerfoodMenu: Menu = {
         {
           type: "MenuItem",
           name: "Gemüsesticks mit Kräuterdip",
-          description: "(40 g pro Port.)",
+          description: "(40 g pro Portion)",
           price: 1.5,
           updatedPrice: 1.9,
           unit: "Port.",
@@ -138,7 +145,7 @@ const fingerfoodMenu: Menu = {
         },
         {
           type: "MenuItem",
-          name: "Schinken-Melonespieße",
+          name: "Schinken-Melonen-Spieße",
           description: "(2 Stück)",
           price: 1.9,
           updatedPrice: 2.2,
@@ -146,7 +153,7 @@ const fingerfoodMenu: Menu = {
         },
         {
           type: "MenuItem",
-          name: "Pilze in Balsamico Spieße",
+          name: "Pilz-Balsamico-Spieße",
           description: "(2 Stück)",
           price: 1.9,
           updatedPrice: 2.2,
@@ -154,7 +161,7 @@ const fingerfoodMenu: Menu = {
         },
         {
           type: "MenuItem",
-          name: "Tomaten-Mozzarellaspieße",
+          name: "Tomate-Mozzarella-Spieße",
           description: "(2 Stück)",
           price: 1.5,
           updatedPrice: 1.9,
@@ -178,21 +185,21 @@ const fingerfoodMenu: Menu = {
           type: "MenuItem",
           name: "American Wrap",
           description:
-            "(tex-mex-Füllung, Couscous-Gemüse-Füllung, Asia-Füllung, Hirtenkäse-Rucola-Füllung) mind. 8 St. pro Füllung",
+            "Tex-Mex-, Couscous-Gemüse-, Asia- oder Hirtenkäse-Rucola-Füllung, mindestens 8 Stück pro Füllung",
           price: 3.2,
           updatedPrice: 2.6,
           unit: "Stück",
         },
         {
           type: "MenuItem",
-          name: "Italienische Bruschette mit nativem Olivenöl und Tomaten",
+          name: "Italienische Bruschetta mit nativem Olivenöl und Tomaten",
           price: 1.5,
           updatedPrice: 1.6,
           unit: "Stück",
         },
         {
           type: "MenuItem",
-          name: "Zucchiniröllchen mit Hirtenkäse und Rauke",
+          name: "Zucchiniröllchen mit Hirtenkäse und Rucola",
           price: 1.6,
           updatedPrice: 1.9,
           unit: "Stück",
@@ -220,7 +227,7 @@ const fingerfoodMenu: Menu = {
         },
         {
           type: "MenuItem",
-          name: 'Geflügelsalat "Bombay" (im Glas angerichtet)',
+          name: "Geflügelsalat „Bombay“ (im Glas angerichtet)",
           price: 3.8,
           updatedPrice: 4.2,
           unit: "Port.",
@@ -234,14 +241,14 @@ const fingerfoodMenu: Menu = {
         },
         {
           type: "MenuItem",
-          name: "Blätterteighalbmonde gefüllt mit Spinat-Hirtenkäse",
+          name: "Blätterteighalbmonde gefüllt mit Spinat und Hirtenkäse",
           price: 1.8,
           updatedPrice: 2.0,
           unit: "Stück",
         },
         {
           type: "MenuItem",
-          name: "Blätterteigwirbel mit Putenschinken, Käse u. Röstzwiebeln",
+          name: "Blätterteigwirbel mit Putenschinken, Käse und Röstzwiebeln",
           price: 1.8,
           updatedPrice: 1.9,
           unit: "Stück",
@@ -287,7 +294,7 @@ const fingerfoodMenu: Menu = {
         {
           type: "MenuItem",
           name: "Hackfleischspieß mit verschiedenen Dips",
-          description: "(60 gr)",
+          description: "(60 g)",
           price: 2.1,
           updatedPrice: 2.4,
           unit: "Stück",
@@ -302,14 +309,14 @@ const fingerfoodMenu: Menu = {
         },
         {
           type: "MenuItem",
-          name: "Glacierte Hähnchenunterkeule asiatisch",
+          name: "Glasierte Hähnchenunterkeule nach asiatischer Art",
           price: 2.1,
           updatedPrice: 2.3,
           unit: "Stück",
         },
         {
           type: "MenuItem",
-          name: "Minipizza (Margherita oder Vegetarisch)",
+          name: "Minipizza (Margherita oder vegetarisch)",
           price: 1.8,
           updatedPrice: 2.1,
           unit: "Stück",
@@ -330,7 +337,7 @@ const fingerfoodMenu: Menu = {
         },
         {
           type: "MenuItem",
-          name: "Yufkaröllchen gefüllt mit Spinat-Hirtenkäse",
+          name: "Yufkaröllchen gefüllt mit Spinat und Hirtenkäse",
           price: 1.8,
           updatedPrice: 2.1,
           unit: "Stück",
@@ -345,7 +352,7 @@ const fingerfoodMenu: Menu = {
         {
           type: "MenuItem",
           name: "Hähnchenspieß im Kokosmantel mit Currydip",
-          description: "(60 gr)",
+          description: "(60 g)",
           price: 2.9,
           updatedPrice: 3.3,
           unit: "Stück",
@@ -353,14 +360,14 @@ const fingerfoodMenu: Menu = {
         {
           type: "MenuItem",
           name: "Hähnchenspieß in der Mandelpanade mit Chutney",
-          description: "(60 gr)",
+          description: "(60 g)",
           price: 2.9,
           updatedPrice: 3.3,
           unit: "Stück",
         },
         {
           type: "MenuItem",
-          name: "Schaschlickspieß in würziger Sauce",
+          name: "Schaschlikspieß in würziger Sauce",
           description: "(80 g)",
           price: 3.1,
           updatedPrice: 3.6,
@@ -376,7 +383,7 @@ const fingerfoodMenu: Menu = {
         },
         {
           type: "MenuItem",
-          name: 'Mini-Frühlingsrollen "sweet chilli"',
+          name: "Minifrühlingsrollen „Sweet Chili“",
           description: "(4 Stück)",
           price: 1.9,
           updatedPrice: 2.3,
@@ -398,8 +405,8 @@ const fingerfoodMenu: Menu = {
         },
         {
           type: "MenuItem",
-          name: "Sahnequark mit Hagemark und Fruchten",
-          description: "(m Glas)",
+          name: "Sahnequark mit Hagebuttenmark und Früchten",
+          description: "(im Glas)",
           price: 1.8,
           updatedPrice: 2.3,
         },
@@ -413,7 +420,7 @@ const fingerfoodMenu: Menu = {
         },
         {
           type: "MenuItem",
-          name: "Mousse au chocolat",
+          name: "Mousse au Chocolat",
           description: "(im Glas)",
           price: 2.1,
           updatedPrice: 2.7,
@@ -442,7 +449,7 @@ const fingerfoodMenu: Menu = {
         },
         {
           type: "MenuItem",
-          name: "Mini Amerikaner",
+          name: "Miniamerikaner",
           description: "(2 Stück)",
           price: 2.0,
           updatedPrice: 2.3,
@@ -452,7 +459,7 @@ const fingerfoodMenu: Menu = {
           type: "MenuItem",
           name: "Verschiedene gebackene Kuchen vom Blech",
           price: 2.0,
-          updatedPrice: 2.6,
+          updatedPrice: 2.7,
           unit: "Port.",
         },
         {
@@ -465,10 +472,10 @@ const fingerfoodMenu: Menu = {
         },
         {
           type: "MenuItem",
-          name: "Latte macchiato-creme",
+          name: "Latte-macchiato-Creme",
           description: "(im Glas)",
           price: 1.9,
-          updatedPrice: 2.5,
+          updatedPrice: 2.7,
           unit: "Stück",
         },
         {
@@ -476,7 +483,7 @@ const fingerfoodMenu: Menu = {
           name: "Himbeertraum",
           description: "(im Glas)",
           price: 1.9,
-          updatedPrice: 2.3,
+          updatedPrice: 2.7,
           unit: "Stück",
         },
         {
@@ -488,7 +495,7 @@ const fingerfoodMenu: Menu = {
         },
         {
           type: "MenuItem",
-          name: "Cassiscrème",
+          name: "Cassiscreme",
           description: "(im Glas)",
           price: 2.3,
           updatedPrice: 2.7,
@@ -499,7 +506,7 @@ const fingerfoodMenu: Menu = {
           name: "Tiramisu",
           description: "(mind. 15 Port.)",
           price: 2.3,
-          updatedPrice: 2.7,
+          updatedPrice: 3.0,
           unit: "Port.",
         },
       ],
@@ -517,7 +524,7 @@ const zumKominierenMenu: Menu = {
       type: "MenuSection",
       name: "",
       description:
-        "mit Weißbrot oder mitgelieferten Minibrötchen, Mindestbestellmenge: 10 Portionen",
+        "Dazu Weißbrot oder Minibrötchen.",
       items: [
         {
           type: "MenuItem",
@@ -527,31 +534,31 @@ const zumKominierenMenu: Menu = {
         },
         {
           type: "MenuItem",
-          name: "Rinderrouladen nach Art des Hauses mit kräftiger Bratensauce und Kartoffelknödel",
+          name: "Rinderrouladen nach Art des Hauses mit kräftiger Bratensauce und Kartoffelknödeln",
           price: 14.6,
           unit: "Pers.",
         },
         {
           type: "MenuItem",
-          name: "Zarte Lammkeule, mit Bohnen im Speckmantel, Ratatouille, Rosmarinkartoffeln",
+          name: "Zarte Lammkeule mit Bohnen im Speckmantel, Ratatouille und Rosmarinkartoffeln",
           price: 14.9,
           unit: "Pers.",
         },
         {
           type: "MenuItem",
-          name: "Schwäbische Maultaschen mit Zwiebelschmälze und Kartoffel-Gurkensalat",
+          name: "Schwäbische Maultaschen mit Zwiebelschmälze und Kartoffel-Gurken-Salat",
           price: 8.9,
           unit: "Pers.",
         },
         {
           type: "MenuItem",
-          name: "Schwäbischer Linsenteller mit Saiten Wurst und Spätzle",
+          name: "Schwäbischer Linsenteller mit Saitenwürstchen und Spätzle",
           price: 9.2,
           unit: "Pers.",
         },
         {
           type: "MenuItem",
-          name: "Chili con carne, auf Basmatireis",
+          name: "Chili con Carne auf Basmatireis",
           price: 8.9,
           unit: "Pers.",
         },
@@ -565,49 +572,49 @@ const zumKominierenMenu: Menu = {
         },
         {
           type: "MenuItem",
-          name: "Saltimbocca vom Lachs Blattspinat und Schwenkkartoffeln",
+          name: "Saltimbocca vom Lachs auf Blattspinat mit Schwenkkartoffeln",
           price: 1.8,
           updatedPrice: 8.7,
           unit: "Port.",
         },
         {
           type: "MenuItem",
-          name: "Italienische Lasagne mit Hackfleisch oder Lachs und Spinat oder Gemüsefüllung",
+          name: "Italienische Lasagne – mit Hackfleisch, mit Lachs und Spinat oder mit Gemüsefüllung",
           price: 1.8,
           updatedPrice: 8.3,
           unit: "Port.",
         },
         {
           type: "MenuItem",
-          name: "Asia-Pfanne mit Chinagemüse, Mie-Nudeln und Putenstreifen ",
+          name: "Asia-Pfanne mit Chinagemüse, Mie-Nudeln und Putenstreifen",
           price: 1.8,
           updatedPrice: 7.9,
           unit: "Port.",
         },
         {
           type: "MenuItem",
-          name: "Kartoffel Gratin Klassisch oder mit Hähnchen",
+          name: "Kartoffelgratin, klassisch oder mit Hähnchen",
           price: 1.8,
           updatedPrice: 8.5,
           unit: "Port.",
         },
         {
           type: "MenuItem",
-          name: "Gebratene Hähnchenbrust eingelegt in Orangensoße",
+          name: "Gebratene Hähnchenbrust in Orangensauce",
           price: 1.8,
           updatedPrice: 9.2,
           unit: "Port.",
         },
         {
           type: "MenuItem",
-          name: "Gegrillte Lachsfilet eingelegt in Honig und Petersilie",
+          name: "Gegrilltes Lachsfilet, mariniert mit Honig und Petersilie",
           price: 1.8,
           updatedPrice: 8.8,
           unit: "Port.",
         },
         {
           type: "MenuItem",
-          name: "Gefüllte Paprika mit Bulgur und Feta ",
+          name: "Gefüllte Paprika mit Bulgur und Feta",
           price: 1.8,
           updatedPrice: 7.5,
           unit: "Port.",
@@ -621,43 +628,43 @@ const zumKominierenMenu: Menu = {
         },
         {
           type: "MenuItem",
-          name: "Zwiebelrostbraten, auf Bratensoße mit Kartoffelpüree",
+          name: "Zwiebelrostbraten auf Bratensauce mit Kartoffelpüree",
           price: 9.8,
           unit: "Pers.",
         },
         {
           type: "MenuItem",
-          name: "Zarter Rehrücken, mit Haushernmacher Spätzle und Rosenkohl",
+          name: "Zarter Rehrücken mit hausgemachten Spätzle und Rosenkohl",
           price: 14.8,
           unit: "Pers.",
         },
         {
           type: "MenuItem",
-          name: "Rinder Braten, mit heller Rahmsauce und buntem Reis",
+          name: "Rinderbraten mit heller Rahmsauce und buntem Reis",
           price: 9.8,
           unit: "Pers.",
         },
         {
           type: "MenuItem",
-          name: "Rindergulasch, auf Tomatenreis mit Buttergurkengemüse",
+          name: "Rindergulasch auf Tomatenreis mit Buttergurkengemüse",
           price: 9.4,
           unit: "Pers.",
         },
         {
           type: "MenuItem",
-          name: "Rinderschmorbraten, mit Bratensauce und Kartoffelgratin",
+          name: "Rinderschmorbraten mit Bratensauce und Kartoffelgratin",
           price: 13.9,
           unit: "Pers.",
         },
         {
           type: "MenuItem",
-          name: "Ravioli mit Spinat-Ricotta-Füllung, auf Tomaten-Basilikum-Concassée",
+          name: "Ravioli mit Spinat-Ricotta-Füllung auf Tomaten-Basilikum-Concassée",
           price: 8.0,
           unit: "Pers.",
         },
         {
           type: "MenuItem",
-          name: "Buntes Geflügelragout, mit Safran-Kartoffeln",
+          name: "Buntes Geflügelragout mit Safrankartoffeln",
           price: 8.6,
           unit: "Pers.",
         },
@@ -669,14 +676,14 @@ const menu: Menu[] = [
   {
     name: "Suppen",
     minimumOrder: {
-      total: "20 Port.",
+      total: 20,
       perType: 250,
       unit: "ml",
     },
     items: [
       {
         type: "MenuSection",
-        name: "Suppen",
+        name: "",
         items: [
           {
             type: "MenuItem",
@@ -709,8 +716,8 @@ const menu: Menu[] = [
             price: 3.7,
           },
           { type: "MenuItem", name: "Deftiger Erbseneintopf", price: 3.2 },
-          { type: "MenuItem", name: "Linsen Suppe", price: 3.4 },
-          { type: "MenuItem", name: "Cremige Champignons Suppe", price: 4 },
+          { type: "MenuItem", name: "Linsensuppe", price: 3.4 },
+          { type: "MenuItem", name: "Cremige Champignonsuppe", price: 4 },
         ],
       },
     ],
@@ -720,7 +727,7 @@ const menu: Menu[] = [
     minimumOrder: {
       total: 10,
       perType: 100,
-      unit: "Gramm",
+      unit: "g",
       // buffetPrice: 48.3,
     },
     items: [
@@ -728,7 +735,7 @@ const menu: Menu[] = [
         type: "MenuItem",
         name: "Hirtenplatte",
         description:
-          "Rustikale Auswahl von rohen Putenschinken, deftigen Käsespezialitäten, Essiggemüse, und Bauernbrot",
+          "Rustikale Auswahl von rohem Putenschinken, deftigen Käsespezialitäten, Essiggemüse und Bauernbrot",
         price: 12,
       },
       {
@@ -742,20 +749,20 @@ const menu: Menu[] = [
         type: "MenuItem",
         name: "Käseplatte",
         description:
-          "Käseplatte Internationale Käsespezialitäten, reich garniert mit Früchten und Salzgebäck, Brotauswahl.",
+          "Internationale Käsespezialitäten, reich garniert mit Früchten und Salzgebäck, dazu eine Brotauswahl",
         price: 12.5,
       },
       {
         type: "MenuItem",
-        name: "Gourmetplatte Constantin (220g pro Pers., ab 15 Personen.)",
+        name: "Gourmetplatte „Constantin“",
         description:
-          "Zarter Räucherlachs mit Sahnemeerrettich, Crevettencocktail, delikate Entenbrust, Filetmedaillons bunt garniert, rosa gebratenes Roastbeef Sauce Remoulade, luftgetrockneter Putenschinken, französischer Camembert mit Früchten Bunter Brotkorb",
+          "220 g pro Person, ab 15 Personen: zarter Räucherlachs mit Sahnemeerrettich, Crevettencocktail, delikate Entenbrust, Filetmedaillons bunt garniert, rosa gebratenes Roastbeef mit Remouladensauce, luftgetrockneter Putenschinken, französischer Camembert mit Früchten und ein bunter Brotkorb",
         price: 27,
       },
     ],
   },
   {
-    name: "Grill Buffet",
+    name: "Grill-Buffet",
     minimumOrder: {
       total: 20,
       perType: 40,
@@ -764,7 +771,7 @@ const menu: Menu[] = [
     items: [
       {
         type: "MenuSection",
-        name: "Vorspeise Und Salate",
+        name: "Vorspeisen und Salate",
         priority: 0,
         items: [
           {
@@ -773,7 +780,7 @@ const menu: Menu[] = [
             price: 34.5,
           },
           { type: "MenuItem", name: "Mediterraner Nudelsalat", price: 34.5 },
-          { type: "MenuItem", name: "Salat „Tabouléh“", price: 34.5 },
+          { type: "MenuItem", name: "Tabouleh", description: "Petersiliensalat mit Bulgur, Tomaten, Minze und Zitrone", price: 34.5 },
           { type: "MenuItem", name: "Toskanischer Brotsalat", price: 34.5 },
           {
             type: "MenuItem",
@@ -783,15 +790,15 @@ const menu: Menu[] = [
           { type: "MenuItem", name: "Bunter Gemüsesalat", price: 34.5 },
           {
             type: "MenuItem",
-            name: "Gurkensalat in Joghurt-Dilldressing",
+            name: "Gurkensalat in Joghurt-Dill-Dressing",
             price: 34.5,
           },
           {
             type: "MenuItem",
-            name: "Fenchel-Chinakohlsalat mit Orangenspalten",
+            name: "Fenchel-Chinakohl-Salat mit Orangenspalten",
             price: 34.5,
           },
-          { type: "MenuItem", name: "Paprika-Maissalat", price: 34.5 },
+          { type: "MenuItem", name: "Paprika-Mais-Salat", price: 34.5 },
           {
             type: "MenuItem",
             name: "Bunte Blattsalate",
@@ -818,7 +825,7 @@ const menu: Menu[] = [
           },
           {
             type: "MenuItem",
-            name: "Marinierte Hähnchenbrustfilets „sweet chilli“",
+            name: "Marinierte Hähnchenbrustfilets „Sweet Chili“",
             price: 34.5,
           },
           {
@@ -829,13 +836,13 @@ const menu: Menu[] = [
           { type: "MenuItem", name: "Halloumi-Grillkäse", price: 34.5 },
           {
             type: "MenuItem",
-            name: "Mediterrane Gemüse aus der Pfanne",
+            name: "Mediterranes Gemüse aus der Pfanne",
             price: 34.5,
           },
           { type: "MenuItem", name: "Gegrillte Maiskolben", price: 34.5 },
           {
             type: "MenuItem",
-            name: "Senf, Ketchup, Kräuterbutter, verschiedene Dip",
+            name: "Senf, Ketchup, Kräuterbutter und verschiedene Dips",
             price: 34.5,
           },
         ],
@@ -865,7 +872,7 @@ const menu: Menu[] = [
     items: [
       {
         type: "MenuSection",
-        name: "Vorspeise Und Salate",
+        name: "Vorspeisen und Salate",
         priority: 0,
         items: [
           {
@@ -891,7 +898,7 @@ const menu: Menu[] = [
           },
           {
             type: "MenuItem",
-            name: "Verschiedene Rohkost- und Blattsalate zwei Dressings",
+            name: "Verschiedene Rohkost- und Blattsalate mit zwei Dressings",
             price: 34.8,
           },
           { type: "MenuItem", name: "Bunte Brotauswahl", price: 34.8 },
@@ -917,7 +924,7 @@ const menu: Menu[] = [
           { type: "MenuItem", name: "Schwäbische Eierspätzle", price: 34.8 },
           {
             type: "MenuItem",
-            name: "Kartoffel-Gemüseauflauf (vegetarisch)",
+            name: "Kartoffel-Gemüse-Auflauf (vegetarisch)",
             price: 34.8,
           },
           { type: "MenuItem", name: "Rustikales Gemüse", price: 34.8 },
@@ -952,7 +959,7 @@ const menu: Menu[] = [
     items: [
       {
         type: "MenuSection",
-        name: "Vorspeise Und Salate",
+        name: "Vorspeisen und Salate",
         priority: 0,
         items: [
           {
@@ -963,7 +970,7 @@ const menu: Menu[] = [
           { type: "MenuItem", name: "Marinierter Ziegenkäse", price: 34.8 },
           {
             type: "MenuItem",
-            name: "Yufka-Röllchen mit Spinat-Hirtenkäsefüllung",
+            name: "Yufkaröllchen gefüllt mit Spinat und Hirtenkäse",
             price: 34.8,
           },
           {
@@ -973,20 +980,20 @@ const menu: Menu[] = [
           },
           {
             type: "MenuItem",
-            name: "Fenchel-Chinakohlsalat mit Orangenspalten",
+            name: "Fenchel-Chinakohl-Salat mit Orangenspalten",
             price: 34.8,
           },
-          { type: "MenuItem", name: "Ananas-Apfel-Karottensalat", price: 34.8 },
+          { type: "MenuItem", name: "Ananas-Apfel-Karotten-Salat", price: 34.8 },
           { type: "MenuItem", name: "Griechischer Bauernsalat", price: 34.8 },
           {
             type: "MenuItem",
-            name: "Rucola-Radicciosalat mit Walnüssen und Sherrydressing",
+            name: "Rucola-Radicchio-Salat mit Walnüssen und Sherrydressing",
             price: 34.8,
           },
-          { type: "MenuItem", name: "Paprika-Maissalat", price: 34.8 },
+          { type: "MenuItem", name: "Paprika-Mais-Salat", price: 34.8 },
           {
             type: "MenuItem",
-            name: "Gurkensalat in Joghurt-Dill Dressing",
+            name: "Gurkensalat in Joghurt-Dill-Dressing",
             price: 34.8,
           },
           {
@@ -1026,7 +1033,7 @@ const menu: Menu[] = [
           },
           {
             type: "MenuItem",
-            name: "Kartoffel-Zucchinirösti mit Paprika",
+            name: "Kartoffel-Zucchini-Rösti mit Paprika",
             price: 34.8,
           },
           {
@@ -1036,7 +1043,7 @@ const menu: Menu[] = [
           },
           {
             type: "MenuItem",
-            name: "Heller Käse-Kräutersauce",
+            name: "Helle Käse-Kräutersauce",
             price: 34.8,
           },
         ],
@@ -1047,7 +1054,7 @@ const menu: Menu[] = [
         priority: 2,
         items: [
           { type: "MenuItem", name: "Frischer Obstsalat", price: 34.8 },
-          { type: "MenuItem", name: "Johannisbeer-Joghurtcreme", price: 34.8 },
+          { type: "MenuItem", name: "Johannisbeer-Joghurt-Creme", price: 34.8 },
           {
             type: "MenuItem",
             name: "Kirschenmichel mit Vanillesauce",
@@ -1067,17 +1074,17 @@ const menu: Menu[] = [
     items: [
       {
         type: "MenuSection",
-        name: "Vorspeise Und Salate",
+        name: "Vorspeisen und Salate",
         priority: 0,
         items: [
           {
             type: "MenuItem",
-            name: "Gegrillte Gemüse eingelegt in nativem Olivenöl",
+            name: "Gegrilltes Gemüse, eingelegt in nativem Olivenöl",
             price: 41.3,
           },
           {
             type: "MenuItem",
-            name: "Zucchiniröllchen mit Hirtenkäse-Raukefüllung",
+            name: "Zucchiniröllchen mit Hirtenkäse-Rucola-Füllung",
             price: 41.3,
           },
           {
@@ -1098,10 +1105,10 @@ const menu: Menu[] = [
             name: "Rucola mit frischen Kirschtomaten",
             price: 41.3,
           },
-          { type: "MenuItem", name: "Salat „Tabouleh“", price: 41.3 },
+          { type: "MenuItem", name: "Tabouleh", description: "Petersiliensalat mit Bulgur, Tomaten, Minze und Zitrone", price: 41.3 },
           {
             type: "MenuItem",
-            name: "Bunte Salatschüssel, zwei Dressings",
+            name: "Bunte Salatschüssel mit zwei Dressings",
             price: 41.3,
           },
           { type: "MenuItem", name: "Bunte Brotauswahl", price: 41.3 },
@@ -1140,7 +1147,7 @@ const menu: Menu[] = [
           { type: "MenuItem", name: "Obstplatte der Saison", price: 41.3 },
           {
             type: "MenuItem",
-            name: "Mascarpone-Quarkcreme mit marinierten Kirschen",
+            name: "Mascarpone-Quark-Creme mit marinierten Kirschen",
             price: 41.3,
           },
           {
@@ -1153,7 +1160,7 @@ const menu: Menu[] = [
     ],
   },
   {
-    name: "Die Glücklichen Ehepaar",
+    name: "Hochzeitsbuffet „Das glückliche Ehepaar“",
     minimumOrder: {
       total: 20,
       perType: 48.3,
@@ -1167,7 +1174,7 @@ const menu: Menu[] = [
       },
       {
         type: "MenuSection",
-        name: "Vorspeise Und Salate",
+        name: "Vorspeisen und Salate",
         priority: 0,
         items: [
           {
@@ -1178,12 +1185,12 @@ const menu: Menu[] = [
           },
           {
             type: "MenuItem",
-            name: "Gegrillte Gemüse eingelegt in nativem Olivenöl",
+            name: "Gegrilltes Gemüse, eingelegt in nativem Olivenöl",
             price: 48.3,
           },
           {
             type: "MenuItem",
-            name: "Anti pasti Spieße",
+            name: "Antipasti-Spieße",
             description:
               "Tomate-Mozzarella, Melone-Putenschinken, Hirtenkäse und Oliven",
             price: 48.3,
@@ -1205,7 +1212,7 @@ const menu: Menu[] = [
           },
           {
             type: "MenuItem",
-            name: "Truthahnröllchen verschieden gefüllt,",
+            name: "Truthahnröllchen, verschieden gefüllt",
             price: 48.3,
           },
           {
@@ -1230,12 +1237,12 @@ const menu: Menu[] = [
         items: [
           {
             type: "MenuItem",
-            name: "Zarte Putensteak",
+            name: "Zarte Putensteaks",
             price: 48.3,
           },
           {
             type: "MenuItem",
-            name: "Kleine Rostbraten, Röstzwiebel",
+            name: "Kleine Rostbraten mit Röstzwiebeln",
             description: "dazu kräftige Bratensauce",
             price: 48.3,
           },
@@ -1246,7 +1253,7 @@ const menu: Menu[] = [
             price: 48.3,
           },
           { type: "MenuItem", name: "Schwäbische Eierspätzle", price: 48.3 },
-          { type: "MenuItem", name: "Kartoffel-Lauchgratin", price: 48.3 },
+          { type: "MenuItem", name: "Kartoffel-Lauch-Gratin", price: 48.3 },
           { type: "MenuItem", name: "Reismosaik", price: 48.3 },
           {
             type: "MenuItem",
@@ -1280,7 +1287,7 @@ const menu: Menu[] = [
     ],
   },
   {
-    name: "Gourmetreise Buffet",
+    name: "Gourmetreise-Buffet",
     minimumOrder: {
       total: 30,
       perType: 42.6,
@@ -1289,7 +1296,7 @@ const menu: Menu[] = [
     items: [
       {
         type: "MenuSection",
-        name: "Vorspeise Und Salate",
+        name: "Vorspeisen und Salate",
         priority: 0,
         items: [
           {
@@ -1310,7 +1317,7 @@ const menu: Menu[] = [
           },
           {
             type: "MenuItem",
-            name: "Yufkaröllchen mit Spinat-Hirtenkäsefüllung",
+            name: "Yufkaröllchen gefüllt mit Spinat und Hirtenkäse",
             price: 42.6,
           },
           { type: "MenuItem", name: "Klassische Pastetenauswahl", price: 42.6 },
@@ -1345,17 +1352,17 @@ const menu: Menu[] = [
             description: "mit Fischsamtsauce",
             price: 42.6,
           },
-          { type: "MenuItem", name: "Lammrücken „provencale“", price: 42.6 },
+          { type: "MenuItem", name: "Lammrücken nach provenzalischer Art", price: 42.6 },
           {
             type: "MenuItem",
             name: "Roastbeef in der Kräuterkruste",
-            description: "Kräftige Bratensauce",
+            description: "mit kräftiger Bratensauce",
             price: 42.6,
           },
           { type: "MenuItem", name: "Duftreis", price: 42.6 },
           { type: "MenuItem", name: "Bircher-Benner-Kartoffeln", price: 42.6 },
           { type: "MenuItem", name: "Schwäbische Eierspätzle", price: 42.6 },
-          { type: "MenuItem", name: "Bunte Gemüse der Saison", price: 42.6 },
+          { type: "MenuItem", name: "Buntes Gemüse der Saison", price: 42.6 },
         ],
       },
       {
@@ -1384,17 +1391,17 @@ const menu: Menu[] = [
     items: [
       {
         type: "MenuSection",
-        name: "Vorspeise Und Salate",
+        name: "Vorspeisen und Salate",
         priority: 0,
         items: [
           {
             type: "MenuItem",
-            name: "Gebeizter Graved Lachs, Senf-Dillsauce",
+            name: "Graved Lachs mit Senf-Dill-Sauce",
             price: 43.6,
           },
           {
             type: "MenuItem",
-            name: "Crêpes gefüllt mit Lachs und Rauke",
+            name: "Crêpes gefüllt mit Lachs und Rucola",
             price: 43.6,
           },
           {
@@ -1409,12 +1416,12 @@ const menu: Menu[] = [
           },
           {
             type: "MenuItem",
-            name: "Gebratene Pilze in Balsamico Dressing",
+            name: "Gebratene Pilze in Balsamicodressing",
             price: 43.6,
           },
           {
             type: "MenuItem",
-            name: "Gurkentaler mit Käse-Kräuterrosette",
+            name: "Gurkentaler mit Käse-Kräuter-Rosette",
             price: 43.6,
           },
           {
@@ -1422,11 +1429,11 @@ const menu: Menu[] = [
             name: "Entenbrust, rosa gebraten mit Orangenconfit",
             price: 43.6,
           },
-          { type: "MenuItem", name: "Ananas-Apfel-Karottensalat", price: 43.6 },
-          { type: "MenuItem", name: "Paprika-Maissalat", price: 43.6 },
+          { type: "MenuItem", name: "Ananas-Apfel-Karotten-Salat", price: 43.6 },
+          { type: "MenuItem", name: "Paprika-Mais-Salat", price: 43.6 },
           {
             type: "MenuItem",
-            name: "Gurkensalat in Joghurt-Dilldressing",
+            name: "Gurkensalat in Joghurt-Dill-Dressing",
             price: 43.6,
           },
           {
@@ -1450,7 +1457,7 @@ const menu: Menu[] = [
       },
       {
         type: "MenuSection",
-        name: "Hauptgang",
+        name: "Hauptspeise",
         items: [
           {
             type: "MenuItem",
@@ -1468,7 +1475,7 @@ const menu: Menu[] = [
           { type: "MenuItem", name: "Kartoffelrösti", price: 43.6 },
           {
             type: "MenuItem",
-            name: "Mandelbrokkoli und Baby Möhrchen",
+            name: "Mandelbrokkoli und Babymöhrchen",
             price: 43.6,
           },
         ],
@@ -1502,20 +1509,20 @@ const menu: Menu[] = [
     items: [
       {
         type: "MenuSection",
-        name: "Vorspeise Und Salate",
+        name: "Vorspeisen und Salate",
         priority: 0,
         items: [
           { type: "MenuItem", name: "Kibbeh-Nayieh", price: 39.8 },
-          { type: "MenuItem", name: "Fattousch", price: 39.8 },
-          { type: "MenuItem", name: "Tabouleh", price: 39.8 },
-          { type: "MenuItem", name: "Hummus", price: 39.8 },
-          { type: "MenuItem", name: "Baba-Ghanoush", price: 39.8 },
+          { type: "MenuItem", name: "Fattousch", description: "Libanesischer Brotsalat mit geröstetem Fladenbrot und frischem Gemüse", price: 39.8 },
+          { type: "MenuItem", name: "Tabouleh", description: "Petersiliensalat mit Bulgur, Tomaten, Minze und Zitrone", price: 39.8 },
+          { type: "MenuItem", name: "Hummus", description: "Kichererbsenpüree mit Tahini", price: 39.8 },
+          { type: "MenuItem", name: "Baba-Ghanoush", description: "Püree aus gerösteten Auberginen mit Tahini", price: 39.8 },
           {
             type: "MenuItem",
             name: "Blätterteighalbmonde gefüllt mit Käse oder Hackfleisch",
             price: 39.8,
           },
-          { type: "MenuItem", name: "Rucola-Radicciosalat mit Walnüssen", price: 39.8 },
+          { type: "MenuItem", name: "Rucola-Radicchio-Salat mit Walnüssen", price: 39.8 },
         ],
       },
       {
@@ -1523,10 +1530,10 @@ const menu: Menu[] = [
         name: "Hauptspeise",
         priority: 1,
         items: [
-          { type: "MenuItem", name: "Mansaf mit Lammfleisch", price: 39.8 },
+          { type: "MenuItem", name: "Mansaf mit Lammfleisch", description: "Lammfleisch in Joghurtsauce, dazu Reis", price: 39.8 },
           { type: "MenuItem", name: "Kabab-Hindi", price: 39.8 },
-          { type: "MenuItem", name: "Kabseh mit Hähnchenkeule", price: 39.8 },
-          { type: "MenuItem", name: "Shakriyeh", price: 39.8 },
+          { type: "MenuItem", name: "Kabseh mit Hähnchenkeule", description: "Würziger Reis mit Hähnchenkeule", price: 39.8 },
+          { type: "MenuItem", name: "Shakriyeh", description: "Geschmortes Fleisch in Joghurtsauce", price: 39.8 },
         ],
       },
       {
@@ -1534,8 +1541,8 @@ const menu: Menu[] = [
         name: "Nachspeise",
         priority: 2,
         items: [
-          { type: "MenuItem", name: "Baklava", price: 39.8 },
-          { type: "MenuItem", name: "Kunafa Nabulsia", price: 39.8 },
+          { type: "MenuItem", name: "Baklava", description: "Blätterteiggebäck mit Nüssen und Sirup", price: 39.8 },
+          { type: "MenuItem", name: "Kunafa Nabulsia", description: "Warmes Dessert aus Teigfäden und Käse mit Zuckersirup", price: 39.8 },
         ],
       },
     ],

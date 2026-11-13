@@ -166,7 +166,7 @@ const getBlockData = async (context: Context, block_ids: string[]) => {
  */
 const getBlock = async (
   block_id: string,
-  { data }: AxiosResponse<NotionResponse, unknown>,
+  { data }: AxiosResponse<NotionResponse>,
   context: Context
 ): Promise<NotionBlock> => {
   const blockData = data.recordMap.block[block_id].value;

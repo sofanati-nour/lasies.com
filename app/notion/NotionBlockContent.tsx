@@ -56,7 +56,6 @@ export function NotionBlockContent({ c: block }: { c: NotionBlock }) {
         return text;
       }
 
-      // @ts-expect-error type is not correct
       const [format, formatValue] = formatting[0];
 
       switch (format) {

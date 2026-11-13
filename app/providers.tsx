@@ -1,18 +1,22 @@
-// app/providers.js
 "use client";
 import posthog from "posthog-js";
 import { PostHogProvider } from "posthog-js/react";
 
-if (typeof window !== "undefined" && process.env.NEXT_PUBLIC_POSTHOG_KEY) {
-  posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
+/**
+ * Starts PostHog – called by the consent banner only after the visitor has
+ * agreed (also for a choice stored on an earlier visit). Before that,
+ * nothing from PostHog is loaded.
+ */
+export function initPostHog() {
+  const key = process.env.NEXT_PUBLIC_POSTHOG_KEY;
+  if (!key || posthog.__loaded) return;
+  posthog.init(key, {
     api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
-    person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well
-    // GDPR: capture nothing and store nothing until the visitor accepts in
-    // the consent banner, which calls opt_in_capturing().
-    opt_out_capturing_by_default: true,
-    persistence: "memory",
+    person_profiles: "identified_only",
+    persistence: "localStorage+cookie",
   });
 }
+
 export function CSPostHogProvider({ children }: { children: React.ReactNode }) {
   return <PostHogProvider client={posthog}>{children}</PostHogProvider>;
 }

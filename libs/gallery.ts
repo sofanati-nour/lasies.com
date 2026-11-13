@@ -2,9 +2,14 @@
 import fs from "fs";
 import { join } from "path";
 
+import { galleryCaptions } from "@/libs/galleryCaptions";
+
 export type GalleryItem =
-  | { type: "image"; src: string }
-  | { type: "video"; src: string; poster?: string };
+  | { type: "image"; src: string; alt: string }
+  | { type: "video"; src: string; poster?: string; alt: string };
+
+const captionFor = (file: string, fallback: string) =>
+  galleryCaptions[file] ?? fallback;
 
 /**
  * Everything shown on /galerie.
@@ -26,6 +31,7 @@ export function getGalleryItems(): GalleryItem[] {
         type: "video",
         src: `/videos/${f}`,
         poster: videoFiles.includes(cover) ? `/videos/${cover}` : undefined,
+        alt: captionFor(f, "Video aus einem Lasies-Catering"),
       };
     });
 
@@ -33,7 +39,11 @@ export function getGalleryItems(): GalleryItem[] {
     .readdirSync(imageDir)
     .filter((f) => /\.(jpe?g|png)$/i.test(f))
     .sort()
-    .map((f) => ({ type: "image", src: `/images/galarie/${f}` }));
+    .map((f) => ({
+      type: "image",
+      src: `/images/galarie/${f}`,
+      alt: captionFor(f, "Speisen von Lasies Catering Service"),
+    }));
 
   // Interleave the videos among the first photos so they stand out.
   const items = [...images];

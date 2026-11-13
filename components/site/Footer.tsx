@@ -2,6 +2,7 @@ import { navLinks, site } from "@/libs/site";
 import { Instagram, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import CookieSettingsButton from "@/components/CookieSettingsButton";
 
 export default function Footer() {
   return (
@@ -10,22 +11,23 @@ export default function Footer() {
         <div className="space-y-5">
           <Image
             src="/logo.png"
-            alt="Lasies"
-            width={500}
-            height={250}
-            className="-ml-3 h-24 w-auto object-cover"
-            style={{ objectPosition: "center 58%", aspectRatio: "2 / 1" }}
+            alt="Lasies Catering Service"
+            width={2000}
+            height={839}
+            sizes="240px"
+            className="h-20 w-auto"
           />
           <p className="max-w-xs text-sm leading-relaxed">
             Catering, Partyservice und Front-Cooking aus Bad Liebenzell –
-            frisch zubereitet für Ihre Feste in {site.area}.
+            frisch zubereitet für Ihre Feste in Calw, Leonberg und im
+            Großraum Stuttgart.
           </p>
           <div className="flex gap-3">
             <SocialLink href={site.instagram} label="Instagram">
-              <Instagram size={18} />
+              <Instagram size={18} aria-hidden />
             </SocialLink>
             <SocialLink href={site.whatsapp} label="WhatsApp">
-              <MessageCircle size={18} />
+              <MessageCircle size={18} aria-hidden />
             </SocialLink>
             <SocialLink href={site.listando} label="Lasies auf Listando">
               <Image
@@ -49,6 +51,14 @@ export default function Footer() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link
+                href="/blog/catering-tipps-bad-liebenzell-moettlingen"
+                className="transition hover:text-gold"
+              >
+                Ratgeber: Catering-Tipps
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -60,7 +70,7 @@ export default function Footer() {
                 href={site.phoneHref}
                 className="flex items-center gap-3 transition hover:text-gold"
               >
-                <Phone size={16} className="shrink-0 text-gold" />
+                <Phone size={16} className="shrink-0 text-gold" aria-hidden />
                 {site.phone}
               </a>
             </li>
@@ -69,17 +79,17 @@ export default function Footer() {
                 href={`mailto:${site.email}`}
                 className="flex items-center gap-3 transition hover:text-gold"
               >
-                <Mail size={16} className="shrink-0 text-gold" />
+                <Mail size={16} className="shrink-0 text-gold" aria-hidden />
                 {site.email}
               </a>
             </li>
             <li className="flex items-start gap-3">
-              <MapPin size={16} className="mt-0.5 shrink-0 text-gold" />
-              <span>
+              <MapPin size={16} className="mt-0.5 shrink-0 text-gold" aria-hidden />
+              <address className="not-italic">
                 {site.street}
                 <br />
                 {site.city}
-              </span>
+              </address>
             </li>
           </ul>
         </div>
@@ -92,28 +102,40 @@ export default function Footer() {
             Erzählen Sie uns von Ihrer Veranstaltung – wir erstellen Ihnen gerne
             ein unverbindliches Angebot.
           </p>
-          <Link href="/#kontakt" className="btn-gold">
+          <Link href="/#anfrage" className="btn-gold">
             Angebot anfragen
           </Link>
         </div>
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-x flex flex-col gap-3 py-6 text-xs text-cream/50 sm:flex-row sm:items-center sm:justify-between">
+        <div className="container-x flex flex-col gap-3 py-6 text-xs text-cream/60 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} {site.name}
           </p>
-          <div className="flex gap-6">
-            <Link href="/impressum" className="transition hover:text-gold">
-              Impressum
-            </Link>
-            <Link
-              href="/wichteges-und-wissenswertes"
-              className="transition hover:text-gold"
-            >
-              Geschäftsbedingungen
-            </Link>
-          </div>
+          <ul className="flex flex-wrap items-center gap-x-6 gap-y-2 [&_a]:inline-block [&_button]:inline-block">
+            <li>
+              <Link href="/impressum" className="py-1 transition hover:text-gold">
+                Impressum
+              </Link>
+            </li>
+            <li>
+              <Link href="/datenschutz" className="py-1 transition hover:text-gold">
+                Datenschutz
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/wichtiges-und-wissenswertes#bedingungen"
+                className="py-1 transition hover:text-gold"
+              >
+                Geschäftsbedingungen
+              </Link>
+            </li>
+            <li>
+              <CookieSettingsButton className="py-1 transition hover:text-gold" />
+            </li>
+          </ul>
         </div>
       </div>
     </footer>
@@ -134,7 +156,7 @@ function SocialLink({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={label}
+      aria-label={`${label} (öffnet in neuem Tab)`}
       className="grid h-10 w-10 place-items-center rounded-full border border-white/15 text-cream transition hover:border-gold hover:text-gold"
     >
       {children}

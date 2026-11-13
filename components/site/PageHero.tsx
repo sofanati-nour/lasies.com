@@ -17,7 +17,8 @@ export default function PageHero({
         src={image}
         alt=""
         fill
-        priority
+        preload
+        loading="eager"
         sizes="100vw"
         placeholder="blur"
         className="-z-20 object-cover opacity-40"
@@ -26,7 +27,7 @@ export default function PageHero({
       <div className="container-x">
         <p className="eyebrow animate-fade-up !text-gold-light">{eyebrow}</p>
         <h1
-          className="mt-4 max-w-3xl animate-fade-up font-display text-4xl leading-[1.05] sm:text-6xl"
+          className="mt-4 max-w-3xl animate-fade-up hyphens-auto font-display text-[2rem] leading-[1.05] min-[400px]:text-4xl [overflow-wrap:anywhere] sm:text-6xl"
           style={{ animationDelay: "80ms" }}
         >
           {title}

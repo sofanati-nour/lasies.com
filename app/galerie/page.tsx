@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { getGalleryItems } from "@/libs/gallery";
@@ -6,12 +5,14 @@ import { Galarie } from "@/components/Galarie";
 import PageHero from "@/components/site/PageHero";
 import heroImage from "@/app/images/1719173020438.jpg";
 
-export const metadata: Metadata = {
-  title: "Galerie | Lasies Catering Service",
+import { pageMetadata } from "@/libs/metadata";
+
+export const metadata = pageMetadata({
+  title: "Galerie – Catering-Fotos aus Bad Liebenzell | Lasies",
   description:
-    "Impressionen aus unseren Caterings: Buffets, Fingerfood, Schlemmerplatten und Front-Cooking von Lasies aus Bad Liebenzell.",
-  alternates: { canonical: "https://www.lasies.com/galerie" },
-};
+    "Fotos und Videos aus unseren Caterings: Buffets, Fingerfood, Schlemmerplatten, Grillfeste und Front-Cooking von Lasies aus Bad Liebenzell.",
+  path: "/galerie",
+});
 
 export default function GaleriePage() {
   const items = getGalleryItems();
@@ -26,7 +27,7 @@ export default function GaleriePage() {
             Das Auge <em className="italic text-gold-light">isst mit</em>
           </>
         }
-        intro="Ein Vorgeschmack aus unseren Caterings – frisch angerichtet, mit Liebe zum Detail. Tippen Sie auf ein Bild, um es groß anzusehen."
+        intro="Ein Vorgeschmack aus unseren Caterings – frisch angerichtet, mit Liebe zum Detail. Wählen Sie ein Bild, um es groß anzusehen."
       />
       <section className="py-14 sm:py-20">
         <div className="container-x">
@@ -35,8 +36,8 @@ export default function GaleriePage() {
             <p className="font-display text-3xl text-olive-900">
               Appetit bekommen?
             </p>
-            <Link href="/#kontakt" className="btn-gold mt-6">
-              Jetzt unverbindlich anfragen <ArrowRight size={16} />
+            <Link href="/#anfrage" className="btn-gold mt-6">
+              Jetzt unverbindlich anfragen <ArrowRight size={16} aria-hidden />
             </Link>
           </div>
         </div>

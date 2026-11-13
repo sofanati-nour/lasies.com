@@ -25,10 +25,11 @@ import SectionHeading from "@/components/site/SectionHeading";
 import { slugify } from "@/libs/utils";
 import { site } from "@/libs/site";
 import { googleRating, reviews } from "@/libs/reviews";
+import MotionToggle from "@/components/MotionToggle";
 
-import heroA from "@/app/images/1719173020627.jpg";
-import heroB from "@/app/images/1719172637065.jpg";
-import heroC from "@/app/images/slide-tarek-2.jpeg";
+import heroA from "@/app/images/hero-lachsplatte.jpg";
+import heroB from "@/app/images/hero-forellenplatte.jpg";
+import heroC from "@/app/images/hero-fingerfood.jpg";
 import chefGrill from "@/app/images/1719172912415.jpg";
 import buffetHall from "@/app/images/1719173020512.jpg";
 import pizzaChef from "@/app/images/pizzaman.jpeg";
@@ -84,26 +85,30 @@ function Hero() {
             src={src}
             alt=""
             fill
-            priority={i === 0}
+            preload={i === 0}
+            loading={i === 0 ? "eager" : "lazy"}
             sizes="100vw"
             placeholder="blur"
-            className="animate-ken-burns object-cover"
+            className="animate-ken-burns object-cover object-[72%_center] md:object-center"
           />
         </div>
       ))}
       <div className="absolute inset-0 -z-10 bg-gradient-to-t from-olive-950 via-olive-950/55 to-black/30" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-olive-950/70 to-transparent" />
 
-      <div className="container-x pb-12 pt-32 sm:pb-16">
-        <p className="eyebrow animate-fade-up !text-gold-light">
-          Catering & Partyservice · Bad Liebenzell
-        </p>
-        <h1
-          className="mt-6 max-w-4xl animate-fade-up font-display text-[2.75rem] font-medium leading-[1.02] tracking-tight sm:text-7xl lg:text-8xl"
-          style={{ animationDelay: "100ms" }}
-        >
-          Feste, die man{" "}
-          <em className="font-normal italic text-gold-light">schmeckt</em>.
+      <MotionToggle className="absolute bottom-4 right-4 z-10 sm:bottom-6 sm:right-6" />
+      <div className="container-x pb-16 pt-32 sm:pb-16">
+        <h1 className="max-w-4xl">
+          <span className="eyebrow animate-fade-up !text-gold-light">
+            Catering & Partyservice in Bad{"\u00A0"}Liebenzell
+          </span>{" "}
+          <span
+            className="mt-6 block animate-fade-up font-display text-[2.75rem] font-medium leading-[1.02] tracking-tight sm:text-7xl lg:text-8xl"
+            style={{ animationDelay: "100ms" }}
+          >
+            Feste, die man{" "}
+            <em className="font-normal italic text-gold-light">schmeckt</em>.
+          </span>
         </h1>
         <p
           className="mt-6 max-w-xl animate-fade-up text-lg leading-relaxed text-white/85 sm:text-xl"
@@ -117,9 +122,9 @@ function Hero() {
           className="mt-9 flex animate-fade-up flex-col gap-3 sm:flex-row"
           style={{ animationDelay: "300ms" }}
         >
-          <Link href="#kontakt" className="btn-gold !px-8 !py-4 text-base">
+          <Link href="#anfrage" className="btn-gold !px-8 !py-4 text-base">
             Unverbindlich anfragen
-            <ArrowRight size={18} />
+            <ArrowRight size={18} aria-hidden />
           </Link>
           <Link href="/menu" className="btn-ghost-light !px-8 !py-4 text-base">
             Menü entdecken
@@ -131,15 +136,15 @@ function Hero() {
           style={{ animationDelay: "400ms" }}
         >
           <li className="flex items-center gap-3">
-            <Leaf size={18} className="shrink-0 text-gold" />
+            <Leaf size={18} className="shrink-0 text-gold" aria-hidden />
             Frische, regionale Zutaten
           </li>
           <li className="flex items-center gap-3">
-            <ChefHat size={18} className="shrink-0 text-gold" />
+            <ChefHat size={18} className="shrink-0 text-gold" aria-hidden />
             Front-Cooking direkt vor Ort
           </li>
           <li className="flex items-center gap-3">
-            <MapPin size={18} className="shrink-0 text-gold" />
+            <MapPin size={18} className="shrink-0 text-gold" aria-hidden />
             Calw, Leonberg & Großraum Stuttgart
           </li>
         </ul>
@@ -164,21 +169,21 @@ function OccasionMarquee() {
     "Abschlussfeiern",
   ];
   const row = (hidden: boolean) => (
-    <ul className="flex shrink-0 items-center" aria-hidden={hidden}>
+    <ul className="marquee-row flex shrink-0 items-center" aria-hidden={hidden}>
       {items.map((item) => (
         <li
           key={item}
           className="flex items-center gap-8 pr-8 font-display text-2xl italic text-cream/90 sm:text-3xl"
         >
           {item}
-          <Sparkles size={16} className="text-gold" />
+          <Sparkles size={16} className="text-gold" aria-hidden />
         </li>
       ))}
     </ul>
   );
   return (
-    <div className="overflow-hidden border-y border-white/5 bg-olive-900 py-5">
-      <div className="flex w-max animate-marquee">
+    <div className="group overflow-hidden border-y border-white/5 bg-olive-900 py-5">
+      <div className="marquee-track flex w-max animate-marquee group-hover:[animation-play-state:paused]">
         {row(false)}
         {row(true)}
       </div>
@@ -212,11 +217,11 @@ function About() {
               src={chefGrill}
               alt="Unser Koch beim Front-Cooking am Grill"
               placeholder="blur"
-              sizes="20vw"
+              sizes="(min-width: 1024px) 20vw, 45vw"
               className="aspect-[3/4] object-cover"
             />
           </div>
-          <div className="absolute -left-3 top-8 rounded-2xl bg-olive-900 px-5 py-4 text-cream shadow-xl sm:-left-8">
+          <div className="absolute -left-2 top-8 rounded-2xl bg-olive-900 px-5 py-4 text-cream shadow-xl sm:-left-4 xl:-left-8">
             <p className="font-display text-3xl text-gold-light">Frisch</p>
             <p className="text-xs uppercase tracking-widest text-cream/70">
               zubereitet vor Ort
@@ -300,7 +305,7 @@ function Pizza() {
             />
           </div>
           <div className="absolute -bottom-2 left-4 flex items-center gap-2 rounded-full bg-gold px-5 py-2.5 text-sm font-bold text-olive-950 shadow-lg">
-            <Flame size={16} /> Neu bei uns
+            <Flame size={16} aria-hidden /> Neu bei uns
           </div>
         </div>
         <div>
@@ -328,8 +333,8 @@ function Pizza() {
               </div>
             ))}
           </div>
-          <Link href="#kontakt" className="btn-gold mt-8">
-            Pizza-Event anfragen <ArrowRight size={16} />
+          <Link href="/?anfrage=pizza#anfrage" className="btn-gold mt-8">
+            Pizza-Event anfragen <ArrowRight size={16} aria-hidden />
           </Link>
         </div>
       </div>
@@ -350,8 +355,8 @@ const featuredBuffets: {
     img: imgFingerfood,
   },
   {
-    name: "Grill Buffet",
-    menu: "Grill Buffet",
+    name: "Grill-Buffet",
+    menu: "Grill-Buffet",
     text: "Gegrilltes Fleisch, Gemüse und Beilagen – ideal für Sommerfeste und Outdoor-Events.",
     img: imgGrill,
   },
@@ -375,8 +380,8 @@ const featuredBuffets: {
   },
   {
     name: "Hochzeitsbuffet",
-    menu: "Die Glücklichen Ehepaar",
-    text: "„Die Glücklichen Ehepaar“ – elegante Gerichte für den schönsten Tag im Leben.",
+    menu: "Hochzeitsbuffet „Das glückliche Ehepaar“",
+    text: "„Das glückliche Ehepaar“ – elegante Gerichte für den schönsten Tag im Leben.",
     img: imgHochzeit,
   },
 ];
@@ -386,7 +391,7 @@ const moreBuffets = [
   "Suppen",
   "Deftiges Buffet",
   "Vegetarisches Buffet",
-  "Gourmetreise Buffet",
+  "Gourmetreise-Buffet",
   "Französisches Buffet",
 ];
 
@@ -401,7 +406,7 @@ function Buffets() {
             intro="Ob rustikal, mediterran oder festlich-elegant: Wählen Sie aus unseren Buffets oder lassen Sie sich Ihr eigenes Menü zusammenstellen."
           />
           <Link href="/menu" className="btn-ghost-dark shrink-0">
-            Komplettes Menü <ArrowRight size={16} />
+            Komplettes Menü <ArrowRight size={16} aria-hidden />
           </Link>
         </div>
 
@@ -429,28 +434,32 @@ function Buffets() {
                 Speisen ansehen
                 <ArrowRight
                   size={16}
-                  className="transition group-hover:translate-x-1"
-                />
+                  className="transition group-hover:translate-x-1" aria-hidden />
               </span>
             </Link>
           ))}
         </div>
 
-        <div className="mt-8 flex flex-wrap items-center gap-3">
-          <span className="text-sm font-medium text-ink-muted">Außerdem:</span>
+        <div className="mt-8 flex flex-col gap-3 xl:flex-row xl:items-center">
+          <span className="shrink-0 text-sm font-medium text-ink-muted">
+            Außerdem:
+          </span>
+          {/* Phones: natural wrap. 640–1279px: even 3-column grid. xl: one row. */}
+          <div className="flex flex-wrap gap-3 sm:grid sm:grid-cols-3 xl:flex xl:flex-wrap">
           {moreBuffets.map((name) => (
             <Link
               key={name}
               href={`/menu#${slugify(name)}`}
-              className="rounded-full border border-olive-900/15 bg-cream-light px-4 py-2 text-sm text-olive-900 transition hover:border-gold hover:text-gold-dark"
+              className="rounded-full border border-olive-900/15 bg-cream-light px-4 py-2 text-center text-sm text-olive-900 transition hover:border-gold hover:text-gold-dark"
             >
               {name}
             </Link>
           ))}
-          <span className="rounded-full border border-dashed border-olive-900/20 px-4 py-2 text-sm text-ink-muted">
-            Getränke auf Anfrage
-          </span>
+          </div>
         </div>
+        <p className="mt-4 text-sm text-ink-muted">
+          Getränke servieren wir Ihnen gerne nach Wunsch.
+        </p>
       </div>
     </section>
   );
@@ -486,7 +495,7 @@ function Services() {
     {
       icon: PartyPopper,
       title: "Private Partys",
-      text: "Feiern wo und wann Sie möchten – wir bringen Genuss und Service zu Ihnen.",
+      text: "Im Garten, im Vereinsheim oder zu Hause – wir bringen Genuss und Service zu Ihnen.",
     },
   ];
   const extras = [
@@ -512,13 +521,17 @@ function Services() {
     },
   ];
   return (
-    <section id="leistungen" className="bg-cream-dark/50 py-20 sm:py-28">
+    <section
+      id="leistungen"
+      tabIndex={-1}
+      className="bg-cream-dark/50 py-20 outline-none focus-visible:ring-0 focus-visible:ring-offset-0 sm:py-28"
+    >
       <div className="container-x">
         <SectionHeading
           align="center"
           eyebrow="Leistungen"
           title="Planen Sie ein fabelhaftes Event?"
-          intro="„Feiern wo und wann Sie möchten“ – das ist unser Motto. Wir kümmern uns um das Essen und auf Wunsch um alles drumherum."
+          intro="„Feiern, wo und wann Sie möchten“ – das ist unser Motto. Wir kümmern uns um das Essen und auf Wunsch um das ganze Drumherum."
         />
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -528,7 +541,7 @@ function Services() {
               className="group rounded-3xl bg-cream-light p-7 shadow-sm ring-1 ring-olive-900/5 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-olive-900/10"
             >
               <div className="grid h-12 w-12 place-items-center rounded-2xl bg-olive-900 text-gold-light transition group-hover:bg-gold group-hover:text-olive-950">
-                <Icon size={22} />
+                <Icon size={22} aria-hidden />
               </div>
               <h3 className="mt-5 font-display text-2xl text-olive-900">
                 {title}
@@ -550,16 +563,16 @@ function Services() {
                 wir Ihnen auf Wunsch die gesamte Organisation ab.
               </p>
               <Link
-                href="/wichteges-und-wissenswertes"
+                href="/wichtiges-und-wissenswertes"
                 className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-gold-light hover:text-gold"
               >
-                Preise & Bedingungen <ArrowRight size={16} />
+                Preise & Bedingungen <ArrowRight size={16} aria-hidden />
               </Link>
             </div>
             <div className="grid gap-px bg-white/10 sm:grid-cols-2">
               {extras.map(({ icon: Icon, title, text }) => (
                 <div key={title} className="bg-olive-900 p-8">
-                  <Icon size={22} className="text-gold" />
+                  <Icon size={22} className="text-gold" aria-hidden />
                   <p className="mt-4 font-display text-xl">{title}</p>
                   <p className="mt-1 text-sm leading-relaxed text-cream/70">
                     {text}
@@ -597,18 +610,19 @@ function Process() {
       <div className="container-x">
         <SectionHeading
           align="center"
-          eyebrow="So einfach geht's"
+          eyebrow="So einfach geht’s"
           title="In drei Schritten zum Fest"
         />
-        <ol className="relative mt-14 grid gap-10 md:grid-cols-3 md:gap-6">
+        <div className="relative mt-14">
           <div
             aria-hidden
             className="absolute left-[16.6%] right-[16.6%] top-8 hidden border-t-2 border-dashed border-gold/40 md:block"
           />
+        <ol className="relative grid gap-10 md:grid-cols-3 md:gap-6">
           {steps.map(({ icon: Icon, title, text }, i) => (
             <li key={title} className="relative text-center">
               <div className="relative mx-auto grid h-16 w-16 place-items-center rounded-full bg-olive-900 text-gold-light ring-8 ring-cream">
-                <Icon size={24} />
+                <Icon size={24} aria-hidden />
                 <span className="absolute -right-1 -top-1 grid h-6 w-6 place-items-center rounded-full bg-gold text-xs font-bold text-olive-950">
                   {i + 1}
                 </span>
@@ -622,17 +636,36 @@ function Process() {
             </li>
           ))}
         </ol>
+        </div>
       </div>
     </section>
   );
 }
 
-function Stars({ value, size = 16 }: { value: number; size?: number }) {
+function Stars({
+  value,
+  size = 16,
+  tone = "light",
+  "aria-hidden": hidden,
+}: {
+  value: number;
+  size?: number;
+  /** Decorative next to a visible rating: hide from assistive tech. */
+  "aria-hidden"?: boolean;
+  /** "light" cards need the darker gold for 3:1 graphic contrast. */
+  tone?: "light" | "dark";
+}) {
+  const filled = tone === "light" ? "text-gold-dark" : "text-gold";
+  const empty = tone === "light" ? "text-gold-dark/25" : "text-gold/30";
   return (
     <span
       className="flex items-center gap-0.5"
-      role="img"
-      aria-label={`${value.toLocaleString("de-DE")} von 5 Sternen`}
+      {...(hidden
+        ? { "aria-hidden": true }
+        : {
+            role: "img",
+            "aria-label": `${value.toLocaleString("de-DE")} von 5 Sternen`,
+          })}
     >
       {[1, 2, 3, 4, 5].map((n) => {
         const fill = Math.max(0, Math.min(1, value - n + 1));
@@ -644,20 +677,18 @@ function Stars({ value, size = 16 }: { value: number; size?: number }) {
           >
             <Star
               size={size}
-              className="absolute inset-0 text-gold/30"
+              className={`absolute inset-0 ${empty}`}
               fill="currentColor"
-              strokeWidth={0}
-            />
+              strokeWidth={0} aria-hidden />
             <span
               className="absolute inset-0 overflow-hidden"
               style={{ width: `${fill * 100}%` }}
             >
               <Star
                 size={size}
-                className="text-gold"
+                className={filled}
                 fill="currentColor"
-                strokeWidth={0}
-              />
+                strokeWidth={0} aria-hidden />
             </span>
           </span>
         );
@@ -682,28 +713,29 @@ function Reviews() {
                 <em className="italic text-gold-dark">wiederkommen</em>
               </>
             }
-            intro="Echte Stimmen aus unseren Google-Rezensionen – von Hochzeiten, Geburtstagen und Firmenfeiern."
+            intro="Echte Stimmen aus unseren Google-Rezensionen – von der Hochzeit bis zur Gartenparty."
           />
           <a
             href={googleRating.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex shrink-0 items-center gap-5 rounded-3xl bg-olive-900 p-5 pr-7 text-cream shadow-xl shadow-olive-900/10 transition hover:bg-olive-800"
+            className="group flex shrink-0 items-center gap-5 self-start rounded-3xl bg-olive-900 p-5 pr-7 text-cream shadow-xl shadow-olive-900/10 transition hover:bg-olive-800"
           >
             <span className="font-display text-6xl leading-none text-gold-light">
               {rating}
             </span>
+            <span className="sr-only">von 5 Sternen,</span>
             <span>
-              <Stars value={googleRating.rating} size={18} />
+              <Stars value={googleRating.rating} size={18} tone="dark" aria-hidden />
               <span className="mt-1.5 block text-sm text-cream/75">
                 {googleRating.count} Google-Rezensionen
               </span>
+              <span className="sr-only">(öffnet in neuem Tab)</span>
               <span className="mt-1 inline-flex items-center gap-1 text-sm font-semibold text-gold-light">
                 Alle lesen
                 <ArrowRight
                   size={14}
-                  className="transition group-hover:translate-x-1"
-                />
+                  className="transition group-hover:translate-x-1" aria-hidden />
               </span>
             </span>
           </a>
@@ -751,6 +783,7 @@ function Reviews() {
             className="btn-ghost-dark"
           >
             Alle Rezensionen auf Google
+            <span className="sr-only"> (öffnet in neuem Tab)</span>
           </a>
           <a
             href={googleRating.url}
@@ -759,6 +792,7 @@ function Reviews() {
             className="text-sm font-semibold text-gold-dark underline-offset-4 hover:underline"
           >
             Bei uns gefeiert? Bewerten Sie uns!
+            <span className="sr-only"> (öffnet in neuem Tab)</span>
           </a>
         </div>
       </div>
@@ -786,16 +820,17 @@ function GalleryTeaser() {
             intro="Ein erster Vorgeschmack aus unseren Caterings – frisch angerichtet, mit Liebe zum Detail."
           />
           <Link href="/galerie" className="btn-ghost-light shrink-0">
-            Zur Galerie <ArrowRight size={16} />
+            Zur Galerie <ArrowRight size={16} aria-hidden />
           </Link>
         </div>
         <div className="mt-12 grid grid-flow-dense auto-rows-[140px] grid-cols-2 gap-3 sm:auto-rows-[200px] md:grid-cols-4 md:gap-4">
+          {/* Decorative preview; the single "Zur Galerie" link above is
+              the way in, so keyboard users don't hit six identical links. */}
           {imgs.map(({ src, cls }) => (
-            <Link
+            <div
               key={src.src}
-              href="/galerie"
+              aria-hidden
               className={`group relative overflow-hidden rounded-2xl ${cls}`}
-              aria-label="Zur Galerie"
             >
               <Image
                 src={src}
@@ -805,7 +840,7 @@ function GalleryTeaser() {
                 placeholder="blur"
                 className="object-cover transition duration-700 group-hover:scale-105"
               />
-            </Link>
+            </div>
           ))}
         </div>
       </div>
@@ -815,7 +850,11 @@ function GalleryTeaser() {
 
 function ContactSection() {
   return (
-    <section id="kontakt" className="py-20 sm:py-28">
+    <section
+      id="kontakt"
+      tabIndex={-1}
+      className="py-20 outline-none focus-visible:ring-0 focus-visible:ring-offset-0 sm:py-28"
+    >
       <div className="container-x grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
         <div className="flex flex-col rounded-[2rem] bg-olive-900 p-8 text-cream sm:p-12">
           <p className="eyebrow !text-gold-light">Kontakt</p>
@@ -824,8 +863,14 @@ function ContactSection() {
           </h2>
           <p className="mt-5 leading-relaxed text-cream/75">
             Gerne erstellen wir Ihnen ein unverbindliches Angebot für Ihr
-            Catering rund um {site.area}.
+            Catering in {site.areaSentence}.
           </p>
+          <Link
+            href="/wichtiges-und-wissenswertes#faq"
+            className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-gold-light hover:text-gold"
+          >
+            Häufige Fragen zu Preisen & Ablauf <ArrowRight size={16} aria-hidden />
+          </Link>
           <ul className="mt-10 space-y-5">
             <ContactRow
               label="Telefon"
@@ -845,7 +890,7 @@ function ContactSection() {
             />
             <ContactRow
               label="Adresse"
-              value={`${site.street}, ${site.city}`}
+              value={`${site.street}, ${site.city.replace(" ", "\u00A0").replace("Bad ", "Bad\u00A0")}`}
             />
           </ul>
           <div className="mt-auto hidden pt-10 lg:block">
@@ -861,7 +906,15 @@ function ContactSection() {
             </div>
           </div>
         </div>
-        <Contact handleSendEmail={SendContactRequest} />
+        {/* Stays in place after sending, so "Angebot anfragen" links
+            always have a target. */}
+        <div
+          id="anfrage"
+          tabIndex={-1}
+          className="scroll-mt-24 outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
+        >
+          <Contact handleSendEmail={SendContactRequest} />
+        </div>
       </div>
     </section>
   );
@@ -890,6 +943,7 @@ function ContactRow({
           className="mt-1 block font-display text-xl text-cream transition hover:text-gold-light"
         >
           {value}
+          {external && <span className="sr-only"> (öffnet in neuem Tab)</span>}
         </a>
       ) : (
         <p className="mt-1 font-display text-xl text-cream">{value}</p>
