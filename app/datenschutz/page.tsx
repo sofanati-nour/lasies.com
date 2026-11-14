@@ -75,6 +75,27 @@ export default function Datenschutz() {
             schreiben, gelten zusätzlich die Datenschutzbestimmungen von
             WhatsApp.
           </p>
+          <p>
+            Nennen Sie uns im Feld „Empfohlen von“ oder auf anderem Weg den
+            Namen einer Person, die uns empfohlen hat, verwenden wir diese
+            Angabe nur für die Empfehlungsaktion: um Ihnen den
+            Neukundenrabatt zu gewähren (Art. 6 Abs. 1 lit. b DSGVO) und der
+            empfehlenden Person ihre Gutschrift zuzuordnen (Art. 6 Abs. 1
+            lit. f DSGVO; unser berechtigtes Interesse ist die korrekte
+            Durchführung der Aktion). Bitte geben Sie keine Kontaktdaten
+            Dritter an. Sofern uns ihre Kontaktdaten vorliegen, informieren
+            wir die empfehlende Person innerhalb eines Monats, nachdem wir
+            ihren Namen erhalten haben, über diese Verarbeitung (Art. 14
+            DSGVO) und benachrichtigen sie, sobald ihre Gutschrift entsteht;
+            Einzelheiten zu Ihrem Auftrag geben wir nicht weiter. Kommt kein
+            Auftrag zustande, löschen wir die Angabe zusammen mit Ihrer
+            Anfrage. Angaben zu Gutschriften löschen wir zwölf Monate,
+            nachdem die Gutschrift eingelöst oder verfallen ist; Rechnungen,
+            auf denen Rabatt oder Gutschrift ausgewiesen sind, bewahren wir
+            für die gesetzlichen Fristen auf (§{"\u00A0"}147 AO, §{"\u00A0"}257 HGB). Der
+            Verarbeitung auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO können
+            Sie nach Art. 21 DSGVO widersprechen.
+          </p>
 
           <h2>5. Analyse und Werbung – nur mit Ihrer Einwilligung</h2>
           <p>
@@ -117,7 +138,7 @@ export default function Datenschutz() {
           <p>
             Die Schriftarten dieser Website werden von unserem eigenen Server
             geladen; dabei werden keine Daten an Google übertragen. Links zu
-            Instagram, WhatsApp, Google Maps oder Listando führen auf Angebote
+            Instagram, WhatsApp oder Google Maps führen auf Angebote
             anderer Anbieter, für die deren Datenschutzbestimmungen gelten.
             Daten werden erst übertragen, wenn Sie einen solchen Link
             anklicken.

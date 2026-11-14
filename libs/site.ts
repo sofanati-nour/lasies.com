@@ -9,8 +9,6 @@ export const site = {
   email: "info@lasies.com",
   whatsapp: "https://wa.me/4915738949296",
   instagram: "https://www.instagram.com/lasies.catering.service/",
-  listando:
-    "https://www.listando.de/baden-wuerttemberg/bad-liebenzell/WzS8jzQmtH/catering/lasies-catering-service-/CNGWSkIcw3",
   street: "Barthstraße 4",
   postalCode: "75378",
   locality: "Bad Liebenzell",

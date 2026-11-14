@@ -45,6 +45,7 @@ export const ContactRequestSchema = z.object({
   time: optionalText(10, "Bitte geben Sie eine gültige Uhrzeit ein."),
   location: optionalText(200, "Der Veranstaltungsort ist zu lang."),
   address: optionalText(300, "Die Adresse ist zu lang."),
+  referredBy: optionalText(100, "Der Name darf höchstens 100 Zeichen lang sein."),
   message: z
     .string({ error: "Bitte erzählen Sie uns kurz von Ihrer Feier." })
     .trim()

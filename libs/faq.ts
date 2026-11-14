@@ -40,6 +40,11 @@ export const faq: { question: string; answer: string }[] = [
       "Ja. Geschirr, Gläser, Besteck und Stehtische können Sie bei uns mieten (eine Mieteinheit beträgt 3 Tage). Ein Gedeck aus Speiseteller, Beilagenteller, Glas, Gabel und Messer kostet 3,25\u00A0€, ein Einzelteil 0,65\u00A0€ – jeweils inklusive Reinigung. Ein Stehtisch kostet 15,00\u00A0€. Service- und Küchenpersonal übernimmt auf Wunsch die Bewirtung Ihrer Gäste.",
   },
   {
+    question: "Gibt es Vorteile für Empfehlungen, Firmen oder Vereine?",
+    answer:
+      "Ja. Neukunden erhalten 50\u00A0€ Rabatt auf ihren ersten Auftrag ab 1.000\u00A0€ (inkl. MwSt.). Wer uns empfohlen hat, erhält 50\u00A0€ Gutschrift auf einen späteren eigenen Auftrag, sobald der empfohlene Auftrag durchgeführt und bezahlt ist – höchstens dreimal pro Kalenderjahr, gültig bis Ende des dritten Kalenderjahres nach Entstehung. Nennen Sie uns den Namen spätestens, bevor Sie unser Angebot annehmen. Alle Bedingungen finden Sie unter „Wichtiges & Wissenswertes“. Firmen und Vereinen mit regelmäßigen Veranstaltungen bieten wir auf Anfrage Partnerkonditionen mit festem Ansprechpartner an; Vorteile gehen dabei immer an die Organisation.",
+  },
+  {
     question: "Bieten Sie auch Getränke an?",
     answer:
       "Getränke servieren wir Ihnen gerne nach Wunsch. Sagen Sie uns in Ihrer Anfrage einfach, was Sie sich vorstellen.",

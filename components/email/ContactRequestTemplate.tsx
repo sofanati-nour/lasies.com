@@ -33,6 +33,7 @@ export const ContactRequestTemplate = (data: ContactRequestType) => {
       <p>Anzahl der Gäste: {data.guests}</p>
       <p>Veranstaltungsort: {dash(data.location)}</p>
       <p>Adresse: {dash(data.address)}</p>
+      <p>Empfohlen von: {dash(data.referredBy)}</p>
     </div>
   );
 };

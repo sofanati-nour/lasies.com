@@ -36,7 +36,7 @@ export function businessSchema() {
     },
     areaServed: site.areaServed.map((name) => ({ "@type": "Place", name })),
     hasMap: googleRating.url,
-    sameAs: [site.instagram, site.listando, googleRating.url],
+    sameAs: [site.instagram, googleRating.url],
     hasMenu: `${site.url}/menu`,
     servesCuisine: [
       "Deutsch",

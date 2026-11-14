@@ -87,6 +87,7 @@ export async function SendContactRequest(
       `Gäste: ${formData.guests}`,
       `Veranstaltungsort: ${formData.location || "–"}`,
       `Adresse: ${formData.address || "–"}`,
+      `Empfohlen von: ${formData.referredBy || "–"}`,
       "",
       formData.message,
     ].join("\n"),

@@ -72,6 +72,7 @@ export function GET() {
 - Servicepersonal 35,00 € und Küchenpersonal 40,00 € pro Person und Stunde
 - Anfahrt 0,60 € pro Kilometer; Rückholung an Sonn- und Feiertagen +30,00 €
 - Unterstützung bei Location-Suche, Dekoration und Rahmenprogramm
+- Empfehlungsaktion: 50 € Rabatt für Neukunden auf den ersten Auftrag ab 1.000 € inkl. MwSt.; 50 € Gutschrift für die empfehlende Person (ab 18 Jahren, auch Gäste) auf einen späteren eigenen Auftrag, sobald der empfohlene Auftrag durchgeführt und bezahlt ist; höchstens 3 Gutschriften pro Kalenderjahr, bis zu 2 pro Auftrag einlösbar, gültig bis 31.12. des dritten Kalenderjahres nach Entstehung; Empfehlung spätestens vor Angebotsannahme nennen; nicht mit anderen Aktionen kombinierbar. Partnerkonditionen für Firmen und Vereine auf Anfrage; Vorteile gehen an die Organisation
 - Alle Preise inkl. gesetzlicher MwSt.; Buffetpreise auf Anfrage (individuelles Angebot)
 
 ## Buffets und Mindestbestellmengen
@@ -86,7 +87,7 @@ ${faq.map((f) => `### ${f.question}\n${f.answer}`).join("\n\n")}
 ## Seiten
 - [Startseite](${site.url}/): Überblick, Leistungen, Bewertungen, Anfrageformular
 - [Menü & Buffets](${site.url}/menu): alle Buffets mit Speisen
-- [Wichtiges & Wissenswertes](${site.url}/wichtiges-und-wissenswertes): Preise, Mietservice, Bedingungen, FAQ
+- [Wichtiges & Wissenswertes](${site.url}/wichtiges-und-wissenswertes): Preise, Mietservice, Empfehlungsaktion, Bedingungen, FAQ
 - [Galerie](${site.url}/galerie): Fotos und Videos
 - [Ratgeber: Catering-Tipps für Bad Liebenzell](${site.url}/blog/catering-tipps-bad-liebenzell-moettlingen)
 - [Impressum](${site.url}/impressum)

@@ -23,6 +23,8 @@ const fields: {
   placeholder?: string;
   autoComplete?: string;
   hint?: string;
+  /** Spans both columns. */
+  wide?: boolean;
 }[] = [
   { name: "name", label: "Name", type: "text", required: true, placeholder: "Vor- und Nachname", autoComplete: "name" },
   { name: "email", label: "E-Mail", type: "email", required: true, placeholder: "ihre@email.de", autoComplete: "email" },
@@ -32,6 +34,7 @@ const fields: {
   { name: "time", label: "Uhrzeit", type: "time" },
   { name: "location", label: "Veranstaltungsort", type: "text", placeholder: "z. B. Festhalle" },
   { name: "address", label: "Ihre Adresse", type: "text", placeholder: "Straße, PLZ, Ort", autoComplete: "street-address" },
+  { name: "referredBy", label: "Empfohlen von", type: "text", placeholder: "Vor- und Nachname der empfehlenden Person", hint: "Neukunden erhalten 50\u00A0€ Rabatt ab 1.000\u00A0€ Auftragswert – Bedingungen unter „Wichtiges & Wissenswertes“.", wide: true },
 ];
 
 export default function Contact({
@@ -285,6 +288,8 @@ function PrefillFromLink({ prefill }: { prefill: (text: string) => void }) {
         ? "Ich interessiere mich für Steinofen-Pizza vor Ort. "
         : anfrage === "personal"
         ? "Ich möchte Service- bzw. Küchenpersonal für meine Veranstaltung anfragen. "
+        : anfrage === "partner"
+        ? "Wir planen regelmäßig Veranstaltungen und interessieren uns für Ihre Partnerkonditionen für Firmen und Vereine. "
         : buffet
         ? `Ich interessiere mich für: ${buffet}. `
         : null;
@@ -310,6 +315,7 @@ function Field({
   placeholder,
   autoComplete,
   hint,
+  wide,
   register,
   error,
 }: {
@@ -320,6 +326,7 @@ function Field({
   placeholder?: string;
   autoComplete?: string;
   hint?: string;
+  wide?: boolean;
   register: UseFormRegister<ContactRequestType>;
   error?: string;
 }) {
@@ -327,7 +334,7 @@ function Field({
   const describedBy =
     (error ? `${id}-error` : hint ? `${id}-hint` : undefined);
   return (
-    <div>
+    <div className={wide ? "sm:col-span-2" : undefined}>
       <label
         htmlFor={id}
         className="mb-1.5 block text-sm font-medium text-olive-900"

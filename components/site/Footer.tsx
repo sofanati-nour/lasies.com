@@ -29,15 +29,6 @@ export default function Footer() {
             <SocialLink href={site.whatsapp} label="WhatsApp">
               <MessageCircle size={18} aria-hidden />
             </SocialLink>
-            <SocialLink href={site.listando} label="Lasies auf Listando">
-              <Image
-                src="/listando-logo.webp"
-                alt=""
-                width={18}
-                height={18}
-                className="rounded grayscale"
-              />
-            </SocialLink>
           </div>
         </div>
 
