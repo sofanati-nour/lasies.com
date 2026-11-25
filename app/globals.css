@@ -197,3 +197,9 @@ html[data-motion="paused"] .animate-ken-burns {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Visitors who already chose: hide the server-rendered cookie banner before
+   the first paint (attribute set by libs/consent.ts). */
+html[data-consent="set"] [data-consent-banner] {
+  display: none;
+}

@@ -8,11 +8,11 @@ import {
   useSyncExternalStore,
 } from "react";
 import Link from "next/link";
-import posthog from "posthog-js";
 import { GA_LOADER_SRC } from "@/libs/analytics";
-import { initPostHog } from "@/app/providers";
+import { CONSENT_STORAGE_KEY } from "@/libs/consent";
+import { startPostHog, stopPostHog } from "@/app/providers";
 
-const STORAGE_KEY = "lasies-consent-v1";
+const STORAGE_KEY = CONSENT_STORAGE_KEY;
 
 /** Event the footer's "Cookie-Einstellungen" button fires to reopen us. */
 export const OPEN_CONSENT_EVENT = "lasies:open-consent";
@@ -40,12 +40,9 @@ function updateConsent(choice: ConsentChoice) {
   });
   if (choice === "granted") {
     loadGoogleTag();
-    initPostHog();
-    if (posthog.__loaded) posthog.opt_in_capturing();
-  } else if (posthog.__loaded) {
-    // Withdrawn after it had started: stop capturing. (No reset(): in
-    // posthog-js that would clear the opt-out again.)
-    posthog.opt_out_capturing();
+    void startPostHog();
+  } else {
+    stopPostHog();
   }
 }
 
@@ -62,10 +59,11 @@ function subscribeToStorage(onChange: () => void) {
   return () => window.removeEventListener("storage", onChange);
 }
 
-// The server can't see localStorage. Reporting "pending" there keeps the
-// banner hidden until the client has read the stored choice, so the first
-// client render matches the server HTML.
-const getServerSnapshot = () => "pending";
+// The server can't see localStorage, so it renders the banner as for a
+// first visit: it is in the HTML and shows without waiting for JavaScript.
+// For visitors who already chose, libs/consent.ts hides it before the first
+// paint, and after hydration the stored choice removes it from the page.
+const getServerSnapshot = () => null;
 
 export default function ConsentBanner() {
   const stored = useSyncExternalStore(
@@ -86,6 +84,8 @@ export default function ConsentBanner() {
 
   useEffect(() => {
     const reopen = () => {
+      // Lift the pre-paint "already chosen" hiding (see libs/consent.ts).
+      delete document.documentElement.dataset.consent;
       returnFocusRef.current = document.activeElement as HTMLElement | null;
       setReopened(true);
     };
@@ -144,6 +144,7 @@ export default function ConsentBanner() {
       ref={bannerRef}
       tabIndex={-1}
       aria-labelledby="consent-title"
+      data-consent-banner=""
       className="fixed inset-x-0 bottom-0 z-50 max-h-[40dvh] overflow-y-auto overscroll-contain border-t border-white/10 bg-olive-950/95 text-cream shadow-2xl outline-none backdrop-blur-md"
     >
       <div className="container-x flex flex-col gap-4 py-5 md:flex-row md:items-center md:gap-8">

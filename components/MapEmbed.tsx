@@ -53,7 +53,7 @@ export default function MapEmbed({ className = "" }: { className?: string }) {
         href={googleRating.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-gold-light hover:text-gold"
+        className="mt-2 inline-flex items-center gap-2 py-1 text-sm font-semibold text-gold-light hover:text-gold"
       >
         <Navigation size={14} aria-hidden /> Route in Google Maps planen
       </a>

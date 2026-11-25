@@ -113,7 +113,7 @@ export default function LandingPage({ page }: { page: LandingPageData }) {
           <nav aria-label="Brotkrumen" className="text-sm text-ink-muted">
             <ol className="flex flex-wrap items-center gap-1.5">
               <li>
-                <Link href="/" className="underline-offset-4 hover:text-gold-dark hover:underline">
+                <Link href="/" className="inline-block py-1 underline-offset-4 hover:text-gold-dark hover:underline">
                   Startseite
                 </Link>
               </li>

@@ -35,10 +35,10 @@ export default function Footer() {
 
         <div>
           <h2 className="mb-4 font-display text-lg text-cream">Entdecken</h2>
-          <ul className="space-y-2.5 text-sm">
+          <ul className="space-y-0.5 text-sm">
             {navLinks.map((l) => (
               <li key={l.href}>
-                <Link href={l.href} className="transition hover:text-gold">
+                <Link href={l.href} className="inline-block py-1 transition hover:text-gold">
                   {l.label}
                 </Link>
               </li>
@@ -46,7 +46,7 @@ export default function Footer() {
             <li>
               <Link
                 href="/blog/catering-tipps-bad-liebenzell-moettlingen"
-                className="transition hover:text-gold"
+                className="inline-block py-1 transition hover:text-gold"
               >
                 Ratgeber: Catering-Tipps
               </Link>
@@ -56,11 +56,11 @@ export default function Footer() {
 
         <div>
           <h2 className="mb-4 font-display text-lg text-cream">Kontakt</h2>
-          <ul className="space-y-3 text-sm">
+          <ul className="space-y-1 text-sm">
             <li>
               <a
                 href={site.phoneHref}
-                className="flex items-center gap-3 transition hover:text-gold"
+                className="flex items-center gap-3 py-1 transition hover:text-gold"
               >
                 <Phone size={16} className="shrink-0 text-gold" aria-hidden />
                 {site.phone}
@@ -69,7 +69,7 @@ export default function Footer() {
             <li>
               <a
                 href={`mailto:${site.email}`}
-                className="flex items-center gap-3 transition hover:text-gold"
+                className="flex items-center gap-3 py-1 transition hover:text-gold"
               >
                 <Mail size={16} className="shrink-0 text-gold" aria-hidden />
                 {site.email}

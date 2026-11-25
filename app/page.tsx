@@ -422,11 +422,11 @@ function Clients() {
           }
           intro="Zu unseren Stammkunden gehören bekannte Firmen und Einrichtungen aus der Region – von Leonberg und Ditzingen bis Bad Liebenzell und Calw. Eine Auswahl der Unternehmen, die regelmäßig bei uns bestellen:"
         />
-        <ul className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+        <ul className="mt-14 flex flex-wrap justify-center gap-4">
           {clients.map((c) => (
             <li
               key={c.name}
-              className="flex flex-col items-center rounded-3xl bg-white px-4 pb-5 pt-6 text-center shadow-sm ring-1 ring-olive-900/5 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-olive-900/10 hover:ring-2 hover:ring-gold"
+              className="flex w-[calc(50%-0.5rem)] flex-col items-center rounded-3xl bg-white px-4 pb-5 pt-6 sm:w-[calc((100%-2rem)/3)] lg:w-[calc((100%-4rem)/5)] text-center shadow-sm ring-1 ring-olive-900/5 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-olive-900/10 hover:ring-2 hover:ring-gold"
             >
               <div className="relative h-16 w-full">
                 <Image
@@ -514,7 +514,7 @@ function Pizza() {
           </Link>
           <Link
             href="/steinofen-pizza-catering"
-            className="ml-0 mt-4 block text-sm font-semibold text-gold-light underline-offset-4 hover:underline sm:ml-5 sm:mt-8 sm:inline-block"
+            className="ml-0 mt-3 block py-1 text-sm font-semibold text-gold-light underline-offset-4 hover:underline sm:ml-5 sm:mt-7 sm:inline-block"
           >
             Mehr zum Steinofen-Pizza-Catering
           </Link>
@@ -736,7 +736,7 @@ function Services() {
               {href && (
                 <Link
                   href={href}
-                  className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-gold-dark underline-offset-4 hover:underline"
+                  className="mt-3 inline-flex items-center gap-2 py-1 text-sm font-semibold text-gold-dark underline-offset-4 hover:underline"
                 >
                   {linkLabel} <ArrowRight size={14} aria-hidden />
                 </Link>
@@ -758,7 +758,7 @@ function Services() {
               </p>
               <Link
                 href="/wichtiges-und-wissenswertes"
-                className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-gold-light hover:text-gold"
+                className="mt-5 inline-flex items-center gap-2 py-1 text-sm font-semibold text-gold-light hover:text-gold"
               >
                 Preise & Bedingungen <ArrowRight size={16} aria-hidden />
               </Link>
@@ -814,7 +814,7 @@ function Rental() {
             </Link>
             <Link
               href="/wichtiges-und-wissenswertes#mietservice"
-              className="text-sm font-semibold text-gold-dark underline-offset-4 hover:underline sm:ml-3"
+              className="inline-block py-1 text-sm font-semibold text-gold-dark underline-offset-4 hover:underline sm:ml-3"
             >
               Mietpreise & Bedingungen
             </Link>
@@ -828,7 +828,7 @@ function Rental() {
               className="relative flex flex-col gap-4 rounded-3xl bg-cream-light p-5 shadow-sm ring-1 ring-olive-900/5 sm:p-6"
             >
               {isNew && (
-                <span className="absolute right-4 top-4 rounded-full bg-gold px-2 py-0.5 text-[0.65rem] font-bold uppercase tracking-wider text-olive-950">
+                <span className="absolute right-4 top-4 rounded-full bg-gold px-2 py-0.5 text-[0.7rem] font-bold uppercase tracking-wider text-olive-950">
                   Neu
                 </span>
               )}
@@ -1048,7 +1048,7 @@ function Reviews() {
             href={googleRating.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-semibold text-gold-dark underline-offset-4 hover:underline"
+            className="inline-block py-1 text-sm font-semibold text-gold-dark underline-offset-4 hover:underline"
           >
             Bei uns gefeiert? Bewerten Sie uns!
             <span className="sr-only"> (öffnet in neuem Tab)</span>
@@ -1170,7 +1170,7 @@ function ContactSection() {
           </p>
           <Link
             href="/wichtiges-und-wissenswertes#faq"
-            className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-gold-light hover:text-gold"
+            className="mt-3 inline-flex items-center gap-2 py-1 text-sm font-semibold text-gold-light hover:text-gold"
           >
             Häufige Fragen zu Preisen & Ablauf <ArrowRight size={16} aria-hidden />
           </Link>

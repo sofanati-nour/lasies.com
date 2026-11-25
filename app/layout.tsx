@@ -6,10 +6,10 @@ import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
-import { CSPostHogProvider } from "./providers";
 import ConsentBanner from "@/components/ConsentBanner";
 import JsonLd from "@/components/JsonLd";
 import { motionInitScript } from "@/libs/motion";
+import { consentInitScript } from "@/libs/consent";
 import { businessSchema } from "@/libs/schema";
 import { pageMetadata } from "@/libs/metadata";
 import { site } from "@/libs/site";
@@ -78,6 +78,7 @@ export default function RootLayout({
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: motionInitScript }} />
+        <script dangerouslySetInnerHTML={{ __html: consentInitScript }} />
         {/* Consent Mode default: everything denied. The gtag.js loader
             itself is only added by the consent banner after the visitor
             accepts; until then these calls just wait in dataLayer. */}
@@ -103,25 +104,23 @@ export default function RootLayout({
           }}
         />
       </head>
-      <CSPostHogProvider>
-        <body>
-          <a href="#inhalt" className="skip-link">
-            Zum Inhalt springen
-          </a>
-          <ConsentBanner />
-          <JsonLd data={businessSchema()} />
-          <Header />
-          <div
-            id="inhalt"
-            tabIndex={-1}
-            className="outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
-          >
-            {children}
-          </div>
-          <Footer />
-          <Analytics />
-        </body>
-      </CSPostHogProvider>
+      <body>
+        <a href="#inhalt" className="skip-link">
+          Zum Inhalt springen
+        </a>
+        <ConsentBanner />
+        <JsonLd data={businessSchema()} />
+        <Header />
+        <div
+          id="inhalt"
+          tabIndex={-1}
+          className="outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
+        >
+          {children}
+        </div>
+        <Footer />
+        <Analytics />
+      </body>
     </html>
   );
 }
