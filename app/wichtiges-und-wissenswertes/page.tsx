@@ -218,7 +218,16 @@ export default function Wichtiges() {
           <p className="mx-auto mt-10 max-w-3xl text-center text-sm leading-relaxed text-ink-muted">
             Alle genannten Preise verstehen sich, wenn nicht anders benannt,
             einschließlich der gesetzlichen Mehrwertsteuer. Es gelten die Preise
-            und Bedingungen zum Zeitpunkt Ihres Angebots.
+            und Bedingungen zum Zeitpunkt Ihres Angebots. Informationen zur
+            Verarbeitung Ihrer Daten, z.{" "}B. beim Kontaktformular oder
+            bei Google Maps, finden Sie in unserer{" "}
+            <Link
+              href="/datenschutz"
+              className="font-medium text-gold-dark underline underline-offset-2 hover:text-olive-900"
+            >
+              Datenschutzerklärung
+            </Link>
+            .
           </p>
         </div>
       </section>
