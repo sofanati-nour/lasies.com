@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
@@ -20,6 +21,19 @@ const fraunces = Fraunces({
   variable: "--font-display",
   axes: ["opsz"],
   style: ["normal", "italic"],
+});
+// Only "F" and "f" (from Source Serif 4, see app/fonts/LICENSE.txt): they
+// replace Fraunces' versions of these two letters in every display heading.
+// No fallback, so all other characters fall through to Fraunces.
+const displayF = localFont({
+  src: [
+    { path: "./fonts/lasies-f-normal.woff2", style: "normal", weight: "200 900" },
+    { path: "./fonts/lasies-f-italic.woff2", style: "italic", weight: "200 900" },
+  ],
+  variable: "--font-display-f",
+  fallback: [],
+  adjustFontFallback: false,
+  declarations: [{ prop: "unicode-range", value: "U+0046, U+0066" }],
 });
 
 export const metadata: Metadata = {
@@ -58,7 +72,7 @@ export default function RootLayout({
   return (
     <html
       lang="de"
-      className={`${inter.variable} ${fraunces.variable}`}
+      className={`${inter.variable} ${fraunces.variable} ${displayF.variable}`}
       // data-motion may be set by the inline script before hydration.
       suppressHydrationWarning
     >

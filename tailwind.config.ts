@@ -22,7 +22,8 @@ const config: Config = {
         ink: { DEFAULT: "#1C1E19", muted: "#5E6157" },
       },
       fontFamily: {
-        display: ["var(--font-display)", "Georgia", "serif"],
+        // --font-display-f only holds "F" and "f"; everything else is Fraunces.
+        display: ["var(--font-display-f)", "var(--font-display)", "Georgia", "serif"],
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
       },
       keyframes: {
