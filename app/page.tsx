@@ -31,6 +31,9 @@ import MotionToggle from "@/components/MotionToggle";
 import heroA from "@/app/images/hero-lachsplatte.jpg";
 import heroB from "@/app/images/hero-forellenplatte.jpg";
 import heroC from "@/app/images/hero-fingerfood.jpg";
+import heroD from "@/app/images/hero-pilze.jpg";
+import heroE from "@/app/images/hero-serrano-melone.jpg";
+import heroF from "@/app/images/hero-dessert.jpg";
 import chefGrill from "@/app/images/1719172912415.jpg";
 import buffetHall from "@/app/images/1719173020512.jpg";
 import pizzaChef from "@/app/images/pizzaman.jpeg";
@@ -68,7 +71,9 @@ export default function Home() {
 /* ------------------------------------------------------------------ */
 
 function Hero() {
-  const slides = [heroA, heroB, heroC];
+  // Each slide shows for 7s; keep in sync with "hero-fade" in tailwind.config.ts.
+  // Gold-tray shots (A, F, C) alternate with the others.
+  const slides = [heroA, heroD, heroF, heroE, heroC, heroB];
   return (
     <section className="relative isolate flex min-h-[100svh] items-end overflow-hidden bg-olive-950 text-white">
       {/* First slide is a static base layer, so the hero never goes blank
@@ -102,7 +107,7 @@ function Hero() {
       <div className="container-x pb-16 pt-32 sm:pb-16">
         <h1 className="max-w-4xl">
           <span className="eyebrow animate-fade-up !text-gold-light">
-            Catering & Partyservice in Bad{"\u00A0"}Liebenzell
+            Catering & Partyservice
           </span>{" "}
           <span
             className="mt-6 block animate-fade-up font-display text-[2.75rem] font-medium leading-[1.02] tracking-tight sm:text-7xl lg:text-8xl"
@@ -147,7 +152,7 @@ function Hero() {
           </li>
           <li className="flex items-center gap-3">
             <MapPin size={18} className="shrink-0 text-gold" aria-hidden />
-            Calw, Leonberg & Großraum Stuttgart
+            Bad Liebenzell, Calw, Leonberg & Großraum Stuttgart
           </li>
         </ul>
       </div>

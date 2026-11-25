@@ -34,11 +34,12 @@ const config: Config = {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(-50%)" },
         },
+        // 6 hero slides × 7s = 42s cycle: fade in ~1.3s, hold to 7s, fade out.
         "hero-fade": {
           "0%": { opacity: "0" },
-          "6%": { opacity: "1" },
-          "33%": { opacity: "1" },
-          "39%": { opacity: "0" },
+          "3%": { opacity: "1" },
+          "16.67%": { opacity: "1" },
+          "19.67%": { opacity: "0" },
           "100%": { opacity: "0" },
         },
         "ken-burns": {
@@ -49,7 +50,7 @@ const config: Config = {
       animation: {
         "fade-up": "fade-up 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both",
         marquee: "marquee 40s linear infinite",
-        "hero-fade": "hero-fade 21s linear infinite",
+        "hero-fade": "hero-fade 42s linear infinite",
         "ken-burns": "ken-burns 21s ease-out infinite alternate",
       },
     },
