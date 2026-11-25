@@ -2,33 +2,204 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-image: url(./bg_2.webp);
-  background-color: #262524;
-  background-position: left top;
-  background-size: auto;
-  background-repeat: repeat;
-  background-attachment: scroll;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-cream text-ink font-sans antialiased;
+  }
+  ::selection {
+    @apply bg-gold/40 text-olive-950;
+  }
+  /* Dark ring with a cream gap: the dark ring shows on light surfaces and
+     the cream gap shows on dark ones, so focus is visible everywhere. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-olive-900 ring-offset-2 ring-offset-cream;
+  }
+  /* Full-screen native dialogs (mobile menu, lightbox). */
+  dialog.dialog-screen {
+    @apply m-0 h-[100dvh] max-h-none w-screen max-w-none border-0 p-0;
+  }
+  dialog.dialog-screen::backdrop {
+    background: rgb(18 24 17 / 0.6);
+  }
 }
 
-.shimmer-on-hover:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.4);
-  -webkit-transition: none;
-  -moz-transition: none;
-  transition: none;
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-gold-dark;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply block h-px w-8 bg-current;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition duration-200 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-gold {
+    @apply btn bg-gold text-olive-950 shadow-[0_8px_24px_-8px_rgba(201,162,58,0.6)] hover:bg-gold-light;
+  }
+  .btn-dark {
+    @apply btn bg-olive-900 text-cream hover:bg-olive-700;
+  }
+  .btn-ghost-light {
+    @apply btn border border-white/40 text-white backdrop-blur-sm hover:border-white hover:bg-white/10;
+  }
+  .btn-ghost-dark {
+    @apply btn border border-olive-900/25 text-olive-900 hover:border-olive-900 hover:bg-olive-900/5;
+  }
+  .field {
+    @apply w-full rounded-xl border border-olive-900/50 bg-cream-light px-4 py-3 text-ink placeholder:text-ink-muted transition focus:border-olive-900 focus:outline-none focus:ring-2 focus:ring-olive-900;
+  }
+  .field-invalid {
+    @apply border-red-600;
+  }
+  .skip-link {
+    @apply fixed left-4 top-4 z-[60] -translate-y-24 rounded-full bg-olive-900 px-5 py-3 text-sm font-semibold text-cream shadow-lg transition focus:translate-y-0;
+  }
 }
 
-.shimmer-on-hover:hover:after {
-  width: 120%;
-  background-color: rgba(255, 255, 255, 0);
+/* On /menu the sticky buffet tabs sit below the fixed header: keep focused
+   or jumped-to content clear of both (WCAG 2.4.11). */
+/* Measured header + tab bar height: 1 row on phones, it wraps to 2–4 rows
+   from tablet width up. */
+html:has([role="tablist"]) {
+  scroll-padding-top: 9.5rem;
+}
+@media (min-width: 768px) and (min-height: 640px) {
+  html:has([role="tablist"]) {
+    scroll-padding-top: 17.5rem;
+  }
+}
+@media (min-width: 820px) and (min-height: 640px) {
+  html:has([role="tablist"]) {
+    scroll-padding-top: 15rem;
+  }
+}
+@media (min-width: 1280px) and (min-height: 640px) {
+  html:has([role="tablist"]) {
+    scroll-padding-top: 12.5rem;
+  }
+}
+/* Short screens: the tab bar scrolls away with the page; only the fixed
+   header needs to be cleared. */
+@media (max-height: 639px) {
+  .menu-tabbar {
+    position: static;
+  }
+  html:has([role="tablist"]) {
+    scroll-padding-top: 5rem;
+  }
+}
 
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
+/* Without motion (OS setting or the pause button) the occasion ticker
+   becomes a static grid: 2/3/4/6 columns, so the 12 occasions always fill
+   whole rows, without separators. */
+@media (prefers-reduced-motion: reduce) {
+html .marquee-track {
+  width: auto;
+  animation: none !important;
+  justify-content: center;
+}
+html .marquee-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  justify-items: center;
+  gap: 0.5rem 1.5rem;
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  flex-shrink: 1;
+}
+html .marquee-row[aria-hidden="true"],
+html .marquee-row li svg {
+  display: none;
+}
+html .marquee-row li {
+  gap: 0;
+  padding-right: 0;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+@media (min-width: 640px) {
+  html .marquee-row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  html .marquee-row li { font-size: 1.5rem; line-height: 2rem; }
+}
+@media (min-width: 768px) {
+  html .marquee-row { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (min-width: 1280px) {
+  html .marquee-row { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+}
+}
+
+html[data-motion="paused"] .marquee-track {
+  width: auto;
+  animation: none !important;
+  justify-content: center;
+}
+html[data-motion="paused"] .marquee-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  justify-items: center;
+  gap: 0.5rem 1.5rem;
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  flex-shrink: 1;
+}
+html[data-motion="paused"] .marquee-row[aria-hidden="true"],
+html[data-motion="paused"] .marquee-row li svg {
+  display: none;
+}
+html[data-motion="paused"] .marquee-row li {
+  gap: 0;
+  padding-right: 0;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+@media (min-width: 640px) {
+  html[data-motion="paused"] .marquee-row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  html[data-motion="paused"] .marquee-row li { font-size: 1.5rem; line-height: 2rem; }
+}
+@media (min-width: 768px) {
+  html[data-motion="paused"] .marquee-row { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (min-width: 1280px) {
+  html[data-motion="paused"] .marquee-row { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+}
+
+/* Visitors can pause the hero slideshow and the occasion ticker
+   (WCAG 2.2.2). The toggle sets data-motion on <html>. */
+html[data-motion="paused"] .animate-marquee,
+html[data-motion="paused"] .animate-hero-fade,
+html[data-motion="paused"] .animate-ken-burns {
+  animation-play-state: paused !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Visitors who already chose: hide the server-rendered cookie banner before
+   the first paint (attribute set by libs/consent.ts). */
+html[data-consent="set"] [data-consent-banner] {
+  display: none;
 }

@@ -1,0 +1,11 @@
+lasies-f-normal.woff2 / lasies-f-italic.woff2
+
+Subset (only the letters "F" and "f") of Source Serif 4, renamed to
+"Lasies F" because the original carries the Reserved Font Name "Source".
+They replace just these two letters in the display font (Fraunces).
+
+Copyright 2014 - 2021 Adobe Systems Incorporated (http://www.adobe.com/),
+with Reserved Font Name "Source".
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+The license is available with a FAQ at: https://openfontlicense.org

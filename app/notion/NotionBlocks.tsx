@@ -32,8 +32,8 @@ export function NotionBlocks({
       return null;
     }
 
-    const result: JSX.Element[] = [];
-    let currentListItems: JSX.Element[] = [];
+    const result: React.JSX.Element[] = [];
+    let currentListItems: React.JSX.Element[] = [];
     let currentListType: "bulleted_list" | "numbered_list" | null = null;
 
     const flushListItems = () => {

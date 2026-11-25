@@ -1,46 +1,68 @@
-import type { Metadata } from "next";
-import { Inter, Merriweather } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Fraunces, Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import Header from "@/components/site/Header";
+import Footer from "@/components/site/Footer";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
-import { GoogleAnalytics } from "@next/third-parties/google";
-import { CSPostHogProvider } from "./providers";
 import ConsentBanner from "@/components/ConsentBanner";
+import JsonLd from "@/components/JsonLd";
+import { motionInitScript } from "@/libs/motion";
+import { consentInitScript } from "@/libs/consent";
+import { businessSchema } from "@/libs/schema";
+import { pageMetadata } from "@/libs/metadata";
+import { site } from "@/libs/site";
+import { ADS_ID, GA_ID } from "@/libs/analytics";
 
-const inter = Inter({ subsets: ["latin"] });
-const merriweather = Merriweather({
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const fraunces = Fraunces({
   subsets: ["latin"],
-  weight: "300",
+  variable: "--font-display",
+  axes: ["opsz"],
+  style: ["normal", "italic"],
+});
+// Only "F" and "f" (from Source Serif 4, see app/fonts/LICENSE.txt): they
+// replace Fraunces' versions of these two letters in every display heading.
+// No fallback, so all other characters fall through to Fraunces.
+const displayF = localFont({
+  src: [
+    { path: "./fonts/lasies-f-normal.woff2", style: "normal", weight: "200 900" },
+    { path: "./fonts/lasies-f-italic.woff2", style: "italic", weight: "200 900" },
+  ],
+  variable: "--font-display-f",
+  fallback: [],
+  adjustFontFallback: false,
+  declarations: [{ prop: "unicode-range", value: "U+0046, U+0066" }],
 });
 
-const keywords = [
-  "catering calw",
-  "partyservice calw",
-  "ladies catering",
-  "lasies.de",
-  "catering leonberg",
-  "ladies catering service",
-  "lasies de",
-  "lasies.com",
-  "marketenderei",
-];
 export const metadata: Metadata = {
-  title:
-    "Lasies Catering Service | Catering Calw, Catering Leonberg, Partyservice Calw",
-  description:
-    "Catering Service in Bad Liebenzell-Möttlingen, Calw, Leonberg und Umgebung. Wir bieten Catering, Partyservice und vieles mehr.",
-  alternates: {
-    canonical: "https://www.lasies.com",
-  },
-  authors: [
-    {
-      name: "Tarek Taraben",
-      url: "https://instagram.com/lasies.catering.service",
-    },
+  metadataBase: new URL(site.url),
+  ...pageMetadata({
+    title: "Catering & Partyservice Bad Liebenzell, Calw | Lasies",
+    description:
+      "Catering aus Bad Liebenzell für Hochzeiten, Firmen- und Familienfeiern in Calw, Leonberg & Stuttgart: Buffets, Fingerfood, Front-Cooking, Steinofen-Pizza.",
+    path: "/",
+  }),
+  applicationName: site.name,
+  authors: [{ name: site.owner, url: site.instagram }],
+  keywords: [
+    "Catering Calw",
+    "Partyservice Calw",
+    "Catering Leonberg",
+    "Catering Bad Liebenzell",
+    "Hochzeitscatering",
+    "Fingerfood Catering",
+    "Steinofen-Pizza Catering",
   ],
-  keywords: keywords.join(", "),
+  manifest: "/site.webmanifest",
+  formatDetection: { telephone: false },
 };
+
+export const viewport: Viewport = {
+  themeColor: "#1B2419",
+};
+
 
 export default function RootLayout({
   children,
@@ -48,17 +70,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang={"de"}>
+    <html
+      lang="de"
+      className={`${inter.variable} ${fraunces.variable} ${displayF.variable}`}
+      // data-motion may be set by the inline script before hydration.
+      suppressHydrationWarning
+    >
       <head>
-        <Script
-          src="https://kit.fontawesome.com/307fd5a23b.js"
-          crossOrigin={"anonymous"}
-        ></Script>
-        <Script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: jsonLd }}
-          id="json-ld"
-        />
+        <script dangerouslySetInnerHTML={{ __html: motionInitScript }} />
+        <script dangerouslySetInnerHTML={{ __html: consentInitScript }} />
+        {/* Consent Mode default: everything denied. The gtag.js loader
+            itself is only added by the consent banner after the visitor
+            accepts; until then these calls just wait in dataLayer. */}
         <Script
           id="gtag-consent-default"
           strategy="beforeInteractive"
@@ -75,206 +98,29 @@ export default function RootLayout({
                 wait_for_update: 500
               });
               gtag('js', new Date());
-              gtag('config', 'AW-18091080306');
+              gtag('config', '${ADS_ID}');
+              gtag('config', '${GA_ID}');
             `,
           }}
         />
-        <Script
-          id="gtag-src"
-          strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=AW-18091080306"
-        />
       </head>
-      <CSPostHogProvider>
-        <body
-          className={`${inter.className} ${merriweather.className} container mx-auto`}
+      <body>
+        <a href="#inhalt" className="skip-link">
+          Zum Inhalt springen
+        </a>
+        <ConsentBanner />
+        <JsonLd data={businessSchema()} />
+        <Header />
+        <div
+          id="inhalt"
+          tabIndex={-1}
+          className="outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
         >
-          <Navbar />
           {children}
-          <footer className="py-8 px-20 text-[#c4c7ae] backdrop-blur text-center grid grid-cols-1 lg:grid-cols-3 gap-4">
-            <div className="lg:text-left ">
-              <h3 className="text-2xl">Lasies Catering Service</h3>
-              <p>Barthstr.4, 75378 Bad Liebenzell</p>
-              <p>Telefon: +49 1573 8949296</p>
-              <p>Email: info@lasies.com</p>
-            </div>
-            <div></div>
-
-            <div>
-              <h3 className="text-2xl">Social Media</h3>
-              <div className="flex justify-center gap-4">
-                <a
-                  href="https://www.instagram.com/lasies.catering.service/"
-                  target="_blank"
-                  aria-label="Instagram"
-                >
-                  <i className="fab fa-instagram w-4 h-4"></i>
-                </a>
-                {/* <a href="https://www.facebook.com/lasies.catering.service">
-                <i className="fab fa-facebook w-4 h-4"></i>
-              </a> */}
-                <a
-                  href="https://wa.me/4915738949296"
-                  target="_blank"
-                  aria-label="WhatsApp"
-                >
-                  <i className="fab fa-whatsapp w-4 h-4"></i>
-                </a>
-                <a
-                  className="invert text-[#4d4f3f] flex items-center"
-                  href={
-                    "https://www.listando.de/baden-wuerttemberg/bad-liebenzell/WzS8jzQmtH/catering/lasies-catering-service-/CNGWSkIcw3"
-                  }
-                  target="_blank"
-                >
-                  <img
-                    src={"/listando-logo.webp"}
-                    alt=""
-                    width={18}
-                    height={18}
-                    className="inline mr-2 grayscale rounded-md"
-                  />
-                </a>
-              </div>
-            </div>
-          </footer>
-          <Analytics />
-          <ConsentBanner />
-        </body>
-      </CSPostHogProvider>
-      <GoogleAnalytics gaId="G-7SFQN95E17" />
+        </div>
+        <Footer />
+        <Analytics />
+      </body>
     </html>
   );
 }
-
-const jsonLd = `{
-  "@context": "https://schema.org",
-  "@type": "FoodEstablishment",
-  "name": "Lasies",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Barthstr. 4",
-    "addressLocality": "Bad Liebenzell-Möttlingen",
-    "addressRegion": "BW",
-    "postalCode": "75378",
-    "addressCountry": "Germany"
-  },
-  "email": "info@lasies.com",
-  "telephone": "+49 1573 8949296",
-  "servesCuisine": [
-    "Fingerfood",
-    "Zum Kombinieren",
-    "Suppen Auswahl",
-    "Schlemmerplatten",
-    "Grill Buffet",
-    "Deftiges Buffet",
-    "Salatjungfer Buffet",
-    "Mediterranes Buffet",
-    "Die Glücklichen Ehepaar",
-    "Gourmetreise Buffet",
-    "Französisches Buffet"
-  ],
-  "hasMenu": "https://lasies.com/menu",
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 48.76102363786428,
-    "longitude": 8.800177643639351
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "author": "Hans Müller",
-      "datePublished": "2023-06-01",
-      "reviewBody": "Das Essen war hervorragend! Besonders die Schlemmerplatten sind sehr zu empfehlen.",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": 5
-      }
-    },
-    {
-      "@type": "Review",
-      "author": "Petra Schmidt",
-      "datePublished": "2023-06-10",
-      "reviewBody": "Toller Service und leckeres Fingerfood. Immer wieder gerne!",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": 5
-      }
-    },
-    {
-      "@type": "Review",
-      "author": "Lukas Bauer",
-      "datePublished": "2023-06-15",
-      "reviewBody": "Die Suppenauswahl war sehr vielfältig und köstlich.",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": 4
-      }
-    },
-    {
-      "@type": "Review",
-      "author": "Anna Fischer",
-      "datePublished": "2023-06-20",
-      "reviewBody": "Das Grill Buffet war einfach spitze! Sehr empfehlenswert.",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": 5
-      }
-    },
-    {
-      "@type": "Review",
-      "author": "Markus Weber",
-      "datePublished": "2023-06-25",
-      "reviewBody": "Die Salatjungfer Buffet war frisch und lecker. Perfekt für heiße Sommertage.",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": 4
-      }
-    },
-    {
-      "@type": "Review",
-      "author": "Claudia Hoffmann",
-      "datePublished": "2023-07-01",
-      "reviewBody": "Sehr gutes mediterranes Buffet. Die Auswahl war großartig.",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": 5
-      }
-    },
-    {
-      "@type": "Review",
-      "author": "Stefan Becker",
-      "datePublished": "2023-07-05",
-      "reviewBody": "Das Deftige Buffet hat uns sehr gut gefallen. Sehr authentisch.",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": 5
-      }
-    },
-    {
-      "@type": "Review",
-      "author": "Kerstin Wagner",
-      "datePublished": "2023-07-10",
-      "reviewBody": "Die Gourmetreise Buffet war ein echtes Geschmackserlebnis. Jederzeit wieder!",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": 5
-      }
-    },
-    {
-      "@type": "Review",
-      "author": "Jürgen Koch",
-      "datePublished": "2023-07-15",
-      "reviewBody": "Das französische Buffet war exquisit. Sehr zu empfehlen!",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": 5
-      }
-    }
-  ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5",
-    "ratingCount": "9"
-}
-}`;
