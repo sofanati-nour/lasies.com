@@ -5,6 +5,7 @@ import { googleRating } from "@/libs/reviews";
 import { slugify } from "@/libs/utils";
 import { landingPages } from "@/libs/landingPages";
 import { lunch } from "@/libs/lunch";
+import { clients } from "@/libs/clients";
 
 // Plain-text summary for AI assistants (https://llmstxt.org), generated from
 // the same data as the pages so the facts never drift apart.
@@ -66,6 +67,9 @@ export function GET() {
 - Google-Bewertung: ${googleRating.rating.toLocaleString("de-DE")} von 5 Sternen (${googleRating.count} Rezensionen) – ${googleRating.url}
 - Einzugsgebiet: ${site.areaServed.join(", ")}
 
+## Stammkunden (Auszug)
+${clients.map((c) => `- ${c.name}, ${c.town}`).join("\n")}
+
 ## Leistungen
 - Catering und Partyservice mit individuellen Buffets und Fingerfood
 - Front-Cooking: Zubereitung direkt vor Ort vor den Gästen
@@ -74,7 +78,7 @@ export function GET() {
 - Mietservice mit Lieferung und Abholung: Geschirr, Gläser, Besteck, Stehtische (Mieteinheit 3 Tage); außerdem Tischdecken, Servietten, professionelle Kaffeemaschine, Sitzgarnituren und Partyzelte (Preise auf Anfrage). Gedeck (Speiseteller, Beilagenteller, Glas, Gabel, Messer) 3,25 €, Einzelteil 0,65 €, jeweils inkl. Reinigung und MwSt.; Stehtisch 15,00 € pro Tisch
 - Servicepersonal 35,00 € und Küchenpersonal 40,00 € pro Person und Stunde
 - Anfahrt 0,60 € pro Kilometer; Rückholung an Sonn- und Feiertagen +30,00 €
-- Unterstützung bei Location-Suche, Dekoration und Rahmenprogramm
+- Unterstützung bei Location-Suche und Dekoration
 - Empfehlungsaktion: 50 € Rabatt für Neukunden auf den ersten Auftrag ab 1.000 € inkl. MwSt.; 50 € Gutschrift für die empfehlende Person (ab 18 Jahren, auch Gäste) auf einen späteren eigenen Auftrag, sobald der empfohlene Auftrag durchgeführt und bezahlt ist; höchstens 3 Gutschriften pro Kalenderjahr, bis zu 2 pro Auftrag einlösbar, gültig bis 31.12. des dritten Kalenderjahres nach Entstehung; Empfehlung spätestens vor Angebotsannahme nennen; nicht mit anderen Aktionen kombinierbar. Partnerkonditionen für Firmen und Vereine auf Anfrage; Vorteile gehen an die Organisation
 - Alle Preise inkl. gesetzlicher MwSt.; Buffetpreise auf Anfrage (individuelles Angebot)
 

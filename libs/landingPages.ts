@@ -93,7 +93,7 @@ export const landingPages: LandingPage[] = [
         bullets: [
           "Deftiges, Grill-, Vegetarisches, Mediterranes und Orientalisches Buffet",
           "Front-Cooking am Grill und Steinofen-Pizza direkt bei Ihrer Feier",
-          "Geschirr, Gläser, Besteck und Stehtische zum Mieten",
+          "Geschirr, Tischdecken, Stehtische und Partyzelte zum Mieten",
           "Service- und Küchenpersonal auf Wunsch",
         ],
       },
@@ -318,7 +318,7 @@ export const landingPages: LandingPage[] = [
       {
         title: "Alles aus einer Hand",
         paragraphs: [
-          "Damit Sie in Pforzheim nicht mehrere Dienstleister koordinieren müssen, bringen wir auf Wunsch alles mit: Geschirr, Gläser und Besteck zur Miete, Stehtische, Servicepersonal für die Bewirtung und Küchenpersonal vor Ort. Bei Dekoration, Blumen und Musik helfen wir Ihnen mit Kontakten weiter.",
+          "Damit Sie in Pforzheim nicht mehrere Dienstleister koordinieren müssen, bringen wir auf Wunsch alles mit: Geschirr, Gläser, Besteck, Tischdecken, Stehtische und Partyzelte zur Miete, Servicepersonal für die Bewirtung und Küchenpersonal vor Ort. Bei Dekoration und Blumen helfen wir Ihnen gerne weiter.",
         ],
       },
     ],
@@ -542,8 +542,8 @@ export const landingPages: LandingPage[] = [
       {
         title: "Mehr als das Essen",
         paragraphs: [
-          "Am Hochzeitstag sollen Sie sich um nichts kümmern müssen. Unser Servicepersonal übernimmt die Bewirtung Ihrer Gäste (35,00\u00A0€ pro Person und Stunde), Küchenpersonal ist für 40,00\u00A0€ pro Person und Stunde vor Ort. Geschirr, Gläser und Besteck mieten Sie als Gedeck für 3,25\u00A0€ inklusive Reinigung, Stehtische für 15,00\u00A0€.",
-          "Bei der Suche nach einer Location, bei Dekoration, Blumen und Musikern helfen wir Ihnen gerne weiter.",
+          "Am Hochzeitstag sollen Sie sich um nichts kümmern müssen. Unser Servicepersonal übernimmt die Bewirtung Ihrer Gäste (35,00\u00A0€ pro Person und Stunde), Küchenpersonal ist für 40,00\u00A0€ pro Person und Stunde vor Ort. Geschirr, Gläser und Besteck mieten Sie als Gedeck für 3,25\u00A0€ inklusive Reinigung, Stehtische für 15,00\u00A0€ – dazu Tischdecken, Servietten, Sitzgarnituren und Partyzelte. Wir liefern alles und holen es wieder ab.",
+          "Bei der Suche nach einer Location, bei Dekoration und Blumen helfen wir Ihnen gerne weiter.",
         ],
       },
       {
@@ -641,7 +641,7 @@ export const landingPages: LandingPage[] = [
       {
         title: "Rundum versorgt am Veranstaltungstag",
         paragraphs: [
-          "Auf Wunsch übernimmt unser Servicepersonal Ausgabe und Betreuung Ihrer Gäste (35,00\u00A0€ pro Person und Stunde), Küchenpersonal kocht vor Ort (40,00\u00A0€ pro Person und Stunde). Gläser, Geschirr und Besteck mieten Sie inklusive Reinigung, Stehtische für 15,00\u00A0€ pro Tisch.",
+          "Auf Wunsch übernimmt unser Servicepersonal Ausgabe und Betreuung Ihrer Gäste (35,00\u00A0€ pro Person und Stunde), Küchenpersonal kocht vor Ort (40,00\u00A0€ pro Person und Stunde). Gläser, Geschirr und Besteck mieten Sie inklusive Reinigung, Stehtische für 15,00\u00A0€ pro Tisch; auch eine professionelle Kaffeemaschine und Partyzelte können Sie bei uns leihen.",
         ],
       },
     ],
@@ -797,7 +797,7 @@ export const landingPages: LandingPage[] = [
       {
         title: "Pizza und mehr kombinieren",
         paragraphs: [
-          "Die Pizza lässt sich gut mit unseren anderen Angeboten verbinden: [Fingerfood](/fingerfood-catering) zum Empfang, Salate und Antipasti vom Mediterranen Buffet oder ein Dessert. Geschirr, Gläser und Stehtische können Sie bei uns mieten, Servicepersonal buchen Sie für 35,00\u00A0€ pro Person und Stunde dazu.",
+          "Die Pizza lässt sich gut mit unseren anderen Angeboten verbinden: [Fingerfood](/fingerfood-catering) zum Empfang, Salate und Antipasti vom Mediterranen Buffet oder ein Dessert. Geschirr, Gläser, Stehtische, Sitzgarnituren und Partyzelte können Sie bei uns mieten, Servicepersonal buchen Sie für 35,00\u00A0€ pro Person und Stunde dazu.",
         ],
       },
     ],

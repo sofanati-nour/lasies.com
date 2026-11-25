@@ -292,6 +292,8 @@ function PrefillFromLink({ prefill }: { prefill: (text: string) => void }) {
         ? "Ich interessiere mich für Steinofen-Pizza vor Ort. "
         : anfrage === "mittagstisch"
         ? "Ich interessiere mich für Ihren Mittagstisch (Tagesgerichte). Anzahl Personen: "
+        : anfrage === "miete"
+        ? "Ich möchte Mietartikel für meine Veranstaltung anfragen (z. B. Geschirr, Tischdecken, Stehtische, Zelt). Datum und Anzahl Gäste: "
         : anfrage === "personal"
         ? "Ich möchte Service- bzw. Küchenpersonal für meine Veranstaltung anfragen. "
         : anfrage === "partner"

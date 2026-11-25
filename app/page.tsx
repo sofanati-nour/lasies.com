@@ -1,11 +1,15 @@
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import {
+  Armchair,
   ArrowRight,
   Building2,
   Cake,
   ChefHat,
   Church,
+  Coffee,
+  Layers,
+  Truck,
   Flame,
   GlassWater,
   Heart,
@@ -27,6 +31,7 @@ import { site } from "@/libs/site";
 import { googleRating, reviews } from "@/libs/reviews";
 import { occasionPages, townPages } from "@/libs/landingPages";
 import { lunch } from "@/libs/lunch";
+import { clients } from "@/libs/clients";
 import MotionToggle from "@/components/MotionToggle";
 
 import heroA from "@/app/images/hero-lachsplatte.jpg";
@@ -58,9 +63,11 @@ export default function Home() {
       <OccasionMarquee />
       <Lunch />
       <About />
+      <Clients />
       <Pizza />
       <Buffets />
       <Services />
+      <Rental />
       <Process />
       <Reviews />
       <GalleryTeaser />
@@ -395,6 +402,55 @@ function About() {
   );
 }
 
+function Clients() {
+  return (
+    <section
+      id="kunden"
+      tabIndex={-1}
+      className="scroll-mt-24 bg-cream-dark/50 py-20 outline-none sm:py-28"
+    >
+      <div className="container-x">
+        <SectionHeading
+          align="center"
+          eyebrow="Unsere Kunden"
+          title={
+            <>
+              Diese Unternehmen{" "}
+              <em className="italic text-gold-dark">vertrauen uns</em>
+            </>
+          }
+          intro="Zu unseren Stammkunden gehören bekannte Firmen und Einrichtungen aus der Region – von Leonberg und Ditzingen bis Bad Liebenzell und Calw. Eine Auswahl der Unternehmen, die regelmäßig bei uns bestellen:"
+        />
+        <ul className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+          {clients.map((c) => (
+            <li
+              key={c.name}
+              className="flex flex-col items-center rounded-3xl bg-white px-4 pb-5 pt-6 text-center shadow-sm ring-1 ring-olive-900/5 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-olive-900/10 hover:ring-2 hover:ring-gold"
+            >
+              <div className="relative h-16 w-full">
+                <Image
+                  src={`/images/kunden/${c.logo}`}
+                  alt={`Logo ${c.name}`}
+                  fill
+                  sizes="200px"
+                  className="object-contain"
+                />
+              </div>
+              <p className="mt-4 text-sm font-medium leading-snug text-olive-900">
+                {c.name}
+              </p>
+              <p className="mt-0.5 flex items-center gap-1 text-xs text-ink-muted">
+                <MapPin size={12} className="text-gold-dark" aria-hidden />
+                {c.town}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
 function Pizza() {
   const kinds = [
     { title: "Klassisch", text: "Margherita, Salami, Prosciutto" },
@@ -645,8 +701,8 @@ function Services() {
     },
     {
       icon: Sparkles,
-      title: "Deko & Rahmenprogramm",
-      text: "Bei Dekoration, Blumen und Musikern helfen wir Ihnen gerne weiter.",
+      title: "Dekoration",
+      text: "Bei Dekoration und Blumen helfen wir Ihnen gerne weiter.",
     },
   ];
   return (
@@ -719,6 +775,71 @@ function Services() {
             </div>
           </div>
         </div>
+      </div>
+    </section>
+  );
+}
+
+function Rental() {
+  const items = [
+    { icon: UtensilsCrossed, title: "Geschirr, Besteck & Gläser" },
+    { icon: Layers, title: "Tischdecken & Servietten", isNew: true },
+    { icon: Coffee, title: "Professionelle Kaffeemaschine", isNew: true },
+    { icon: Armchair, title: "Stehtische & Sitzgarnituren", isNew: true },
+    { icon: Tent, title: "Partyzelte", isNew: true },
+    { icon: Truck, title: "Lieferung & Abholung" },
+  ];
+  return (
+    <section
+      id="mietservice"
+      tabIndex={-1}
+      className="scroll-mt-24 py-20 outline-none sm:py-28"
+    >
+      <div className="container-x grid items-center gap-12 lg:grid-cols-[1fr_1.15fr] lg:gap-16">
+        <div>
+          <SectionHeading
+            eyebrow="Mietservice"
+            title={
+              <>
+                Tischdecken, Servietten, Partyzelte{" "}
+                <em className="italic text-gold-dark">und vieles mehr</em>
+              </>
+            }
+            intro="Sie benötigen Geschirr, Besteck, Gläser, Tischdecken oder eine professionelle Kaffeemaschine? Oder möchten Sie für Ihre Gartenparty Sitzgarnituren, Stehtische und vielleicht auch ein Zelt leihen? Wir liefern Ihnen das nötige Equipment für Ihre Veranstaltung und holen es anschließend auch wieder bei Ihnen ab."
+          />
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <Link href="/?anfrage=miete#anfrage" className="btn-gold">
+              Mietartikel anfragen <ArrowRight size={16} aria-hidden />
+            </Link>
+            <Link
+              href="/wichtiges-und-wissenswertes#mietservice"
+              className="text-sm font-semibold text-gold-dark underline-offset-4 hover:underline sm:ml-3"
+            >
+              Mietpreise & Bedingungen
+            </Link>
+          </div>
+        </div>
+
+        <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3">
+          {items.map(({ icon: Icon, title, isNew }) => (
+            <li
+              key={title}
+              className="relative flex flex-col gap-4 rounded-3xl bg-cream-light p-5 shadow-sm ring-1 ring-olive-900/5 sm:p-6"
+            >
+              {isNew && (
+                <span className="absolute right-4 top-4 rounded-full bg-gold px-2 py-0.5 text-[0.65rem] font-bold uppercase tracking-wider text-olive-950">
+                  Neu
+                </span>
+              )}
+              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-olive-900 text-gold-light">
+                <Icon size={20} aria-hidden />
+              </span>
+              <span className="font-medium leading-snug text-olive-900">
+                {title}
+              </span>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

@@ -87,8 +87,14 @@ export default function Wichtiges() {
         </h2>
         <div className="container-x grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 [&>*]:min-w-0">
           {/* Rental */}
-          <article className="rounded-[2rem] bg-cream-light p-8 shadow-sm ring-1 ring-olive-900/5 sm:p-10 md:col-span-2">
+          <article
+            id="mietservice"
+            className="scroll-mt-28 rounded-[2rem] bg-cream-light p-8 shadow-sm ring-1 ring-olive-900/5 sm:p-10 md:col-span-2"
+          >
             <CardTitle icon={GlassWater} title="Mietservice" />
+            <p className="mt-3 font-display text-xl text-olive-900">
+              Tischdecken, Servietten, Partyzelte und vieles mehr
+            </p>
             <p className="mt-2 text-sm text-ink-muted">
               Vom Geschirr bis zum Partyzelt: Wir liefern Ihnen das nötige
               Equipment für Ihre Veranstaltung und holen es anschließend
@@ -176,12 +182,11 @@ export default function Wichtiges() {
           </article>
           <InfoCard
             icon={Flower2}
-            title={"Dekoration & Rahmen\u00ADprogramm"}
+            title="Dekoration"
             className="flex-1"
           >
             Bei der Auswahl von Dekoration und Blumen helfen wir Ihnen gerne
-            weiter – ebenso bei der Vermittlung von Rahmenprogrammen, zum
-            Beispiel von Musikern.
+            weiter.
           </InfoCard>
           </div>
           <InfoCard icon={Wallet} title={"Auftrags\u00ADerteilung & Anzahlung"}>
