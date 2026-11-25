@@ -107,7 +107,7 @@ ${faq.map((f) => `### ${f.question}\n${f.answer}`).join("\n\n")}
 - [Menü & Buffets](${site.url}/menu): alle Buffets mit Speisen
 ${landingPages.map((p) => `- [${p.nav}](${site.url}/${p.slug}): ${p.description}`).join("\n")}
 - [Wichtiges & Wissenswertes](${site.url}/wichtiges-und-wissenswertes): Preise, Mietservice, Empfehlungsaktion, Bedingungen, FAQ
-- [Galerie](${site.url}/galerie): Fotos und Videos
+- [Galerie](${site.url}/galerie): Fotos aus unseren Caterings
 - [Ratgeber: Catering-Tipps für Bad Liebenzell](${site.url}/blog/catering-tipps-bad-liebenzell-moettlingen)
 - [Impressum](${site.url}/impressum)
 - [Datenschutz](${site.url}/datenschutz)

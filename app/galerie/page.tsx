@@ -10,7 +10,7 @@ import { pageMetadata } from "@/libs/metadata";
 export const metadata = pageMetadata({
   title: "Galerie – Catering-Fotos aus Bad Liebenzell | Lasies",
   description:
-    "Fotos und Videos aus unseren Caterings: Buffets, Fingerfood, Schlemmerplatten, Grillfeste und Front-Cooking von Lasies aus Bad Liebenzell.",
+    "Fotos aus unseren Caterings: Buffets, Fingerfood, Schlemmerplatten, Grillfeste und Front-Cooking von Lasies aus Bad Liebenzell.",
   path: "/galerie",
 });
 

@@ -33,6 +33,7 @@ import { occasionPages, townPages } from "@/libs/landingPages";
 import { lunch } from "@/libs/lunch";
 import { clients } from "@/libs/clients";
 import MotionToggle from "@/components/MotionToggle";
+import MapEmbed from "@/components/MapEmbed";
 
 import heroA from "@/app/images/hero-lachsplatte.jpg";
 import heroB from "@/app/images/hero-forellenplatte.jpg";
@@ -1195,18 +1196,7 @@ function ContactSection() {
               value={`${site.street}, ${site.city.replace(" ", "\u00A0").replace("Bad ", "Bad\u00A0")}`}
             />
           </ul>
-          <div className="mt-auto hidden pt-10 lg:block">
-            <div className="relative h-40 overflow-hidden rounded-2xl">
-              <Image
-                src={imgPlatten}
-                alt=""
-                fill
-                sizes="30vw"
-                placeholder="blur"
-                className="object-cover opacity-80"
-              />
-            </div>
-          </div>
+          <MapEmbed className="mt-auto pt-10" />
         </div>
         {/* Stays in place after sending, so "Angebot anfragen" links
             always have a target. */}

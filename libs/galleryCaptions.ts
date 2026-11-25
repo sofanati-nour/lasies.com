@@ -48,6 +48,4 @@ export const galleryCaptions: Record<string, string> = {
   "IMG_20240717_234147_798.jpg": "Harzer Roller mit Essig, Öl und Zwiebeln",
   "IMG_20240717_234148_322.jpg": "Aufschnitt- und Käseplatten am Buffet",
   "slide-tarek-1.jpg": "Hähnchen mit Reis, Cashewkernen und Rosinen",
-  "buffet-rundgang-1.mp4": "Video: Rundgang über ein Lasies-Buffet",
-  "buffet-rundgang-2.mp4": "Video: zweiter Rundgang über ein Lasies-Buffet",
 };

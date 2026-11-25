@@ -134,7 +134,27 @@ export default function Datenschutz() {
             DSGVO).
           </p>
 
-          <h2>7. Schriftarten und externe Links</h2>
+          <h2>7. Google Maps</h2>
+          <p>
+            Auf unserer Startseite können Sie eine Karte von Google Maps
+            (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4,
+            Irland) anzeigen lassen. Die Karte wird erst geladen, wenn Sie auf
+            „Karte anzeigen“ klicken. Erst dann werden Daten wie Ihre
+            IP-Adresse an Google übertragen, auch in die USA, und Google kann
+            Cookies setzen. Rechtsgrundlage ist Ihre Einwilligung durch den
+            Klick (Art. 6 Abs. 1 lit. a DSGVO). Mehr dazu in der
+            Datenschutzerklärung von Google:{" "}
+            <a
+              href="https://policies.google.com/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              policies.google.com/privacy
+            </a>
+            .
+          </p>
+
+          <h2>8. Schriftarten und externe Links</h2>
           <p>
             Die Schriftarten dieser Website werden von unserem eigenen Server
             geladen; dabei werden keine Daten an Google übertragen. Links zu
