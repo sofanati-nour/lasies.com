@@ -46,6 +46,7 @@ const fingerfoodMenu: Menu = {
       description:
         "Belegt und garniert mit zartem Räucherlachs, geräuchertem Forellenfilet, reifem Tortenbrie mit Früchten und mehr",
       price: 2.6,
+      unit: "Stück",
     },
     {
       type: "MenuItem",
@@ -53,6 +54,7 @@ const fingerfoodMenu: Menu = {
       description:
         "Appetitlich belegt mit Aufschnitt, Käse und Putenschinken",
       price: 2.5,
+      unit: "Stück",
     },
     {
       type: "MenuSection",
@@ -62,6 +64,7 @@ const fingerfoodMenu: Menu = {
           type: "MenuItem",
           name: "Schwäbische Laugenstange, verschieden belegt",
           price: 2.7,
+          unit: "Stück",
           updatedPrice: 3.2,
         },
         //{
@@ -74,12 +77,14 @@ const fingerfoodMenu: Menu = {
           type: "MenuItem",
           name: "Sommerrollen (vegetarisch, mit Fleisch- oder Räucherlachsfüllung)",
           price: 3.2,
+          unit: "Stück",
           updatedPrice: 3.2,
         },
         {
           type: "MenuItem",
           name: "Burger-Tacos",
           price: 2.7,
+          unit: "Stück",
           updatedPrice: 3.1,
         },
         {
@@ -93,24 +98,28 @@ const fingerfoodMenu: Menu = {
           type: "MenuItem",
           name: "Bagels mit Kräuterfrischkäse und Tomate",
           price: 2.3,
+          unit: "Stück",
           updatedPrice: 2.8,
         },
         {
           type: "MenuItem",
           name: "Fladenbrotecken, vegetarisch oder mit Fleisch gefüllt",
           price: 2.6,
+          unit: "Stück",
           updatedPrice: 2.3,
         },
         {
           type: "MenuItem",
           name: "Schwäbische Laugenbrezel mit Butter oder Frischkäse",
           price: 1.9,
+          unit: "Stück",
           updatedPrice: 2.5,
         },
         {
           type: "MenuItem",
           name: "Halbes Laugencroissant mit Graved Lachs",
           price: 2.4,
+          unit: "Stück",
           updatedPrice: 3.0,
         },
         {
@@ -118,7 +127,7 @@ const fingerfoodMenu: Menu = {
           name: "Körnerbrot mit Kräuterquark und Radieschen",
           price: 1.8,
           updatedPrice: 2.2,
-          unit: "Port.",
+          unit: "Stück",
         },
         {
           type: "MenuItem",
@@ -165,7 +174,7 @@ const fingerfoodMenu: Menu = {
           description: "(2 Stück)",
           price: 1.5,
           updatedPrice: 1.9,
-          unit: "Stück",
+          unit: "Port.",
         },
         {
           type: "MenuItem",
@@ -223,14 +232,14 @@ const fingerfoodMenu: Menu = {
           name: "Salat von Eismeergarnelen (im Glas serviert)",
           price: 4.5,
           updatedPrice: 5.3,
-          unit: "Port.",
+          unit: "Stück",
         },
         {
           type: "MenuItem",
           name: "Geflügelsalat „Bombay“ (im Glas angerichtet)",
           price: 3.8,
           updatedPrice: 4.2,
-          unit: "Port.",
+          unit: "Stück",
         },
         {
           type: "MenuItem",
@@ -401,13 +410,14 @@ const fingerfoodMenu: Menu = {
           description: "(im Glas)",
           price: 1.8,
           updatedPrice: 2.7,
-          unit: "Port.",
+          unit: "Stück",
         },
         {
           type: "MenuItem",
           name: "Sahnequark mit Hagebuttenmark und Früchten",
           description: "(im Glas)",
           price: 1.8,
+          unit: "Stück",
           updatedPrice: 2.3,
         },
         {
@@ -416,7 +426,7 @@ const fingerfoodMenu: Menu = {
           description: "(im Glas)",
           price: 1.9,
           updatedPrice: 2.4,
-          unit: "Port.",
+          unit: "Stück",
         },
         {
           type: "MenuItem",
@@ -445,7 +455,7 @@ const fingerfoodMenu: Menu = {
           name: "Verschiedene Muffins",
           price: 2.0,
           updatedPrice: 2.3,
-          unit: "Port.",
+          unit: "Stück",
         },
         {
           type: "MenuItem",
@@ -460,7 +470,7 @@ const fingerfoodMenu: Menu = {
           name: "Verschiedene gebackene Kuchen vom Blech",
           price: 2.0,
           updatedPrice: 2.7,
-          unit: "Port.",
+          unit: "Stück",
         },
         {
           type: "MenuItem",
@@ -468,7 +478,7 @@ const fingerfoodMenu: Menu = {
           description: "(im Glas)",
           price: 2.0,
           updatedPrice: 2.7,
-          unit: "Port.",
+          unit: "Stück",
         },
         {
           type: "MenuItem",
@@ -495,7 +505,7 @@ const fingerfoodMenu: Menu = {
         },
         {
           type: "MenuItem",
-          name: "Cassiscreme",
+          name: "Johannisbeercreme",
           description: "(im Glas)",
           price: 2.3,
           updatedPrice: 2.7,

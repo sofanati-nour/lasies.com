@@ -1,5 +1,6 @@
 import { site } from "@/libs/site";
 import { googleRating } from "@/libs/reviews";
+import { lunch } from "@/libs/lunch";
 
 export const businessId = `${site.url}/#business`;
 
@@ -50,7 +51,8 @@ export function businessSchema() {
       offer("Catering & Partyservice", "Buffets und Fingerfood für Hochzeiten, Firmenfeiern und private Feste."),
       offer("Front-Cooking", "Speisen werden direkt vor Ort vor den Gästen zubereitet."),
       offer("Steinofen-Pizza vor Ort", "Mobiler Steinofen, Pizza frisch gebacken bei Ihrer Veranstaltung: klassisch (Margherita, Salami, Prosciutto), vegetarisch (Grillgemüse, Pilze, Rucola) oder Spezial (BBQ Chicken, Thunfisch, Schafskäse)."),
-      offer("Mietservice", "Geschirr, Gläser, Besteck und Stehtische zum Mieten. Gedeck (Speiseteller, Beilagenteller, Glas, Gabel, Messer) 3,25 €, Einzelteil 0,65 €, jeweils inklusive Reinigung; Stehtisch 15,00 €; pro Mieteinheit von 3 Tagen."),
+      offer("Mittagstisch", `Wechselnde Tagesgerichte für ${lunch.minGuests} bis ${lunch.maxGuests} Personen, jeder Teller unter ${lunch.maxPrice} €, z. B. ${lunch.dishes.slice(0, 3).join(", ")}.`),
+      offer("Mietservice", "Geschirr, Gläser, Besteck, Stehtische, Tischdecken, Servietten, Kaffeemaschine, Sitzgarnituren und Partyzelte zum Mieten, mit Lieferung und Abholung. Gedeck (Speiseteller, Beilagenteller, Glas, Gabel, Messer) 3,25 €, Einzelteil 0,65 €, jeweils inklusive Reinigung; Stehtisch 15,00 €; pro Mieteinheit von 3 Tagen."),
       offer("Servicepersonal", "Bewirtung Ihrer Gäste.", 35),
       offer("Küchenpersonal", "Küchenpersonal vor Ort.", 40),
     ],

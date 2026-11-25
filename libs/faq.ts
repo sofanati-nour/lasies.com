@@ -25,6 +25,11 @@ export const faq: { question: string; answer: string }[] = [
       "Für Ihr Buffet erstellen wir Ihnen ein individuelles Angebot – abhängig von Buffet, Gästezahl und gewünschten Leistungen. Die Fingerfood-Preise finden Sie direkt im Menü. Servicepersonal kostet 35,00\u00A0€ und Küchenpersonal 40,00\u00A0€ pro Person und Stunde. Alle Preise verstehen sich inklusive Mehrwertsteuer.",
   },
   {
+    question: "Bieten Sie auch einen Mittagstisch an?",
+    answer:
+      "Ja. Für Firmen, Schulungen, Vereine und Gruppen von 10 bis 200 Personen kochen wir wechselnde Tagesgerichte, jeder Teller unter 10 € – zum Beispiel Rindergulasch mit Spätzle und Salat oder Geröstete Maultaschen mit Kartoffelsalat.",
+  },
+  {
     question: "Gibt es vegetarische Speisen?",
     answer:
       "Ja. Wir bieten ein eigenes Vegetarisches Buffet sowie vegetarische Steinofen-Pizza an. Jedes Buffet passen wir gerne an Ihre Wünsche an – sprechen Sie uns einfach an.",
@@ -37,7 +42,7 @@ export const faq: { question: string; answer: string }[] = [
   {
     question: "Kann ich Geschirr und Personal dazubuchen?",
     answer:
-      "Ja. Geschirr, Gläser, Besteck und Stehtische können Sie bei uns mieten (eine Mieteinheit beträgt 3 Tage). Ein Gedeck aus Speiseteller, Beilagenteller, Glas, Gabel und Messer kostet 3,25\u00A0€, ein Einzelteil 0,65\u00A0€ – jeweils inklusive Reinigung. Ein Stehtisch kostet 15,00\u00A0€. Service- und Küchenpersonal übernimmt auf Wunsch die Bewirtung Ihrer Gäste.",
+      "Ja. Geschirr, Gläser, Besteck und Stehtische können Sie bei uns mieten (eine Mieteinheit beträgt 3 Tage), außerdem Tischdecken, Servietten, eine professionelle Kaffeemaschine, Sitzgarnituren und Partyzelte. Wir liefern das Equipment und holen es anschließend wieder ab. Ein Gedeck aus Speiseteller, Beilagenteller, Glas, Gabel und Messer kostet 3,25\u00A0€, ein Einzelteil 0,65\u00A0€ – jeweils inklusive Reinigung. Ein Stehtisch kostet 15,00\u00A0€. Service- und Küchenpersonal übernimmt auf Wunsch die Bewirtung Ihrer Gäste.",
   },
   {
     question: "Gibt es Vorteile für Empfehlungen, Firmen oder Vereine?",

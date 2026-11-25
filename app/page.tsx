@@ -26,6 +26,7 @@ import { slugify } from "@/libs/utils";
 import { site } from "@/libs/site";
 import { googleRating, reviews } from "@/libs/reviews";
 import { occasionPages, townPages } from "@/libs/landingPages";
+import { lunch } from "@/libs/lunch";
 import MotionToggle from "@/components/MotionToggle";
 
 import heroA from "@/app/images/hero-lachsplatte.jpg";
@@ -55,6 +56,7 @@ export default function Home() {
     <main>
       <Hero />
       <OccasionMarquee />
+      <Lunch />
       <About />
       <Pizza />
       <Buffets />
@@ -105,6 +107,28 @@ function Hero() {
 
       <MotionToggle className="absolute bottom-4 right-4 z-10 sm:bottom-6 sm:right-6" />
       <div className="container-x pb-16 pt-32 sm:pb-16">
+        <ul className="mb-6 flex animate-fade-up flex-col items-start gap-2.5">
+          <li>
+            <NewBadge href="#mittagstisch">
+              Mittagstisch für {lunch.minGuests}–{lunch.maxGuests} Personen
+              <span className="hidden sm:inline">
+                {" "}
+                · Tagesgerichte unter {lunch.maxPrice}
+                {" "}€
+              </span>
+            </NewBadge>
+          </li>
+          <li>
+            <NewBadge href="#pizza">
+              Steinofen-Pizza
+              <span className="hidden sm:inline">
+                {" "}
+                · live gebacken bei Ihrem Event
+              </span>
+              <span className="sm:hidden"> live vor Ort</span>
+            </NewBadge>
+          </li>
+        </ul>
         <h1 className="max-w-4xl">
           <span className="eyebrow animate-fade-up !text-gold-light">
             Catering & Partyservice
@@ -160,6 +184,27 @@ function Hero() {
   );
 }
 
+function NewBadge({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <Link
+      href={href}
+      className="inline-flex items-center gap-3 rounded-full border border-gold/40 bg-olive-950/60 py-1.5 pl-1.5 pr-4 text-sm text-white/90 backdrop-blur transition hover:border-gold hover:text-white"
+    >
+      <span className="rounded-full bg-gold px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-olive-950">
+        Neu
+      </span>
+      <span>{children}</span>
+      <ArrowRight size={14} className="shrink-0" aria-hidden />
+    </Link>
+  );
+}
+
 function OccasionMarquee() {
   const items = [
     "Hochzeiten",
@@ -198,11 +243,74 @@ function OccasionMarquee() {
   );
 }
 
+function Lunch() {
+  const points = [
+    `Ab ${lunch.minGuests} bis ${lunch.maxGuests} Personen`,
+    "Wechselnde Tagesgerichte, frisch gekocht",
+    `Jeder Teller unter ${lunch.maxPrice} €`,
+  ];
+  return (
+    <section
+      id="mittagstisch"
+      tabIndex={-1}
+      className="scroll-mt-24 bg-cream-dark/50 py-20 outline-none sm:py-28"
+    >
+      <div className="container-x grid items-center gap-12 lg:grid-cols-[1fr_1.05fr] lg:gap-16">
+        <div>
+          <SectionHeading
+            eyebrow="Neu · Mittagstisch"
+            title={
+              <>
+                Tagesgerichte für Ihr Team –{" "}
+                <em className="italic text-gold-dark">frisch gekocht</em>
+              </>
+            }
+            intro={`Ob Firma, Schulung, Verein oder Gruppe: Wir kochen Ihr Mittagessen frisch – für ${lunch.minGuests} bis ${lunch.maxGuests} Personen und zu Preisen unter ${lunch.maxPrice} € pro Teller.`}
+          />
+          <ul className="mt-8 space-y-3">
+            {points.map((p) => (
+              <li key={p} className="flex items-center gap-3 text-olive-900">
+                <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-olive-900 text-gold-light">
+                  <UtensilsCrossed size={14} aria-hidden />
+                </span>
+                {p}
+              </li>
+            ))}
+          </ul>
+          <Link href="/?anfrage=mittagstisch#anfrage" className="btn-gold mt-9">
+            Mittagstisch anfragen <ArrowRight size={16} aria-hidden />
+          </Link>
+        </div>
+
+        <div className="rounded-[2rem] bg-olive-900 p-7 text-cream shadow-2xl shadow-olive-900/20 sm:p-10">
+          <h3 className="font-display text-2xl text-gold-light sm:text-3xl">
+            Aus unserer Tageskarte
+          </h3>
+          <p className="mt-1 text-sm text-cream/70">
+            Eine Auswahl – die Gerichte wechseln täglich.
+          </p>
+          <ul className="mt-6 divide-y divide-white/10">
+            {lunch.dishes.map((d) => (
+              <li key={d} className="flex items-center gap-4 py-3.5">
+                <span
+                  aria-hidden
+                  className="h-1.5 w-1.5 shrink-0 rounded-full bg-gold"
+                />
+                <span className="leading-snug">{d}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function About() {
   const points = [
     "Individuelle Menüs nach Ihren Wünschen",
     "Front-Cooking als Highlight für Ihre Gäste",
-    "Geschirr, Gläser & Besteck zum Mieten",
+    "Geschirr, Tischdecken, Zelte & mehr zum Mieten",
     "Service- und Küchenpersonal auf Wunsch",
   ];
   return (
@@ -294,7 +402,11 @@ function Pizza() {
     { title: "Spezial", text: "BBQ Chicken, Thunfisch, Schafskäse & mehr" },
   ];
   return (
-    <section className="relative overflow-hidden bg-olive-900 py-20 text-cream sm:py-28">
+    <section
+      id="pizza"
+      tabIndex={-1}
+      className="relative scroll-mt-24 overflow-hidden bg-olive-900 py-20 text-cream outline-none sm:py-28"
+    >
       <div
         aria-hidden
         className="pointer-events-none absolute -right-40 -top-40 h-[30rem] w-[30rem] rounded-full bg-gold/10 blur-3xl"
@@ -524,7 +636,7 @@ function Services() {
     {
       icon: GlassWater,
       title: "Mietservice",
-      text: "Geschirr, Gläser, Besteck und Stehtische können Sie bei uns mieten.",
+      text: "Geschirr, Gläser, Tischdecken, Kaffeemaschine, Sitzgarnituren, Stehtische und Partyzelte – wir liefern und holen alles wieder ab.",
     },
     {
       icon: Users,

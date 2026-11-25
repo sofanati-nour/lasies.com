@@ -4,6 +4,7 @@ import { site } from "@/libs/site";
 import { googleRating } from "@/libs/reviews";
 import { slugify } from "@/libs/utils";
 import { landingPages } from "@/libs/landingPages";
+import { lunch } from "@/libs/lunch";
 
 // Plain-text summary for AI assistants (https://llmstxt.org), generated from
 // the same data as the pages so the facts never drift apart.
@@ -69,7 +70,8 @@ export function GET() {
 - Catering und Partyservice mit individuellen Buffets und Fingerfood
 - Front-Cooking: Zubereitung direkt vor Ort vor den Gästen
 - Steinofen-Pizza vor Ort (mobiler Steinofen): klassisch (Margherita, Salami, Prosciutto), vegetarisch (Grillgemüse, Pilze, Rucola), Spezial (BBQ Chicken, Thunfisch, Schafskäse)
-- Mietservice: Geschirr, Gläser, Besteck, Stehtische (Mieteinheit 3 Tage). Gedeck (Speiseteller, Beilagenteller, Glas, Gabel, Messer) 3,25 €, Einzelteil 0,65 €, jeweils inkl. Reinigung und MwSt.; Stehtisch 15,00 € pro Tisch
+- Mittagstisch (neu): wechselnde Tagesgerichte für ${lunch.minGuests} bis ${lunch.maxGuests} Personen, jeder Teller unter ${lunch.maxPrice} €. Beispiele: ${lunch.dishes.join("; ")}
+- Mietservice mit Lieferung und Abholung: Geschirr, Gläser, Besteck, Stehtische (Mieteinheit 3 Tage); außerdem Tischdecken, Servietten, professionelle Kaffeemaschine, Sitzgarnituren und Partyzelte (Preise auf Anfrage). Gedeck (Speiseteller, Beilagenteller, Glas, Gabel, Messer) 3,25 €, Einzelteil 0,65 €, jeweils inkl. Reinigung und MwSt.; Stehtisch 15,00 € pro Tisch
 - Servicepersonal 35,00 € und Küchenpersonal 40,00 € pro Person und Stunde
 - Anfahrt 0,60 € pro Kilometer; Rückholung an Sonn- und Feiertagen +30,00 €
 - Unterstützung bei Location-Suche, Dekoration und Rahmenprogramm

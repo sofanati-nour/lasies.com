@@ -290,6 +290,8 @@ function PrefillFromLink({ prefill }: { prefill: (text: string) => void }) {
     const text =
       anfrage === "pizza"
         ? "Ich interessiere mich für Steinofen-Pizza vor Ort. "
+        : anfrage === "mittagstisch"
+        ? "Ich interessiere mich für Ihren Mittagstisch (Tagesgerichte). Anzahl Personen: "
         : anfrage === "personal"
         ? "Ich möchte Service- bzw. Küchenpersonal für meine Veranstaltung anfragen. "
         : anfrage === "partner"

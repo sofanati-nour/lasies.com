@@ -33,6 +33,10 @@ const rentalItems = [
   "Gläser aller Art",
   "Stehtisch schwarz, rund 80 cm",
   "Stehtisch inkl. weißer Husse",
+  "Tischdecken und Servietten (Preis auf Anfrage)",
+  "Professionelle Kaffeemaschine (Preis auf Anfrage)",
+  "Sitzgarnituren für Gartenpartys (Preis auf Anfrage)",
+  "Partyzelte (Preis auf Anfrage)",
 ];
 
 const rentalTerms = [
@@ -86,7 +90,10 @@ export default function Wichtiges() {
           <article className="rounded-[2rem] bg-cream-light p-8 shadow-sm ring-1 ring-olive-900/5 sm:p-10 md:col-span-2">
             <CardTitle icon={GlassWater} title="Mietservice" />
             <p className="mt-2 text-sm text-ink-muted">
-              Mietartikel in Standardausführung – Preise pro Mieteinheit
+              Vom Geschirr bis zum Partyzelt: Wir liefern Ihnen das nötige
+              Equipment für Ihre Veranstaltung und holen es anschließend
+              wieder ab. Mietartikel in Standardausführung – Preise pro
+              Mieteinheit
               (3{"\u00A0"}Tage):
             </p>
             <dl className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
