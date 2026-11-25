@@ -46,6 +46,5 @@ export const galleryCaptions: Record<string, string> = {
   "IMG_20240717_234135_053.jpg": "Schwäbischer Kartoffelsalat",
   "IMG_20240717_234147_628.jpg": "Fischplatte mit geräucherter Forelle und Lachs",
   "IMG_20240717_234147_798.jpg": "Harzer Roller mit Essig, Öl und Zwiebeln",
-  "IMG_20240717_234148_322.jpg": "Aufschnitt- und Käseplatten am Buffet",
   "slide-tarek-1.jpg": "Hähnchen mit Reis, Cashewkernen und Rosinen",
 };
