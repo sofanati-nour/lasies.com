@@ -1,4 +1,5 @@
 import { navLinks, site } from "@/libs/site";
+import { occasionPages, townPages } from "@/libs/landingPages";
 import { Instagram, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -99,6 +100,16 @@ export default function Footer() {
         </div>
       </div>
 
+      <nav
+        aria-label="Einzugsgebiet und Anlässe"
+        className="border-t border-white/10"
+      >
+        <div className="container-x grid gap-8 py-10 md:grid-cols-2">
+          <FooterLinks title="Catering in Ihrer Nähe" pages={townPages} />
+          <FooterLinks title="Anlässe & Angebote" pages={occasionPages} />
+        </div>
+      </nav>
+
       <div className="border-t border-white/10">
         <div className="container-x flex flex-col gap-3 py-6 text-xs text-cream/60 sm:flex-row sm:items-center sm:justify-between">
           <p>
@@ -130,6 +141,32 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+function FooterLinks({
+  title,
+  pages,
+}: {
+  title: string;
+  pages: { slug: string; nav: string }[];
+}) {
+  return (
+    <div>
+      <h2 className="mb-4 font-display text-lg text-cream">{title}</h2>
+      <ul className="flex flex-wrap gap-x-6 gap-y-1 text-sm">
+        {pages.map((p) => (
+          <li key={p.slug}>
+            <Link
+              href={`/${p.slug}`}
+              className="inline-block py-1.5 transition hover:text-gold"
+            >
+              {p.nav}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 

@@ -7,7 +7,7 @@ export const faq: { question: string; answer: string }[] = [
   {
     question: "In welcher Region ist Lasies Catering tätig?",
     answer:
-      "Wir sind in Bad Liebenzell zu Hause und beliefern Feiern in Calw, Leonberg und im gesamten Großraum Stuttgart. Für die Anfahrt berechnen wir 0,60\u00A0€ pro Kilometer.",
+      "Wir sind in Bad Liebenzell-Möttlingen zu Hause und beliefern Feiern in Calw, Weil der Stadt, Leonberg, Pforzheim, Nagold, Böblingen, Sindelfingen und im gesamten Großraum Stuttgart. Für die Anfahrt berechnen wir 0,60\u00A0€ pro Kilometer.",
   },
   {
     question: "Für welche Anlässe kann ich Sie buchen?",

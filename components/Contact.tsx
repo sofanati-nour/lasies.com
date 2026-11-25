@@ -39,7 +39,10 @@ const fields: {
 
 export default function Contact({
   handleSendEmail,
+  initialMessage,
 }: {
+  /** Starts the message, e.g. on a landing page ("Catering in Calw"). */
+  initialMessage?: string;
   handleSendEmail: (
     data: ContactRequestType
   ) => Promise<{ error?: string; confirmationSent?: boolean }>;
@@ -56,6 +59,7 @@ export default function Contact({
   } = useForm<ContactRequestType>({
     resolver: zodResolver(ContactRequestSchema),
     shouldFocusError: false,
+    defaultValues: initialMessage ? { message: initialMessage } : undefined,
   });
   const successRef = useRef<HTMLHeadingElement>(null);
   const [confirmationSent, setConfirmationSent] = useState(true);

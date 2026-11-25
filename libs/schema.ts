@@ -152,3 +152,51 @@ export function menuSchema(
     }),
   };
 }
+
+/** A landing page's offer: what is provided, by whom and where. */
+export function serviceSchema(page: {
+  slug: string;
+  h1: string;
+  h1Accent: string;
+  description: string;
+  serviceType: string;
+  areaServed: string[];
+}) {
+  const url = `${site.url}/${page.slug}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${url}#service`,
+    name: `${page.h1} ${page.h1Accent}`,
+    serviceType: page.serviceType,
+    description: page.description,
+    url,
+    provider: { "@id": businessId },
+    areaServed: page.areaServed.map((name) => ({ "@type": "Place", name })),
+  };
+}
+
+export function breadcrumbSchema(items: { name: string; path: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: `${site.url}${item.path === "/" ? "" : item.path}`,
+    })),
+  };
+}
+
+export function faqPageSchema(faq: { question: string; answer: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faq.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+}

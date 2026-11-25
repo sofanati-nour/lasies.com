@@ -2,7 +2,7 @@ export const site = {
   name: "Lasies Catering Service",
   url: "https://www.lasies.com",
   description:
-    "Catering und Partyservice aus Bad Liebenzell: individuelle Buffets, Fingerfood, Front-Cooking und Steinofen-Pizza vor Ort, Mietservice sowie Service- und Küchenpersonal für Hochzeiten, Firmenfeiern und private Feste in Calw, Leonberg und im Großraum Stuttgart.",
+    "Catering und Partyservice aus Bad Liebenzell: individuelle Buffets, Fingerfood, Front-Cooking und Steinofen-Pizza vor Ort, Mietservice sowie Service- und Küchenpersonal für Hochzeiten, Firmenfeiern und private Feste in Calw, Weil der Stadt, Leonberg, Pforzheim, Nagold, Böblingen, Sindelfingen und im Großraum Stuttgart.",
   owner: "Tarek Taraben",
   phone: "+49 1573 8949296",
   phoneHref: "tel:+4915738949296",
@@ -18,8 +18,19 @@ export const site = {
   geo: { latitude: 48.76102363786428, longitude: 8.800177643639351 },
   area: "Bad Liebenzell, Calw, Leonberg & Großraum Stuttgart",
   /** For use inside sentences: "… in {areaSentence}." */
-  areaSentence: "Bad Liebenzell, Calw, Leonberg und im Großraum Stuttgart",
-  areaServed: ["Bad Liebenzell", "Calw", "Leonberg", "Großraum Stuttgart"],
+  areaSentence:
+    "Bad Liebenzell, Calw, Weil der Stadt, Leonberg, Pforzheim, Nagold, Böblingen, Sindelfingen und im Großraum Stuttgart",
+  areaServed: [
+    "Bad Liebenzell",
+    "Calw",
+    "Weil der Stadt",
+    "Leonberg",
+    "Pforzheim",
+    "Nagold",
+    "Böblingen",
+    "Sindelfingen",
+    "Großraum Stuttgart",
+  ],
 };
 
 export const navLinks = [

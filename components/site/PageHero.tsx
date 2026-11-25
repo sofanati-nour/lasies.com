@@ -5,17 +5,20 @@ export default function PageHero({
   title,
   intro,
   image,
+  imageAlt = "",
 }: {
   eyebrow: string;
   title: React.ReactNode;
   intro?: React.ReactNode;
   image: StaticImageData;
+  /** Describe the photo when it shows what the page is about. */
+  imageAlt?: string;
 }) {
   return (
     <section className="relative isolate overflow-hidden bg-olive-950 pb-16 pt-36 text-cream sm:pb-20 sm:pt-44">
       <Image
         src={image}
-        alt=""
+        alt={imageAlt}
         fill
         preload
         loading="eager"

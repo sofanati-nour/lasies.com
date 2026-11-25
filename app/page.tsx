@@ -25,6 +25,7 @@ import SectionHeading from "@/components/site/SectionHeading";
 import { slugify } from "@/libs/utils";
 import { site } from "@/libs/site";
 import { googleRating, reviews } from "@/libs/reviews";
+import { occasionPages, townPages } from "@/libs/landingPages";
 import MotionToggle from "@/components/MotionToggle";
 
 import heroA from "@/app/images/hero-lachsplatte.jpg";
@@ -58,6 +59,7 @@ export default function Home() {
       <Process />
       <Reviews />
       <GalleryTeaser />
+      <Area />
       <ContactSection />
     </main>
   );
@@ -336,6 +338,12 @@ function Pizza() {
           <Link href="/?anfrage=pizza#anfrage" className="btn-gold mt-8">
             Pizza-Event anfragen <ArrowRight size={16} aria-hidden />
           </Link>
+          <Link
+            href="/steinofen-pizza-catering"
+            className="ml-0 mt-4 block text-sm font-semibold text-gold-light underline-offset-4 hover:underline sm:ml-5 sm:mt-8 sm:inline-block"
+          >
+            Mehr zum Steinofen-Pizza-Catering
+          </Link>
         </div>
       </div>
     </section>
@@ -470,6 +478,8 @@ function Services() {
     {
       icon: Heart,
       title: "Hochzeiten",
+      href: "/hochzeitscatering",
+      linkLabel: "Mehr zum Hochzeitscatering",
       text: "An einem der wichtigsten Tage Ihres Lebens bieten wir ein umfassendes Catering-Programm.",
     },
     {
@@ -480,6 +490,8 @@ function Services() {
     {
       icon: Building2,
       title: "Unternehmen",
+      href: "/firmencatering",
+      linkLabel: "Mehr zum Firmencatering",
       text: "Ob Richtfest, Messe oder Tag der offenen Tür – wir verwöhnen Ihre Gäste mit Fingerfood oder Menü.",
     },
     {
@@ -535,7 +547,7 @@ function Services() {
         />
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {occasions.map(({ icon: Icon, title, text }) => (
+          {occasions.map(({ icon: Icon, title, text, href, linkLabel }) => (
             <div
               key={title}
               className="group rounded-3xl bg-cream-light p-7 shadow-sm ring-1 ring-olive-900/5 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-olive-900/10"
@@ -547,6 +559,14 @@ function Services() {
                 {title}
               </h3>
               <p className="mt-2 leading-relaxed text-ink-muted">{text}</p>
+              {href && (
+                <Link
+                  href={href}
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-gold-dark underline-offset-4 hover:underline"
+                >
+                  {linkLabel} <ArrowRight size={14} aria-hidden />
+                </Link>
+              )}
             </div>
           ))}
         </div>
@@ -845,6 +865,50 @@ function GalleryTeaser() {
         </div>
       </div>
     </section>
+  );
+}
+
+function Area() {
+  return (
+    <section className="bg-cream-dark/50 py-20 sm:py-28">
+      <div className="container-x">
+        <SectionHeading
+          eyebrow="Einzugsgebiet"
+          title="Catering in Ihrer Nähe"
+          intro="Wir kochen in Bad Liebenzell-Möttlingen und liefern in die ganze Region – von Calw bis in den Großraum Stuttgart."
+        />
+        <div className="mt-10 grid gap-8 lg:grid-cols-2">
+          <AreaLinks title="Orte" pages={townPages} />
+          <AreaLinks title="Anlässe & Angebote" pages={occasionPages} />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function AreaLinks({
+  title,
+  pages,
+}: {
+  title: string;
+  pages: { slug: string; nav: string }[];
+}) {
+  return (
+    <div>
+      <h3 className="font-display text-2xl text-olive-900">{title}</h3>
+      <ul className="mt-4 flex flex-wrap gap-3">
+        {pages.map((p) => (
+          <li key={p.slug}>
+            <Link
+              href={`/${p.slug}`}
+              className="inline-flex items-center gap-2 rounded-full border border-olive-900/15 bg-cream-light px-4 py-2.5 text-sm text-olive-900 transition hover:border-gold hover:text-gold-dark"
+            >
+              {p.nav} <ArrowRight size={14} aria-hidden />
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 

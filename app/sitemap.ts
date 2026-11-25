@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { getBlogSlugs } from "@/libs/blogApi";
 import { site } from "@/libs/site";
 import { blogDates, PAGES_UPDATED } from "@/libs/contentDates";
+import { landingPages } from "@/libs/landingPages";
 
 type Entry = {
   path: string;
@@ -14,6 +15,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const pages: Entry[] = [
     { path: "", priority: 1, changeFrequency: "monthly", lastModified: PAGES_UPDATED },
     { path: "/menu", priority: 0.9, changeFrequency: "monthly", lastModified: PAGES_UPDATED },
+    ...landingPages.map((p) => ({
+      path: `/${p.slug}`,
+      priority: 0.8,
+      changeFrequency: "monthly" as const,
+      lastModified: PAGES_UPDATED,
+    })),
     { path: "/galerie", priority: 0.7, changeFrequency: "monthly", lastModified: PAGES_UPDATED },
     { path: "/wichtiges-und-wissenswertes", priority: 0.7, changeFrequency: "yearly", lastModified: PAGES_UPDATED },
     { path: "/datenschutz", priority: 0.2, changeFrequency: "yearly", lastModified: PAGES_UPDATED },

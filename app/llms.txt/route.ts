@@ -3,6 +3,7 @@ import { Menus, type MenuItem, type MenuSection } from "@/libs/menuData";
 import { site } from "@/libs/site";
 import { googleRating } from "@/libs/reviews";
 import { slugify } from "@/libs/utils";
+import { landingPages } from "@/libs/landingPages";
 
 // Plain-text summary for AI assistants (https://llmstxt.org), generated from
 // the same data as the pages so the facts never drift apart.
@@ -56,7 +57,7 @@ export function GET() {
 
 ## Kontakt
 - Inhaber: ${site.owner}
-- Adresse: ${site.street}, ${site.postalCode} ${site.locality}, Deutschland
+- Adresse: ${site.street}, ${site.postalCode} ${site.locality}-Möttlingen, Deutschland
 - Telefon: ${site.phone}
 - E-Mail: ${site.email}
 - WhatsApp: ${site.whatsapp}
@@ -81,12 +82,24 @@ ${buffets}
 ## Speisen je Buffet
 ${dishes}
 
+## Orte und Anlässe
+${landingPages
+    .map(
+      (p) =>
+        `### ${p.nav} (${site.url}/${p.slug})\n${p.intro}\n` +
+        p.facts.map((f) => `- ${f.label}: ${f.value}`).join("\n") +
+        "\n" +
+        p.faq.map((f) => `- ${f.question} ${f.answer}`).join("\n")
+    )
+    .join("\n\n")}
+
 ## Häufige Fragen
 ${faq.map((f) => `### ${f.question}\n${f.answer}`).join("\n\n")}
 
 ## Seiten
 - [Startseite](${site.url}/): Überblick, Leistungen, Bewertungen, Anfrageformular
 - [Menü & Buffets](${site.url}/menu): alle Buffets mit Speisen
+${landingPages.map((p) => `- [${p.nav}](${site.url}/${p.slug}): ${p.description}`).join("\n")}
 - [Wichtiges & Wissenswertes](${site.url}/wichtiges-und-wissenswertes): Preise, Mietservice, Empfehlungsaktion, Bedingungen, FAQ
 - [Galerie](${site.url}/galerie): Fotos und Videos
 - [Ratgeber: Catering-Tipps für Bad Liebenzell](${site.url}/blog/catering-tipps-bad-liebenzell-moettlingen)
