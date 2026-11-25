@@ -96,7 +96,7 @@ export default function Wichtiges() {
               Tischdecken, Servietten, Partyzelte und vieles mehr
             </p>
             <p className="mt-2 text-sm text-ink-muted">
-              Vom Geschirr bis zum Partyzelt: Wir liefern Ihnen das nötige
+              Vom Geschirr bis zum Partyzelt: Wir liefern Ihnen gerne das nötige
               Equipment für Ihre Veranstaltung und holen es anschließend
               wieder ab. Mietartikel in Standardausführung – Preise pro
               Mieteinheit

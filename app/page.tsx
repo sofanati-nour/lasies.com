@@ -805,7 +805,7 @@ function Rental() {
                 <em className="italic text-gold-dark">und vieles mehr</em>
               </>
             }
-            intro="Sie benötigen Geschirr, Besteck, Gläser, Tischdecken oder eine professionelle Kaffeemaschine? Oder möchten Sie für Ihre Gartenparty Sitzgarnituren, Stehtische und vielleicht auch ein Zelt leihen? Wir liefern Ihnen das nötige Equipment für Ihre Veranstaltung und holen es anschließend auch wieder bei Ihnen ab."
+            intro="Sie benötigen Geschirr, Besteck, Gläser, Tischdecken oder eine professionelle Kaffeemaschine? Oder möchten Sie für Ihre Gartenparty Sitzgarnituren, Stehtische und vielleicht auch ein Zelt leihen? Wir liefern Ihnen gerne das nötige Equipment für Ihre Veranstaltung und holen es anschließend auch wieder bei Ihnen ab."
           />
           <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link href="/?anfrage=miete#anfrage" className="btn-gold">
