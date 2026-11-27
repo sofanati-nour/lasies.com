@@ -12,4 +12,5 @@ export const clients: { name: string; town: string; logo: string }[] = [
   { name: "mednos Hausarztpraxen", town: "Calw", logo: "mednos.png" },
   { name: "Atrio Leonberg e. V.", town: "Leonberg", logo: "atrio-leonberg.png" },
   { name: "Freiwillige Feuerwehr Leonberg", town: "Leonberg", logo: "feuerwehr-leonberg.png" },
+  { name: "Die Drei Billardcafé & Sportsbar", town: "Sindelfingen", logo: "die-drei-sindelfingen.png" },
 ];
